@@ -37,19 +37,35 @@ lgbtcollno234$matchcode <- paste0(lgbtcollno234$state, lgbtcollno234$bmfyear)
 colnames(lgbtallcoll) <- paste0(colnames(lgbtallcoll), "all")
 colnames(lgbtcollno234) <- paste0(colnames(lgbtcollno234), "no234")
 
-allcollmatcher <- match(taylorlgbt$matchcode, lgbtallcoll$matchcode)
-taylorlgbt <- cbind(taylorlgbt, lgbtallcoll[allcollmatcher,])
+## allcollmatcher <- match(taylorlgbt$matchcode, lgbtallcoll$matchcodeall)
+## taylorlgbt <- cbind(taylorlgbt, lgbtallcoll[allcollmatcher,])
 
-no234matcher <- match(taylorlgbt$matchcode, lgbtcollno234$matchcode)
-taylorlgbt <- cbind(taylorlgbt, lgbtcollno234[no234matcher,])
+## no234matcher <- match(taylorlgbt$matchcode, lgbtcollno234$matchcodeno234)
+## taylorlgbt <- cbind(taylorlgbt, lgbtcollno234[no234matcher,])
+
+## So DHM wants me to make sure all of the data is in the file, not
+## just the stuff that matches. I Need to figure out how to match the
+## values that are a. not in taylorlgbt and b. the same. Turns out we
+## can do it by using the merge instead of the match command. The
+## merge command combines the values that are the same, but we can
+## make it append values that differ on their codes by setting the
+## all.x and all.y arguments to TRUE
+
+
+taylorlgbt2 <- merge(taylorlgbt, lgbtallcoll, by.x = "matchcode", by.y = "matchcodeall", all.x = TRUE, all.y = TRUE)
+taylorlgbt2 <- merge(taylorlgbt2, lgbtcollno234, by.x = "matchcode", by.y = "matchcodeno234", all.x = TRUE, all.y = TRUE)
+
+
+
+taylorlgbt2$bmfyearno234
 
 colnames(taylorlgbt)
 
 head(taylorlgbt)
+
+
 ## Get rid of the match codes, abbreviations and bmfyear, as they've done their part
-taylorlgbt <- taylorlgbt[, -grep("matchcode", colnames(taylorlgbt))]
-taylorlgbt <- taylorlgbt[, -grep('bmfyear',colnames(taylorlgbt))]
-taylorlgbt <- taylorlgbt[, !colnames(taylorlgbt) %in% c("stateall", "stateabb", "stateno234")]
+taylorlgbt2 <- taylorlgbt2[, -grep("matchcode", colnames(taylorlgbt2))]
 
 ## The goal: to create a file called JT DHM LGBT Group Resources, with NCCS measures added
 write.csv(taylorlgbt, paste0(loc,"JT DHM LGBT Group Resources.csv"))
