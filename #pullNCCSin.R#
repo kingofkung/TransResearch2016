@@ -88,4 +88,4 @@ head(taylorlgbt)
 taylorlgbt2 <- taylorlgbt2[, -grep("matchcode", colnames(taylorlgbt2))]
 
 ## The goal: to create a file called JT DHM LGBT Group Resources, with NCCS measures added
-write.csv(taylorlgbt, paste0(loc,"JT DHM LGBT Group Resources.csv"))
+write.csv(taylorlgbt, paste0(loc,"JT DHM LGBT Group Resources.csv"), row.names = F)
