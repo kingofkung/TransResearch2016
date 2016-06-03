@@ -16,4 +16,8 @@ taylorlgbt <- read.dta13(paste0(loc, "taylor lgbt measure 3.20.14.dta"))
 ## read in pop/price index
 popnprice <- read.dta13(paste0(loc, "pop and priceindex.dta"))
 
+## read in HRC's policy index
+HRC <- read.csv(paste0(loc, "Index2015.csv"))
+
+
 
