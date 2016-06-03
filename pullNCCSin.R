@@ -79,17 +79,21 @@ taylorlgbt2$statename[which(taylorlgbt2$statename %in% state.abb)] <- namesinord
 
 taylorlgbt2$bmfyearno234
 
-colnames(taylorlgbt)
 
-head(taylorlgbt)
+
+
+
+## Now to get the HRC Index in
+head(HRC)
+HRC$St.abb <- rep(state.abb,2)
+HRC$sy <- paste0(HRC$St.abb, HRC$Year)
+taylorlgbt2 <- merge(taylorlgbt2, HRC[,c("ScoreCardCats", "sy")], by.x = "matchcode", by.y = "sy", all.x = TRUE)
+
 
 
 ## Get rid of the match codes, abbreviations and bmfyear, as they've done their part
 taylorlgbt2 <- taylorlgbt2[, -grep("matchcode", colnames(taylorlgbt2))]
-
-
-## Now to get the HRC Index in
-
+taylorlgbt2 <- taylorlgbt2[, -grep("newyear", colnames(taylorlgbt2))]
 
 ## The Goal: to create a file called JT DHM LGBT Group Resources, with NCCS measures added
 write.csv(taylorlgbt2, paste0(loc,"JT DHM LGBT Group Resources.csv"), row.names = F)
