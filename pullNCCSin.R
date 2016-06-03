@@ -87,5 +87,5 @@ head(taylorlgbt)
 ## Get rid of the match codes, abbreviations and bmfyear, as they've done their part
 taylorlgbt2 <- taylorlgbt2[, -grep("matchcode", colnames(taylorlgbt2))]
 
-## The goal: to create a file called JT DHM LGBT Group Resources, with NCCS measures added
+## The Goal: to create a file called JT DHM LGBT Group Resources, with NCCS measures added
 write.csv(taylorlgbt2, paste0(loc,"JT DHM LGBT Group Resources.csv"), row.names = F)

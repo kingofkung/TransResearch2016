@@ -1,7 +1,7 @@
 ## Open the Files DHM is having me look at
 rm(list = ls())
-loc <- "/Users/bjr/KUDropbox/Dropbox/LGBT Interest group data/"
-
+## loc <- "/Users/bjr/KUDropbox/Dropbox/LGBT Interest group data/"
+loc <- "/Users/bjr/Dropbox/LGBT Interest group data/"
 library(readstata13)
 cleaneddata <- read.dta13(paste0(loc, "jami and don lgbt data cleaned 5.20.16.dta"))
 
