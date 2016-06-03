@@ -90,6 +90,14 @@ HRC$sy <- paste0(HRC$St.abb, HRC$Year)
 taylorlgbt2 <- merge(taylorlgbt2, HRC[,c("ScoreCardCats", "sy")], by.x = "matchcode", by.y = "sy", all.x = TRUE)
 
 
+## In order to do the pooled time series analysis that
+## Dr. Haider-Markel wants, we'll need to change the format of the
+## dependent variables. When they came in, the DVS had 0's if the
+## policy hadn't been adopted, and 1's if it had. We need to make it
+## so that every 1 after the first is an NA...
+
+taysplit <- split(taylorlgbt2, f = taylorlgbt2$statename)
+head(taysplit)
 
 ## Get rid of the match codes, abbreviations and bmfyear, as they've done their part
 taylorlgbt2 <- taylorlgbt2[, -grep("matchcode", colnames(taylorlgbt2))]
