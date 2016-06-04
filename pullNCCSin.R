@@ -97,7 +97,7 @@ taylorlgbt2 <- merge(taylorlgbt2, HRC[,c("ScoreCardCats", "sy")], by.x = "matchc
 ## so that every 1 after the first is an NA...
 
 ## taylorlgbt2[, c("statename", "year", "doma")]
-devees <- c("doma", "gay_disc", "trans_dis")
+devees <- c("doma", "gay_disc", "trans_dis", "superdoma")
 taysplit <- split(taylorlgbt2, f = taylorlgbt2$statename)
 head(taysplit)
 
@@ -116,6 +116,12 @@ for(i in devees){
 
 library(plyr)
 taylorlgbt2 <- rbind.fill(taysplit)
+
+## get state public opinion appended to the end of the data
+
+head(stateopp)
+
+taylorlgbt2 <- merge(taylorlgbt2, stateopp[,c("State","MeanOpp")], by.x = "statename", by.y = "State", all.x = TRUE)
 
 ## Get rid of the match codes, abbreviations and bmfyear, as they've done their part
 taylorlgbt2 <- taylorlgbt2[, -grep("matchcode", colnames(taylorlgbt2))]
