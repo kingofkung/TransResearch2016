@@ -96,8 +96,26 @@ taylorlgbt2 <- merge(taylorlgbt2, HRC[,c("ScoreCardCats", "sy")], by.x = "matchc
 ## policy hadn't been adopted, and 1's if it had. We need to make it
 ## so that every 1 after the first is an NA...
 
+## taylorlgbt2[, c("statename", "year", "doma")]
+devees <- c("doma", "gay_disc", "trans_dis")
 taysplit <- split(taylorlgbt2, f = taylorlgbt2$statename)
 head(taysplit)
+
+## first goal, try to get the toy example, with just doma, to have only 1 one
+## Iterate over devee list that I create above
+
+for(i in devees){
+    taysplit <- lapply(taysplit,
+                       function(x, dvname = i){
+                           ## Return which values in dvname equal to 1, except for the first one
+                           extraones <- which(x[,dvname]==1)[-1]
+                           x[extraones, dvname] <- NA
+                           x
+                       })
+    }
+
+library(plyr)
+taylorlgbt2 <- rbind.fill(taysplit)
 
 ## Get rid of the match codes, abbreviations and bmfyear, as they've done their part
 taylorlgbt2 <- taylorlgbt2[, -grep("matchcode", colnames(taylorlgbt2))]

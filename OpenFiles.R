@@ -3,6 +3,7 @@ rm(list = ls())
 ## loc <- "/Users/bjr/KUDropbox/Dropbox/LGBT Interest group data/"
 loc <- "/Users/bjr/Dropbox/LGBT Interest group data/"
 library(readstata13)
+library(xlsx)
 cleaneddata <- read.dta13(paste0(loc, "jami and don lgbt data cleaned 5.20.16.dta"))
 
 ## Read in files with nccs data
@@ -19,5 +20,6 @@ popnprice <- read.dta13(paste0(loc, "pop and priceindex.dta"))
 ## read in HRC's policy index
 HRC <- read.csv(paste0(loc, "Index2015.csv"))
 
-
+## read in state public opinion data
+stateopp <- read.xlsx(paste0(loc, "StateOpp.xlsx"), 1)
 
