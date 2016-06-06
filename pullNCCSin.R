@@ -12,31 +12,6 @@ head(taylorlgbt, 3)
 
 statematcher <- data.frame("name" = state.name, "abb" = state.abb)
 
-## So basically we want to add a column that has the state as either a
-## name in the collapse files or an abbreviation in the taylor file.
-taylorlgbt$stateabb <- NA
-taylorlgbt$stateabb <- unlist(lapply(taylorlgbt$statename, function(x){
-    state.abb[match(x, state.name)]
-    }
-
-))
-
-## Appears to have worked exactly as intended
-## table(taylorlgbt$stateabb, taylorlgbt$statename)
-
-## So what do you say we create some codes with the correct naming
-## conventions? Now that we have given taylorlgbt state abbreviations,
-## we should be able to make codes to do some matching.
-taylorlgbt$matchcode <- paste0(taylorlgbt$stateabb, taylorlgbt$year)
-lgbtallcoll$matchcode <- paste0(lgbtallcoll$state, lgbtallcoll$bmfyear)
-lgbtcollno234$matchcode <- paste0(lgbtcollno234$state, lgbtcollno234$bmfyear)
-
-## All rows have a unique match code. You can tell based on this command.
-## which(table(taylorlgbt$matchcode)>1)
-
-colnames(lgbtallcoll) <- paste0(colnames(lgbtallcoll), "all")
-colnames(lgbtcollno234) <- paste0(colnames(lgbtcollno234), "no234")
-
 ## allcollmatcher <- match(taylorlgbt$matchcode, lgbtallcoll$matchcodeall)
 ## taylorlgbt <- cbind(taylorlgbt, lgbtallcoll[allcollmatcher,])
 
