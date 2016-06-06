@@ -90,6 +90,14 @@ HRC$sy <- paste0(HRC$St.abb, HRC$Year)
 taylorlgbt2 <- merge(taylorlgbt2, HRC[,c("ScoreCardCats", "sy")], by.x = "matchcode", by.y = "sy", all.x = TRUE)
 
 
+## So here's the thing. If I want to use the HRC Data for the majority
+## of the files, I need to make it so there's an index in each row by
+## the state. It doesn't make a whole lot of sense to use the 2015
+## data across all of them. I think the best option is to make it so
+## the 2014 categorical index result is used across the rest of the state rows
+
+
+
 ## In order to do the pooled time series analysis that
 ## Dr. Haider-Markel wants, we'll need to change the format of the
 ## dependent variables. When they came in, the DVS had 0's if the
