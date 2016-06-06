@@ -49,7 +49,7 @@ popnprice$matchcode <- paste0(popnprice$state, popnprice$bmfyear)
 ## read in HRC's policy index
 HRC <- read.csv(paste0(loc, "Index2015.csv"))
 HRC$abb <- unlist(lapply(HRC$State, function(u) state.abb[match(u, state.name)]))
-HRC$matchcodes <- paste0(HRC$abb, HRC$Year)
+HRC$matchcode <- paste0(HRC$abb, HRC$Year)
 
 
 ## read in state public opinion data
