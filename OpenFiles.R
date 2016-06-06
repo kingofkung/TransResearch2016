@@ -43,7 +43,7 @@ taylorlgbt$matchcode <- paste0(taylorlgbt$stateabb, taylorlgbt$year)
 
 ## read in pop/price index
 popnprice <- read.dta13(paste0(loc, "pop and priceindex.dta"))
-popnprice$matchcodes <- paste0(popnprice$state, popnprice$bmfyear)
+popnprice$matchcode <- paste0(popnprice$state, popnprice$bmfyear)
 
 
 ## read in HRC's policy index

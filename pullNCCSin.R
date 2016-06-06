@@ -55,7 +55,9 @@ taylorlgbt2$statename[which(taylorlgbt2$statename %in% state.abb)] <- namesinord
 taylorlgbt2$bmfyearno234
 
 
+## Merge in pop and price
 
+taylorlgbt2 <- merge(taylorlgbt2, popnprice, by.x = "matchcode", by.y = "matchcode", all.x = TRUE, all.y = TRUE)
 
 
 ## ## Now to get the HRC Index in
