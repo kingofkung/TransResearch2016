@@ -16,7 +16,7 @@ statematcher <- data.frame("name" = state.name, "abb" = state.abb)
 ## name in the collapse files or an abbreviation in the taylor file.
 taylorlgbt$stateabb <- NA
 taylorlgbt$stateabb <- unlist(lapply(taylorlgbt$statename, function(x){
-    statematcher$abb[statematcher$name %in% x]
+    state.abb[match(x, state.name)]
     }
 
 ))
