@@ -21,3 +21,13 @@ hrcmerge <- merge(hrcmerge, lgbtallcoll, by.x = "matchcode", by.y = "matchcodeal
 hrcmerge <- merge(hrcmerge, lgbtcollno234, by.x = "matchcode", by.y = "matchcodeno234", all.x = TRUE)
 
 
+hrcmerge <- hrcmerge[,-grep('matchcode', colnames(hrcmerge))]
+hrcmerge <- hrcmerge[,-grep('bmfyear', colnames(hrcmerge))]
+
+## So what if I decide that I want to remove all states but the one at
+## the start? This works.
+hrcmerge <- hrcmerge[,-grep('state', colnames(hrcmerge))[-1]]
+
+
+
+write.csv(hrcmerge, "/Users/bjr/Dropbox/LGBT Interest group data/hrcCrossSec.csv", row.names = F)
