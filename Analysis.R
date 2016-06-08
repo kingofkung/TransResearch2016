@@ -15,14 +15,14 @@ lgbtrevpercapita
 nofacs <- !unlist(lapply(dat, is.factor))
 deveesofint <- c("doma", "superdoma", "trans_dis", 'gay_disc')
 
-colnames(dat)[grepl("all", colnames(dat))]
-colnames(dat)[grepl("no234", colnames(dat))]
+allcols <- colnames(dat)[grepl("all", colnames(dat))]
+no234cols <- colnames(dat)[grepl("no234", colnames(dat))]
 
-ivsofint <- c("citi6008", "inst6008_adacope", "inst6008_nom", "evangelical", "census", "ssph", "south", "lowerdem", "upperdem", 'squire', 'partneradj', 'ssphh2000', "ssphhacs3", "Williams", "lgbtpop", "lgbtrev2010adj", "lgbtrevpercapita", "lgbtrevperlgbtcapita", "sexorientnd2013", "genderidentnd2013", "loglgbtrev", "ssphh200per", "ssphhacs3per", "Williamsper", "logrevperlgbtcap", "evangper", "stdlgbtperlgbtcapita", "ssphh2010per", "percentssphh", "lgbtrevperlgbtcapita2", "loglgbtrevperlgbtcapita2", "incomeall", "assetsall", "orgcountall")
+ivsofint <- c("citi6008", "inst6008_adacope", "inst6008_nom", "evangelical", "census", "ssph", "south", "lowerdem", "upperdem", 'squire', 'partneradj', 'ssphh2000', "ssphhacs3", "Williams", "lgbtpop", "lgbtrev2010adj", "lgbtrevpercapita", "lgbtrevperlgbtcapita", "sexorientnd2013", "genderidentnd2013", "loglgbtrev", "ssphh200per", "ssphhacs3per", "Williamsper", "logrevperlgbtcap", "evangper", "stdlgbtperlgbtcapita", "ssphh2010per", "percentssphh", "lgbtrevperlgbtcapita2", "loglgbtrevperlgbtcapita2", "incomeall", "assetsall", "orgcountall", allcols, no234cols)
 
 allcors <- cor(dat[, nofacs], use = "pairwise.complete")
 
-allcors[ivsofint , deveesofint]
+allcors[unique(ivsofint) , deveesofint]
 
 
 tr1 <- glm(trans_dis ~ citi6008, data = dat, family = "binomial")
