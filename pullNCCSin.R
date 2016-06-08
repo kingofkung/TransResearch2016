@@ -111,6 +111,13 @@ taylorlgbt2 <- merge(taylorlgbt2, stateopp[,c("State","MeanOpp")], by.x = "state
 ## Get rid of the match codes, abbreviations and bmfyear, as they've done their part
 taylorlgbt2 <- taylorlgbt2[, -grep("matchcode", colnames(taylorlgbt2))]
 taylorlgbt2 <- taylorlgbt2[, -grep("newyear", colnames(taylorlgbt2))]
+taylorlgbt2 <- taylorlgbt2[, -grep("bmfyear", colnames(taylorlgbt2))]
+taylorlgbt2 <- taylorlgbt2[, -grep("state", colnames(taylorlgbt2))[-1]]
+
+## sort it so I don't have to keep doing it when I'm reading the data
+
+taylorlgbt2 <- taylorlgbt2[order(taylorlgbt2$year),]
+taylorlgbt2 <- taylorlgbt2[order(taylorlgbt2$state),]
 
 ## The Goal: to create a file called JT DHM LGBT Group Resources, with NCCS measures added
 write.csv(taylorlgbt2, paste0(loc,"JT DHM LGBT Group Resources.csv"), row.names = F)
