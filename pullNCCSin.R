@@ -105,8 +105,9 @@ taylorlgbt2 <- rbind.fill(taysplit)
 ## get state public opinion appended to the end of the data
 
 head(stateopp)
+colnames(stateopp) <- paste0(colnames(stateopp), "LP")
 
-taylorlgbt2 <- merge(taylorlgbt2, stateopp[,c("State","MeanOpp")], by.x = "statename", by.y = "State", all.x = TRUE)
+taylorlgbt2 <- merge(taylorlgbt2, stateopp, by.x = "statename", by.y = "StateLP", all.x = TRUE)
 
 ## Get rid of the match codes, abbreviations and bmfyear, as they've done their part
 taylorlgbt2 <- taylorlgbt2[, -grep("matchcode", colnames(taylorlgbt2))]
