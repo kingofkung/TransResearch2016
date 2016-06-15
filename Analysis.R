@@ -12,20 +12,9 @@ lgbtrevpercapita
 ## correlations between IVs, dvs
 ## make a file with output
 
-## make hrccols something we can use.
-hrccols <- colnames(dat)[grepl("ScoreCardCats", colnames(dat))]
-dat[, hrccols]
-hrclevels <- levels(dat[, hrccols])
-hrcdums <- sapply(hrclevels, function(x) ifelse(dat[ ,hrccols] == x, 1, 0))
-
-## Get column names just so
-colnames(hrcdums) <- paste0(colnames(hrcdums), "hrc")
-colnames(hrcdums) <- gsub("\\s", ".", colnames(hrcdums))
-
-## add hrc dummys to the full dataset
-dat[,colnames(hrcdums)] <- hrcdums
 
 realhrccols <- colnames(dat)[grepl("hrc", colnames(dat))]
+laxPhillips <- colnames(dat)[grepl("LP", colnames(dat))]
 
 nofacs <- !unlist(lapply(dat, is.factor))
 deveesofint <- c("doma", "superdoma", "trans_dis", 'gay_disc')
@@ -40,7 +29,17 @@ allcors <- cor(dat[, nofacs], use = "pairwise.complete")
 allcors[unique(ivsofint) , deveesofint]
 
 allcors <- cor(dat[, c(deveesofint, ivsofint)], use = "pairwise.complete.obs")
-write.csv(allcors, paste0(loc,"correlations.csv"))
+## write.csv(allcors, paste0(loc,"correlations.csv"))
+
+library(MASS)
+
+## Get ScoreCardCats into the correct Order
+SCCLvls <- c("High Priority To Achieve Basic Equality", "Building Equality", "Solidifying Equality", "Working Toward Innovative Equality")
+dat$ScoreCardCats <- factor(dat$ScoreCardCats, levels = SCCLvls)
+levels(dat$ScoreCardCats)
+
+m1 <- polr(ScoreCardCats ~ MeanOppLP, data = dat, method = "logistic")
+summary(m1)
 
 tr1 <- glm(trans_dis ~ citi6008, data = dat, family = "binomial")
 summary(tr1)

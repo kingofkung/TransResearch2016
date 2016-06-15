@@ -66,6 +66,20 @@ HRC$St.abb <- rep(state.abb,2)
 HRC$sy <- paste0(HRC$St.abb, HRC$Year)
 taylorlgbt2 <- merge(taylorlgbt2, HRC[,c("ScoreCardCats", "sy")], by.x = "matchcode", by.y = "sy", all.x = TRUE)
 
+## make hrccols something we can use.
+hrccols <- colnames(taylorlgbt2)[grepl("ScoreCardCats", colnames(taylorlgbt2))]
+taylorlgbt2[, hrccols]
+hrclevels <- levels(taylorlgbt2[, hrccols])
+hrcdums <- sapply(hrclevels, function(x) ifelse(taylorlgbt2[ ,hrccols] == x, 1, 0))
+
+## Get column names just so
+colnames(hrcdums) <- paste0(colnames(hrcdums), "hrc")
+colnames(hrcdums) <- gsub("\\s", ".", colnames(hrcdums))
+
+## add hrc dummys to the full dataset
+taylorlgbt2[,colnames(hrcdums)] <- hrcdums
+
+
 
 ## So here's the thing. If I want to use the HRC Data for the majority
 ## of the files, I need to make it so there's an index in each row by
