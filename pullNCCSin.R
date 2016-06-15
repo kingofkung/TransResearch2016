@@ -62,9 +62,9 @@ taylorlgbt2 <- merge(taylorlgbt2, popnprice, by.x = "matchcode", by.y = "matchco
 
 ## ## Now to get the HRC Index in
 ## head(HRC)
-## HRC$St.abb <- rep(state.abb,2)
-## HRC$sy <- paste0(HRC$St.abb, HRC$Year)
-## taylorlgbt2 <- merge(taylorlgbt2, HRC[,c("ScoreCardCats", "sy")], by.x = "matchcode", by.y = "sy", all.x = TRUE)
+HRC$St.abb <- rep(state.abb,2)
+HRC$sy <- paste0(HRC$St.abb, HRC$Year)
+taylorlgbt2 <- merge(taylorlgbt2, HRC[,c("ScoreCardCats", "sy")], by.x = "matchcode", by.y = "sy", all.x = TRUE)
 
 
 ## So here's the thing. If I want to use the HRC Data for the majority
