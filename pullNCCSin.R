@@ -113,6 +113,12 @@ for(i in devees){
                        })
     }
 
+
+## The problem as I currently see it: A number of variables are
+## missing data for 2014-2015. This includes the citi6008 and inst6008
+## family of variables.
+taysplit$Colorado[taysplit$Colorado$year %in% 2014:2015,]
+
 library(plyr)
 taylorlgbt2 <- rbind.fill(taysplit)
 
