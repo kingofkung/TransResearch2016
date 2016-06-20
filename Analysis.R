@@ -1,4 +1,8 @@
 ## We'll store the analyses of the data we collect in here
+
+library(MASS)
+library(zoo)
+
 loc <- "/Users/bjr/Dropbox/LGBT Interest group data/"
 
 dat <- read.csv(paste0(loc,"JT DHM LGBT Group Resources.csv"))
@@ -7,7 +11,7 @@ head(dat)
 colnames(dat)
 ## Have read in data, will conduct some analyses now
 
-lgbtrevpercapita
+## lgbtrevpercapita is Dr. Taylor's measure
 
 ## correlations between IVs, dvs
 ## make a file with output
@@ -31,7 +35,19 @@ allcors[unique(ivsofint) , deveesofint]
 allcors <- cor(dat[, c(deveesofint, ivsofint)], use = "pairwise.complete.obs")
 ## write.csv(allcors, paste0(loc,"correlations.csv"))
 
-library(MASS)
+## Extrapolate Dr. Fording's data to the years 2014-2015
+colstoex <- colnames(dat)[grep("601", colnames(dat))]
+datsub <- dat[, c("statename", colstoex )]
+
+exsplit <- split(dat[, c("statename", colstoex )], dat$statename)
+
+## Apparently, na.locf fills na values with the last non-NA value,
+## fixing the problem we were having!
+exsplit <- lapply(exsplit, na.locf)
+exsplit <- rbind.fill(exsplit)
+
+dat[, colnames(exsplit)[2:4]] <- exsplit[2:4]
+
 
 ## Get ScoreCardCats into the correct Order
 SCCLvls <- c("High Priority To Achieve Basic Equality", "Building Equality", "Solidifying Equality", "Working Toward Innovative Equality")
