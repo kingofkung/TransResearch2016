@@ -29,7 +29,8 @@ statematcher <- data.frame("name" = state.name, "abb" = state.abb)
 
 taylorlgbt2 <- merge(taylorlgbt, lgbtallcoll, by.x = "matchcode", by.y = "matchcodeall", all.x = TRUE, all.y = TRUE)
 taylorlgbt2 <- merge(taylorlgbt2, lgbtcollno234, by.x = "matchcode", by.y = "matchcodeno234", all.x = TRUE, all.y = TRUE)
-
+taylorlgbt2 <- merge(taylorlgbt2, stcit, by.x = "matchcode", by.y = "matchcode", all.x = TRUE, all.y = FALSE)
+colnames(taylorlgbt2) <- gsub("[.]x", "", colnames(taylorlgbt2))
 
 ## So here's the thing. Right now, the year and states are all messed
 ## up. There are missing values in the states and missing values in
@@ -52,7 +53,7 @@ namesinorder <- as.character(statematcher$name[ match(abbsinorder, statematcher$
 taylorlgbt2$statename[which(taylorlgbt2$statename %in% state.abb)] <- namesinorder
 
 
-taylorlgbt2$bmfyearno234
+## taylorlgbt2$bmfyearno234
 
 
 ## Merge in pop and price
@@ -68,7 +69,7 @@ taylorlgbt2 <- merge(taylorlgbt2, HRC[,c("ScoreCardCats", "sy")], by.x = "matchc
 
 ## make hrccols something we can use.
 hrccols <- colnames(taylorlgbt2)[grepl("ScoreCardCats", colnames(taylorlgbt2))]
-taylorlgbt2[, hrccols]
+## taylorlgbt2[, hrccols]
 hrclevels <- levels(taylorlgbt2[, hrccols])
 hrcdums <- sapply(hrclevels, function(x) ifelse(taylorlgbt2[ ,hrccols] == x, 1, 0))
 

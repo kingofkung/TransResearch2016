@@ -56,4 +56,7 @@ HRC$matchcode <- paste0(HRC$abb, HRC$Year)
 stateopp <- read.xlsx(paste0(loc, "StateOpp.xlsx"), 1)
 
 
-
+## read in newest state/citizen ideology data
+stcit <- read.xlsx2(paste0(loc, "ideo6014.xlsx"), 1)
+stcit$abb <- unlist(lapply(as.character(stcit$statename),  function(u) state.abb[match(u, state.name)]))
+stcit$matchcode <- paste0(stcit$abb, stcit$year)
