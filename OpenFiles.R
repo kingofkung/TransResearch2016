@@ -58,5 +58,10 @@ stateopp <- read.xlsx(paste0(loc, "StateOpp.xlsx"), 1)
 
 ## read in newest state/citizen ideology data
 stcit <- read.xlsx2(paste0(loc, "ideo6014.xlsx"), 1)
+stcit <- as.data.frame(apply(stcit, 2, function(x){ x[which(x %in% "")] <- NA
+x
+}))
+head(stcit)
+
 stcit$abb <- unlist(lapply(as.character(stcit$statename),  function(u) state.abb[match(u, state.name)]))
 stcit$matchcode <- paste0(stcit$abb, stcit$year)
