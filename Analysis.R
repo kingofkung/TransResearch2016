@@ -46,7 +46,8 @@ exsplit <- split(dat[, c("statename", colstoex )], dat$statename)
 exsplit <- lapply(exsplit, na.locf)
 exsplit <- rbind.fill(exsplit)
 
-dat[, colnames(exsplit)[2:4]] <- exsplit[2:4]
+dat[, colnames(exsplit)[2:4]] <- sapply(exsplit[2:4], as.numeric)
+str(dat[,colnames(exsplit)[2:4]])
 
 
 ## Get ScoreCardCats into the correct Order
@@ -57,11 +58,38 @@ levels(dat$ScoreCardCats)
 SCCdat <- dat[ !is.na(dat$ScoreCardCats),]
 head(SCCdat)
 
+nacols <- apply(SCCdat, 2, function(x) all(is.na(x)))
+names(nacols[!nacols==T])
+
+
 m1 <- polr(ScoreCardCats ~ MeanOppLP, data = SCCdat, method = "logistic")
 summary(m1)
 
-apply(SCCdat, 2, function(x) all(is.na(x)))
 
+m2 <- polr(ScoreCardCats ~ inst6013_adacope, data = SCCdat, method = "logistic")
+summary(m2)
+
+m3 <- polr(ScoreCardCats ~ inst6014_nom, data = SCCdat, method = "logistic")
+summary(m3)
+
+m4 <- polr(ScoreCardCats ~ citi6013, data = SCCdat, method = "logistic")
+summary(m4)
+
+## Incomeall isn't working correctly, but its square root returns a result
+SCCdat$iasqrt <- sqrt(SCCdat$incomeall)
+SCCdat$iaplus <- SCCdat$incomeall + 1
+SCCdat$iaperc <- SCCdat$incomeall/sum(as.numeric(SCCdat$incomeall))
+incomeall <- as.numeric(SCCdat$incomeall)
+m5 <- polr(ScoreCardCats ~ iaperc, data = SCCdat, method = "logistic", Hess = T)
+summary(m5)
+
+m6 <- polr(ScoreCardCats ~ orgcountall, data = SCCdat, method = "logistic")
+summary(m6)
+
+
+library(rms)
+
+lrm(ScoreCardCats ~ incomeall, SCCdat)
 
 tr1 <- glm(trans_dis ~ citi6008, data = dat, family = "binomial")
 summary(tr1)
