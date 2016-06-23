@@ -1,5 +1,5 @@
 ## We'll store the analyses of the data we collect in here
-
+library(plyr)
 library(MASS)
 library(zoo)
 
@@ -54,8 +54,14 @@ SCCLvls <- c("High Priority To Achieve Basic Equality", "Building Equality", "So
 dat$ScoreCardCats <- factor(dat$ScoreCardCats, levels = SCCLvls)
 levels(dat$ScoreCardCats)
 
-m1 <- polr(ScoreCardCats ~ MeanOppLP, data = dat, method = "logistic")
+SCCdat <- dat[ !is.na(dat$ScoreCardCats),]
+head(SCCdat)
+
+m1 <- polr(ScoreCardCats ~ MeanOppLP, data = SCCdat, method = "logistic")
 summary(m1)
+
+apply(SCCdat, 2, function(x) all(is.na(x)))
+
 
 tr1 <- glm(trans_dis ~ citi6008, data = dat, family = "binomial")
 summary(tr1)
