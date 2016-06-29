@@ -75,7 +75,7 @@ summary(m3)
 m4 <- polr(ScoreCardCats ~ citi6013, data = SCCdat, method = "logistic")
 summary(m4)
 
-## Incomeall isn't working correctly, but its square root returns a result
+## Incomeall isn't working correctly, but its square root and percentages return a result
 SCCdat$iasqrt <- sqrt(SCCdat$incomeall)
 SCCdat$iaplus <- SCCdat$incomeall + 1
 SCCdat$iaperc <- SCCdat$incomeall/sum(as.numeric(SCCdat$incomeall))
@@ -86,10 +86,13 @@ summary(m5)
 m6 <- polr(ScoreCardCats ~ orgcountall, data = SCCdat, method = "logistic")
 summary(m6)
 
+m7 <- polr(ScoreCardCats ~HateCrimesLP, data = SCCdat, method = "logistic")
+summary(m7)
 
-library(rms)
 
-lrm(ScoreCardCats ~ incomeall, SCCdat)
+
+library(texreg)
+
 
 tr1 <- glm(trans_dis ~ citi6008, data = dat, family = "binomial")
 summary(tr1)
