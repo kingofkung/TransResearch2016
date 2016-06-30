@@ -92,7 +92,7 @@ summary(m7)
 
 
 library(texreg)
-
+texreg(list(m1, m2, m3, m4, "Income As Percentage" = m5, m6, m7))
 
 tr1 <- glm(trans_dis ~ citi6008, data = dat, family = "binomial")
 summary(tr1)
