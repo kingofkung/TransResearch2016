@@ -86,13 +86,34 @@ summary(m5)
 m6 <- polr(ScoreCardCats ~ orgcountall, data = SCCdat, method = "logistic")
 summary(m6)
 
-m7 <- polr(ScoreCardCats ~HateCrimesLP, data = SCCdat, method = "logistic")
+## [1] "SecondParentLP"   "HateCrimesLP"     "HealthBenefitsLP" "HousingLP"
+## [5] "JobsLP"           "MarriageLP"       "SodomyLP"         "CivUnionsLP"
+## [9] "MeanOppLP"
+
+
+m7 <- polr(ScoreCardCats ~ HateCrimesLP, data = SCCdat, method = "logistic")
 summary(m7)
+
+m8 <- polr(ScoreCardCats ~ HealthBenefitsLP, data = SCCdat, method = "logistic")
+m9 <- polr(ScoreCardCats ~ HousingLP, data = SCCdat, method = "logistic")
+m10 <- polr(ScoreCardCats ~ JobsLP, data = SCCdat, method = "logistic")
+m11 <- polr(ScoreCardCats ~ MarriageLP, data = SCCdat, method = "logistic")
+m12 <- polr(ScoreCardCats ~ SodomyLP, data = SCCdat, method = "logistic")
+m13 <- polr(ScoreCardCats ~ CivUnionsLP, data = SCCdat, method = "logistic")
+
+
+
+
+mlist1 <- list(m1, m2, m3, m4, "Income As Percentage" = m5, m6, m7, m8, m9, m10, m11, m12,m13)
+mlist1 <- lapply(mlist1, extract, include.thresholds = TRUE)
+
 
 
 
 library(texreg)
-texreg(list(m1, m2, m3, m4, "Income As Percentage" = m5, m6, m7))
+## The columns ordered properly
+texreg(mlist1,  reorder.coef = c(2:4, 1, 5:(length(mlist1) + 3) ), caption.above = TRUE   )
+
 
 tr1 <- glm(trans_dis ~ citi6008, data = dat, family = "binomial")
 summary(tr1)
