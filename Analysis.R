@@ -83,6 +83,9 @@ incomeall <- as.numeric(SCCdat$incomeall)
 m5 <- polr(ScoreCardCats ~ iaperc, data = SCCdat, method = "logistic", Hess = T)
 summary(m5)
 
+m5.5 <- polr(ScoreCardCats ~ realincpercapall, data = SCCdat, method = "logistic")
+summary(m5.5)
+
 m6 <- polr(ScoreCardCats ~ orgcountall, data = SCCdat, method = "logistic")
 summary(m6)
 
@@ -104,15 +107,16 @@ m13 <- polr(ScoreCardCats ~ CivUnionsLP, data = SCCdat, method = "logistic")
 
 
 
-mlist1 <- list(m1, m2, m3, m4, "Income As Percentage" = m5, m6, m7, m8, m9, m10, m11, m12,m13)
-mlist1 <- lapply(mlist1, extract, include.thresholds = TRUE)
+mlist1 <- list(m1, m2, m3, m4, "Income As Percentage" = m5, m5.5, m6, m7, m8, m9, m10, m11, m12,m13)
+mlist1 <- lapply(mlist1, FUN = extract, include.thresholds = TRUE)
 
 
 
 
 library(texreg)
+latextext1 <- texreg(mlist1,  reorder.coef = c(2:4, 1, 5:(length(mlist1) + 3) ), caption.above = TRUE, caption = "Ordered Logistic Regressions using the HRC's classifications"   )
 ## The columns ordered properly
-texreg(mlist1,  reorder.coef = c(2:4, 1, 5:(length(mlist1) + 3) ), caption.above = TRUE   )
+write.table(latextext1 , file = "mlist.txt", quote = F, row.names = F, col.names = F)
 
 
 tr1 <- glm(trans_dis ~ citi6008, data = dat, family = "binomial")

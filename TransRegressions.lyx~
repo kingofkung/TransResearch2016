@@ -92,7 +92,7 @@ begin{table}
 
 
 \backslash
-caption{Statistical models}
+caption{Ordered Logistic Regressions using the HRC's classifications}
 \end_layout
 
 \begin_layout Plain Layout
@@ -106,7 +106,7 @@ begin{center}
 
 
 \backslash
-begin{tabular}{l c c c c c c c }
+begin{tabular}{l c c c c c c c c c c c c c }
 \end_layout
 
 \begin_layout Plain Layout
@@ -119,7 +119,8 @@ hline
 \begin_layout Plain Layout
 
  & Model 1 & Model 2 & Model 3 & Model 4 & Income As Percentage & Model
- 6 & Model 7 
+ 6 & Model 7 & Model 8 & Model 9 & Model 10 & Model 11 & Model 12 & Model
+ 13 
 \backslash
 
 \backslash
@@ -137,7 +138,8 @@ hline
 
 High Priority To Achieve Basic Equality|Building Equality & $21.44^{***}$
  & $3.12^{***}$ & $3.17^{***}$ & $4.99^{***}$ & $0.45^{*}$   & $0.64^{*}$   &
- $30.04^{***}$ 
+ $30.04^{***}$ & $16.66^{***}$ & $36.71^{***}$ & $22.84^{***}$ & $10.75^{***}$
+ & $14.45^{***}$ & $12.85^{***}$ 
 \backslash
 
 \backslash
@@ -148,7 +150,8 @@ High Priority To Achieve Basic Equality|Building Equality & $21.44^{***}$
 
                                                           & $(3.45)$    
   & $(0.54)$     & $(0.56)$     & $(0.87)$     & $(0.21)$     & $(0.25)$    
- & $(4.87)$      
+ & $(4.87)$      & $(2.95)$      & $(6.58)$      & $(4.29)$      & $(1.72)$ 
+     & $(2.40)$      & $(2.05)$      
 \backslash
 
 \backslash
@@ -159,7 +162,8 @@ High Priority To Achieve Basic Equality|Building Equality & $21.44^{***}$
 
 Building Equality|Solidifying Equality                    & $23.07^{***}$
  & $4.65^{***}$ & $4.66^{***}$ & $6.18^{***}$ & $1.29^{***}$ & $1.45^{***}$ &
- $31.69^{***}$ 
+ $31.69^{***}$ & $17.87^{***}$ & $38.06^{***}$ & $24.10^{***}$ & $12.28^{***}$
+ & $15.97^{***}$ & $14.39^{***}$ 
 \backslash
 
 \backslash
@@ -170,7 +174,8 @@ Building Equality|Solidifying Equality                    & $23.07^{***}$
 
                                                           & $(3.61)$    
   & $(0.68)$     & $(0.70)$     & $(0.97)$     & $(0.25)$     & $(0.28)$    
- & $(5.03)$      
+ & $(5.03)$      & $(3.05)$      & $(6.70)$      & $(4.40)$      & $(1.86)$ 
+     & $(2.53)$      & $(2.20)$      
 \backslash
 
 \backslash
@@ -181,7 +186,8 @@ Building Equality|Solidifying Equality                    & $23.07^{***}$
 
 Solidifying Equality|Working Toward Innovative Equality   & $24.36^{***}$
  & $5.90^{***}$ & $5.90^{***}$ & $7.30^{***}$ & $2.26^{***}$ & $2.38^{***}$ &
- $32.93^{***}$ 
+ $32.93^{***}$ & $18.93^{***}$ & $39.18^{***}$ & $25.21^{***}$ & $13.54^{***}$
+ & $17.27^{***}$ & $15.64^{***}$ 
 \backslash
 
 \backslash
@@ -192,7 +198,8 @@ Solidifying Equality|Working Toward Innovative Equality   & $24.36^{***}$
 
                                                           & $(3.69)$    
   & $(0.76)$     & $(0.77)$     & $(1.04)$     & $(0.34)$     & $(0.37)$    
- & $(5.09)$      
+ & $(5.09)$      & $(3.09)$      & $(6.75)$      & $(4.46)$      & $(1.94)$ 
+     & $(2.62)$      & $(2.27)$      
 \backslash
 
 \backslash
@@ -203,7 +210,8 @@ Solidifying Equality|Working Toward Innovative Equality   & $24.36^{***}$
 
 MeanOppLP                                                 & $0.37^{***}$
   &              &              &              &              &        
-      &               
+      &               &               &               &               &
+               &               &               
 \backslash
 
 \backslash
@@ -214,7 +222,8 @@ MeanOppLP                                                 & $0.37^{***}$
 
                                                           & $(0.06)$    
   &              &              &              &              &        
-      &               
+      &               &               &               &               &
+               &               &               
 \backslash
 
 \backslash
@@ -227,7 +236,8 @@ inst6013
 \backslash
 _adacope                                         &               & $0.06^{***}$
  &              &              &              &              &         
-      
+      &               &               &               &               &
+               &               
 \backslash
 
 \backslash
@@ -238,7 +248,8 @@ _adacope                                         &               & $0.06^{***}$
 
                                                           &            
    & $(0.01)$     &              &              &              &        
-      &               
+      &               &               &               &               &
+               &               &               
 \backslash
 
 \backslash
@@ -251,7 +262,8 @@ inst6014
 \backslash
 _nom                                             &               &     
          & $0.06^{***}$ &              &              &              &  
-             
+             &               &               &               &         
+      &               &               
 \backslash
 
 \backslash
@@ -262,7 +274,8 @@ _nom                                             &               &
 
                                                           &            
    &              & $(0.01)$     &              &              &        
-      &               
+      &               &               &               &               &
+               &               &               
 \backslash
 
 \backslash
@@ -273,7 +286,8 @@ _nom                                             &               &
 
 citi6013                                                  &            
    &              &              & $0.09^{***}$ &              &        
-      &               
+      &               &               &               &               &
+               &               &               
 \backslash
 
 \backslash
@@ -284,7 +298,8 @@ citi6013                                                  &
 
                                                           &            
    &              &              & $(0.02)$     &              &        
-      &               
+      &               &               &               &               &
+               &               &               
 \backslash
 
 \backslash
@@ -295,7 +310,8 @@ citi6013                                                  &
 
 iaperc                                                    &            
    &              &              &              & $19.72^{**}$ &        
-      &               
+      &               &               &               &               &
+               &               &               
 \backslash
 
 \backslash
@@ -306,7 +322,8 @@ iaperc                                                    &
 
                                                           &            
    &              &              &              & $(6.79)$     &        
-      &               
+      &               &               &               &               &
+               &               &               
 \backslash
 
 \backslash
@@ -317,7 +334,8 @@ iaperc                                                    &
 
 orgcountall                                               &            
    &              &              &              &              & $0.01^{**}$
-  &               
+  &               &               &               &               &    
+           &               &               
 \backslash
 
 \backslash
@@ -328,7 +346,8 @@ orgcountall                                               &
 
                                                           &            
    &              &              &              &              & $(0.00)$
-     &               
+     &               &               &               &               & 
+              &               &               
 \backslash
 
 \backslash
@@ -339,7 +358,8 @@ orgcountall                                               &
 
 HateCrimesLP                                              &            
    &              &              &              &              &       
-       & $0.42^{***}$  
+       & $0.42^{***}$  &               &               &               &
+               &               &               
 \backslash
 
 \backslash
@@ -350,7 +370,152 @@ HateCrimesLP                                              &
 
                                                           &            
    &              &              &              &              &       
-       & $(0.07)$      
+       & $(0.07)$      &               &               &               &
+               &               &               
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+HealthBenefitsLP                                          &            
+   &              &              &              &              &       
+       &               & $0.27^{***}$  &               &               &
+               &               &               
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                                                          &            
+   &              &              &              &              &       
+       &               & $(0.05)$      &               &               &
+               &               &               
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+HousingLP                                                 &            
+   &              &              &              &              &       
+       &               &               & $0.48^{***}$  &               &
+               &               &               
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                                                          &            
+   &              &              &              &              &       
+       &               &               & $(0.09)$      &               &
+               &               &               
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+JobsLP                                                    &            
+   &              &              &              &              &       
+       &               &               &               & $0.36^{***}$  &
+               &               &               
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                                                          &            
+   &              &              &              &              &       
+       &               &               &               & $(0.07)$      &
+               &               &               
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+MarriageLP                                                &            
+   &              &              &              &              &       
+       &               &               &               &               &
+ $0.26^{***}$  &               &               
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                                                          &            
+   &              &              &              &              &       
+       &               &               &               &               &
+ $(0.04)$      &               &               
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+SodomyLP                                                  &            
+   &              &              &              &              &       
+       &               &               &               &               &
+               & $0.30^{***}$  &               
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                                                          &            
+   &              &              &              &              &       
+       &               &               &               &               &
+               & $(0.05)$      &               
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+CivUnionsLP                                               &            
+   &              &              &              &              &       
+       &               &               &               &               &
+               &               & $0.25^{***}$  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                                                          &            
+   &              &              &              &              &       
+       &               &               &               &               &
+               &               & $(0.04)$      
 \backslash
 
 \backslash
@@ -368,7 +533,8 @@ hline
 
 AIC                                                       & 162.70      
   & 168.13       & 170.34       & 194.79       & 227.90       & 231.43      
- & 161.48        
+ & 161.48        & 193.36        & 182.80        & 188.45        & 166.39   
+     & 162.06        & 168.20        
 \backslash
 
 \backslash
@@ -379,7 +545,8 @@ AIC                                                       & 162.70
 
 BIC                                                       & 173.12      
   & 178.55       & 180.76       & 205.21       & 238.32       & 241.85      
- & 171.90        
+ & 171.90        & 203.78        & 193.22        & 198.87        & 176.81   
+     & 172.48        & 178.62        
 \backslash
 
 \backslash
@@ -390,7 +557,8 @@ BIC                                                       & 173.12
 
 Log Likelihood                                            & -77.35      
   & -80.06       & -81.17       & -93.40       & -109.95      & -111.72     
- & -76.74        
+ & -76.74        & -92.68        & -87.40        & -90.22        & -79.20   
+     & -77.03        & -80.10        
 \backslash
 
 \backslash
@@ -401,7 +569,8 @@ Log Likelihood                                            & -77.35
 
 Deviance                                                  & 154.70      
   & 160.13       & 162.34       & 186.79       & 219.90       & 223.43      
- & 153.48        
+ & 153.48        & 185.36        & 174.80        & 180.45        & 158.39   
+     & 154.06        & 160.20        
 \backslash
 
 \backslash
@@ -414,7 +583,8 @@ Num.
  obs.
                                                  & 100           & 100 
          & 100          & 100          & 100          & 100          & 100
-           
+           & 100           & 100           & 100           & 100       
+    & 100           & 100           
 \backslash
 
 \backslash
@@ -432,7 +602,7 @@ hline
 
 
 \backslash
-multicolumn{8}{l}{
+multicolumn{14}{l}{
 \backslash
 scriptsize{$^{***}p<0.001$, $^{**}p<0.01$, $^*p<0.05$}}
 \end_layout
