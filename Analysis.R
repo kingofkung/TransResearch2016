@@ -132,12 +132,53 @@ ivs <- list("MeanOppLP", "citi6013", m3 = c("citi6013", "inst6013_adacope"), "in
 customglm <- function(x, deev = dv1){
     x <- ifelse(length(x) > 1, paste0(x, collapse = "+"), x)
     u <- as.formula(paste(deev, x, sep = " ~ "))
-    ## eval(bquote(u <- as.formula(paste(deev, .(x), sep = " ~ "))))
+    ## eval(bquote(.(u))) lets us get u out and evaluate it not as a thing passed in, but as the formula as it exists
     eval(bquote(glm(.(u), family = "binomial", data = dat)))
     }
 
+
 tdmods <- lapply(ivs[1:5], customglm)
 
-tdlatex <- texreg(tdmods, caption.above = T, caption = "Event History Analysis of Transgender Discrimination Policy")
-write.table(tdlatex, file = paste0(outlocgit, 'tdmods.txt'), quote = F, row.names = F, col.names = F)
+tdlatex1 <- texreg(tdmods, caption.above = T, caption = "Event History Analysis of Transgender Discrimination Policy")
+write.table(tdlatex1, file = paste0(outlocgit, 'tdmods.txt'), quote = F, row.names = F, col.names = F)
 
+## get income/Revenue/assets variables
+revVars <- grep("rev", colnames(dat), value = T)
+incVars <- grep("inc", colnames(dat), value = T)
+## Fun fact: | is the or command, and it works in regex the same as elsewhere
+assetVars <- grep("asset|ast", colnames(dat), value = T)
+## grep("ast", colnames(dat), value = T)
+
+incasstrevVars <- c(revVars, incVars, assetVars)
+
+##Typical control variables
+typcont <- c("citi6013", "inst6013_adacope", "inst6014_nom", laxPhillips[9])
+typcont <- lapply(seq_along(typcont), function(x) typcont[1:x])
+
+## bind typcont[[4]] to revVars
+toreg <- lapply(incasstrevVars, function(x) c(x, typcont[[4]]) )
+
+transdisregsNconts <- lapply(toreg, customglm)
+tdlatex2 <- texreg(transdisregsNconts, caption.above = T, caption = "Event History Analysis of Transgender Discrimination Policy \n with Controls")
+write.table(tdlatex2, file = paste0(outlocgit, 'transdisregsNconts.txt'), quote = F, row.names = F, col.names = F)
+
+
+
+dv2 <- "gay_disc"
+
+gdmods <- lapply(toreg, customglm, deev = dv2)
+gdlatex1 <- texreg(gdmods, caption.above = T, caption = "Event History Analysis of Gay Discrimination Policy with added Controls")
+write.table(gdlatex1, file = paste0(outlocgit, "gdlatex1.txt"), quote = F, row.names = F, col.names = F)
+
+## source("/Users/bjr/GitHub/BeSiVaImp/R/BeSiVaFunctions.R")
+## mtake <- lapply(1:20, function(i) y <- besiva("gay_disc", unique(unlist(toreg)), dat = dat, perc = .33,  iters = 5, thresh = .0001, sampseed = i))
+## names(mtake[[1]])
+
+
+## lapply(1:20, function(u) sort(mtake[[u]]$pcps))
+## lapply(1:20, function(u) mtake[[u]]$predvals)
+
+## nrow(model.frame(transdisregsNconts[[1]]))
+
+## take2 <- lapply(1:45, function(i) besiva(dv1, incasstrevVars, dat, sampseed = i, perc = .1))
+## lapply(1:45, function(gum) sort(take2[[gum]]$pcps))
