@@ -4,7 +4,7 @@ library(MASS)
 library(zoo)
 
 loc <- "/Users/bjr/Dropbox/LGBT Interest group data/"
-
+outlocgit <- "/Users/bjr/GitHub/TransResearch2016/Output/"
 dat <- read.csv(paste0(loc,"JT DHM LGBT Group Resources.csv"))
 
 head(dat)
@@ -114,28 +114,30 @@ mlist1 <- lapply(mlist1, FUN = extract, include.thresholds = TRUE)
 
 
 library(texreg)
-latextext1 <- texreg(mlist1,  reorder.coef = c(2:4, 1, 5:(length(mlist1) + 3) ), caption.above = TRUE, caption = "Ordered Logistic Regressions using the HRC's classifications"   )
+latextext1 <- texreg(mlist1,  reorder.coef = c(1, 5:(length(mlist1) + 3) , 2:4), caption.above = TRUE, caption = "Ordered Logistic Regressions using the HRC's classifications"   )
 ## The columns ordered properly
-write.table(latextext1 , file = "mlist.txt", quote = F, row.names = F, col.names = F)
+write.table(latextext1 , file = paste0(outloc, "HRCmlist.txt"), quote = F, row.names = F, col.names = F)
 
 
-tr1 <- glm(trans_dis ~ citi6008, data = dat, family = "binomial")
-summary(tr1)
+## Reconsideration of trans_dis
+citi
 
-tr2 <- update(tr1, .~. + inst6008_adacope + inst6008_nom)
-summary(tr2)
+colnames(dat)
 
-tr3 <- update(tr2, .~. + evangelical)
-summary(tr3)
 
-tr4 <- update(tr3, .~. + Williams)
-summary(tr4)
+dv1 <- "trans_dis"
+ivs <- list("MeanOppLP", "citi6013", m3 = c("citi6013", "inst6013_adacope"), "inst6014_nom", "realincpercapall", "orgcountall", laxPhillips[1:8])
 
-tr5 <- update(tr4, .~. + squire)
-summary(tr5)
 
-tr6 <- update(tr5, .~. + percentssphh)
-summary(tr6)
+customglm <- function(x, deev = dv1){
+    x <- ifelse(length(x) > 1, paste0(x, collapse = "+"), x)
+    u <- as.formula(paste(deev, x, sep = " ~ "))
+    ## eval(bquote(u <- as.formula(paste(deev, .(x), sep = " ~ "))))
+    eval(bquote(glm(.(u), family = "binomial", data = dat)))
+    }
 
-tr7 <- update(tr6, gay_disc ~ .)
-summary(tr7)
+tdmods <- lapply(ivs[1:5], customglm)
+
+tdlatex <- texreg(tdmods, caption.above = T, caption = "Event History Analysis of Transgender Discrimination Policy")
+write.table(tdlatex, file = paste0(outlocgit, 'tdmods.txt'), quote = F, row.names = F, col.names = F)
+
