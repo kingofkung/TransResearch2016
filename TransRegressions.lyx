@@ -691,7 +691,7 @@ begin{table}
 
 
 \backslash
-caption{Event History Analysis of Transgender Discrimination}
+caption{Event History Analysis of Transgender Anti-Discrimination}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1242,8 +1242,8 @@ begin{table}
 
 
 \backslash
-caption{Event History Analysis of Transgender Discrimination Policy with
- Controls, Models 1-10}
+caption{Event History Analysis of Transgender Anti-Discrimination Policy
+ with Controls, Models 1-10}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1286,9 +1286,9 @@ hline
 
 \begin_layout Plain Layout
 
-(Intercept)              & $-18.31^{***}$ & $-17.76^{***}$ & $-17.37^{***}$
- & $-17.46^{***}$ & $-19.00^{***}$ & $-17.37^{***}$ & $-18.17^{***}$ & $-18.00^{***}$
- & $-18.00^{***}$ & $-18.90^{***}$ 
+(Intercept)              & $-34.00^{*}$ & $-33.06^{*}$ & $-33.23^{*}$ & $-32.94^{*}$
+ & $-34.17^{*}$ & $-33.23^{*}$ & $-32.85^{*}$ & $-33.92^{*}$ & $-33.92^{*}$ &
+ $-34.21^{*}$ 
 \backslash
 
 \backslash
@@ -1297,9 +1297,9 @@ hline
 
 \begin_layout Plain Layout
 
-                         & $(4.61)$       & $(4.55)$       & $(4.44)$     
-  & $(4.34)$       & $(4.69)$       & $(4.44)$       & $(4.57)$       & $(4.44)$
-       & $(4.43)$       & $(4.62)$       
+                         & $(14.79)$    & $(14.50)$    & $(14.31)$    & $(14.91)$
+    & $(15.04)$    & $(14.31)$    & $(14.63)$    & $(14.79)$    & $(14.80)$ 
+   & $(15.00)$    
 \backslash
 
 \backslash
@@ -1308,9 +1308,9 @@ hline
 
 \begin_layout Plain Layout
 
-citi6013                 & $-0.03$        & $-0.02$        & $-0.02$      
-  & $-0.03$        & $-0.02$        & $-0.02$        & $-0.02$        & $-0.03$
-        & $-0.03$        & $-0.03$        
+citi6013                 & $-0.04$      & $-0.05$      & $-0.05$      & $-0.05$
+      & $-0.03$      & $-0.05$      & $-0.05$      & $-0.04$      & $-0.04$ 
+     & $-0.04$      
 \backslash
 
 \backslash
@@ -1319,9 +1319,9 @@ citi6013                 & $-0.03$        & $-0.02$        & $-0.02$
 
 \begin_layout Plain Layout
 
-                         & $(0.03)$       & $(0.03)$       & $(0.03)$     
-  & $(0.03)$       & $(0.03)$       & $(0.03)$       & $(0.03)$       & $(0.03)$
-       & $(0.03)$       & $(0.03)$       
+                         & $(0.04)$     & $(0.04)$     & $(0.04)$     & $(0.04)$
+     & $(0.04)$     & $(0.04)$     & $(0.04)$     & $(0.04)$     & $(0.04)$ 
+    & $(0.04)$     
 \backslash
 
 \backslash
@@ -1332,9 +1332,9 @@ citi6013                 & $-0.03$        & $-0.02$        & $-0.02$
 
 inst6013
 \backslash
-_adacope        & $0.07^{***}$   & $0.07^{***}$   & $0.07^{***}$   & $0.07^{***}$
-   & $0.07^{***}$   & $0.07^{***}$   & $0.07^{***}$   & $0.07^{***}$   & $0.07^{***}$
-   & $0.07^{***}$   
+_adacope        & $0.09^{**}$  & $0.09^{**}$  & $0.09^{***}$ & $0.09^{**}$ 
+ & $0.08^{**}$  & $0.09^{***}$ & $0.09^{**}$  & $0.09^{**}$  & $0.09^{**}$  &
+ $0.09^{**}$  
 \backslash
 
 \backslash
@@ -1343,9 +1343,9 @@ _adacope        & $0.07^{***}$   & $0.07^{***}$   & $0.07^{***}$   & $0.07^{***}
 
 \begin_layout Plain Layout
 
-                         & $(0.02)$       & $(0.02)$       & $(0.02)$     
-  & $(0.02)$       & $(0.02)$       & $(0.02)$       & $(0.02)$       & $(0.02)$
-       & $(0.02)$       & $(0.02)$       
+                         & $(0.03)$     & $(0.03)$     & $(0.03)$     & $(0.03)$
+     & $(0.03)$     & $(0.03)$     & $(0.03)$     & $(0.03)$     & $(0.03)$ 
+    & $(0.03)$     
 \backslash
 
 \backslash
@@ -1354,9 +1354,9 @@ _adacope        & $0.07^{***}$   & $0.07^{***}$   & $0.07^{***}$   & $0.07^{***}
 
 \begin_layout Plain Layout
 
-MeanOppLP                & $0.20^{*}$     & $0.19^{*}$     & $0.18^{*}$   
-  & $0.18^{*}$     & $0.20^{*}$     & $0.18^{*}$     & $0.19^{*}$     & $0.19^{*}$
-     & $0.19^{*}$     & $0.21^{*}$     
+MeanOppLP                & $0.45$       & $0.45$       & $0.45$       & $0.43$
+       & $0.45$       & $0.45$       & $0.45$       & $0.45$       & $0.45$ 
+      & $0.46$       
 \backslash
 
 \backslash
@@ -1365,9 +1365,9 @@ MeanOppLP                & $0.20^{*}$     & $0.19^{*}$     & $0.18^{*}$
 
 \begin_layout Plain Layout
 
-                         & $(0.09)$       & $(0.09)$       & $(0.09)$     
-  & $(0.09)$       & $(0.09)$       & $(0.09)$       & $(0.09)$       & $(0.09)$
-       & $(0.09)$       & $(0.09)$       
+                         & $(0.24)$     & $(0.24)$     & $(0.24)$     & $(0.25)$
+     & $(0.25)$     & $(0.24)$     & $(0.24)$     & $(0.24)$     & $(0.24)$ 
+    & $(0.25)$     
 \backslash
 
 \backslash
@@ -1376,9 +1376,9 @@ MeanOppLP                & $0.20^{*}$     & $0.19^{*}$     & $0.18^{*}$
 
 \begin_layout Plain Layout
 
-ssph                     & $-0.59$        & $-0.48$        & $-0.55$      
-  & $-0.27$        & $0.21$         & $-0.55$        & $-0.00$        & $-0.35$
-        & $-0.29$        & $-0.39$        
+ssph                     & $-3.90$      & $-4.25$      & $-4.49$      & $-5.66$
+      & $-2.99$      & $-4.49$      & $-5.90$      & $-3.98$      & $-4.01$ 
+     & $-3.58$      
 \backslash
 
 \backslash
@@ -1387,9 +1387,9 @@ ssph                     & $-0.59$        & $-0.48$        & $-0.55$
 
 \begin_layout Plain Layout
 
-                         & $(2.87)$       & $(2.89)$       & $(2.89)$     
-  & $(2.98)$       & $(3.00)$       & $(2.89)$       & $(3.03)$       & $(2.90)$
-       & $(2.91)$       & $(2.82)$       
+                         & $(4.54)$     & $(4.53)$     & $(4.52)$     & $(4.73)$
+     & $(5.06)$     & $(4.52)$     & $(5.01)$     & $(4.57)$     & $(4.58)$ 
+    & $(4.61)$     
 \backslash
 
 \backslash
@@ -1398,9 +1398,9 @@ ssph                     & $-0.59$        & $-0.48$        & $-0.55$
 
 \begin_layout Plain Layout
 
-lgbtrevpercapita         &                & $-0.32$        &            
-    &                &                &                &               
- &                &                &                
+Williams                 & $14.54$      & $22.45$      & $30.75$      & $45.87$
+      & $1.40$       & $30.74$      & $45.09$      & $16.30$      & $16.68$ 
+     & $6.36$       
 \backslash
 
 \backslash
@@ -1409,9 +1409,9 @@ lgbtrevpercapita         &                & $-0.32$        &
 
 \begin_layout Plain Layout
 
-                         &                & $(0.70)$       &            
-    &                &                &                &               
- &                &                &                
+                         & $(68.90)$    & $(70.44)$    & $(71.19)$    & $(73.29)$
+    & $(75.21)$    & $(71.19)$    & $(76.08)$    & $(69.25)$    & $(69.32)$ 
+   & $(70.32)$    
 \backslash
 
 \backslash
@@ -1420,9 +1420,9 @@ lgbtrevpercapita         &                & $-0.32$        &
 
 \begin_layout Plain Layout
 
-lgbtrev2010adj           & $-0.00$        &                &            
-    &                &                &                &               
- &                &                &                
+squire                   & $-2.11$      & $-2.76$      & $-3.25$      & $-3.15$
+      & $-1.82$      & $-3.25$      & $-2.68$      & $-2.51$      & $-2.61$ 
+     & $-1.18$      
 \backslash
 
 \backslash
@@ -1431,9 +1431,9 @@ lgbtrev2010adj           & $-0.00$        &                &
 
 \begin_layout Plain Layout
 
-                         & $(0.00)$       &                &            
-    &                &                &                &               
- &                &                &                
+                         & $(3.08)$     & $(2.99)$     & $(3.09)$     & $(3.01)$
+     & $(2.86)$     & $(3.09)$     & $(2.85)$     & $(3.35)$     & $(3.46)$ 
+    & $(3.26)$     
 \backslash
 
 \backslash
@@ -1442,9 +1442,9 @@ lgbtrev2010adj           & $-0.00$        &                &
 
 \begin_layout Plain Layout
 
-lgbtrevperlgbtcapita     &                &                & $-0.01$    
-    &                &                &                &               
- &                &                &                
+evangelical              & $14.96$      & $14.26$      & $14.36$      & $13.62$
+      & $14.88$      & $14.36$      & $14.52$      & $14.95$      & $14.97$ 
+     & $14.81$      
 \backslash
 
 \backslash
@@ -1453,9 +1453,9 @@ lgbtrevperlgbtcapita     &                &                & $-0.01$
 
 \begin_layout Plain Layout
 
-                         &                &                & $(0.03)$   
-    &                &                &                &               
- &                &                &                
+                         & $(12.17)$    & $(11.94)$    & $(11.78)$    & $(12.37)$
+    & $(12.40)$    & $(11.78)$    & $(12.05)$    & $(12.18)$    & $(12.19)$ 
+   & $(12.36)$    
 \backslash
 
 \backslash
@@ -1464,9 +1464,9 @@ lgbtrevperlgbtcapita     &                &                & $-0.01$
 
 \begin_layout Plain Layout
 
-loglgbtrev               &                &                &           
-     & $-0.02$        &                &                &               
- &                &                &                
+lgbtrev2010adj           & $-0.00$      &              &              & 
+             &              &              &              &            
+  &              &              
 \backslash
 
 \backslash
@@ -1475,9 +1475,9 @@ loglgbtrev               &                &                &
 
 \begin_layout Plain Layout
 
-                         &                &                &           
-     & $(0.05)$       &                &                &               
- &                &                &                
+                         & $(0.00)$     &              &              & 
+             &              &              &              &            
+  &              &              
 \backslash
 
 \backslash
@@ -1486,9 +1486,9 @@ loglgbtrev               &                &                &
 
 \begin_layout Plain Layout
 
-logrevperlgbtcap         &                &                &           
-     &                & $-0.30$        &                &               
- &                &                &                
+lgbtrevpercapita         &              & $0.58$       &              & 
+             &              &              &              &            
+  &              &              
 \backslash
 
 \backslash
@@ -1497,9 +1497,9 @@ logrevperlgbtcap         &                &                &
 
 \begin_layout Plain Layout
 
-                         &                &                &           
-     &                & $(0.24)$       &                &               
- &                &                &                
+                         &              & $(0.91)$     &              & 
+             &              &              &              &            
+  &              &              
 \backslash
 
 \backslash
@@ -1508,9 +1508,9 @@ logrevperlgbtcap         &                &                &
 
 \begin_layout Plain Layout
 
-lgbtrevperlgbtcapita2    &                &                &           
-     &                &                & $-0.01$        &               
- &                &                &                
+lgbtrevperlgbtcapita     &              &              & $0.04$       & 
+             &              &              &              &            
+  &              &              
 \backslash
 
 \backslash
@@ -1519,9 +1519,9 @@ lgbtrevperlgbtcapita2    &                &                &
 
 \begin_layout Plain Layout
 
-                         &                &                &           
-     &                &                & $(0.03)$       &               
- &                &                &                
+                         &              &              & $(0.03)$     & 
+             &              &              &              &            
+  &              &              
 \backslash
 
 \backslash
@@ -1530,9 +1530,9 @@ lgbtrevperlgbtcapita2    &                &                &
 
 \begin_layout Plain Layout
 
-loglgbtrevperlgbtcapita2 &                &                &           
-     &                &                &                & $-0.08$       
- &                &                &                
+loglgbtrev               &              &              &              &
+ $0.09$       &              &              &              &            
+  &              &              
 \backslash
 
 \backslash
@@ -1541,9 +1541,9 @@ loglgbtrevperlgbtcapita2 &                &                &
 
 \begin_layout Plain Layout
 
-                         &                &                &           
-     &                &                &                & $(0.11)$      
- &                &                &                
+                         &              &              &              &
+ $(0.09)$     &              &              &              &            
+  &              &              
 \backslash
 
 \backslash
@@ -1552,9 +1552,9 @@ loglgbtrevperlgbtcapita2 &                &                &
 
 \begin_layout Plain Layout
 
-incomeall                &                &                &           
-     &                &                &                &              
-  & $-0.00$        &                &                
+logrevperlgbtcap         &              &              &              &
+              & $-0.16$      &              &              &            
+  &              &              
 \backslash
 
 \backslash
@@ -1563,9 +1563,9 @@ incomeall                &                &                &
 
 \begin_layout Plain Layout
 
-                         &                &                &           
-     &                &                &                &              
-  & $(0.00)$       &                &                
+                         &              &              &              &
+              & $(0.37)$     &              &              &            
+  &              &              
 \backslash
 
 \backslash
@@ -1574,9 +1574,9 @@ incomeall                &                &                &
 
 \begin_layout Plain Layout
 
-realincall               &                &                &           
-     &                &                &                &              
-  &                & $-0.00$        &                
+lgbtrevperlgbtcapita2    &              &              &              &
+              &              & $0.04$       &              &            
+  &              &              
 \backslash
 
 \backslash
@@ -1585,9 +1585,9 @@ realincall               &                &                &
 
 \begin_layout Plain Layout
 
-                         &                &                &           
-     &                &                &                &              
-  &                & $(0.00)$       &                
+                         &              &              &              &
+              &              & $(0.03)$     &              &            
+  &              &              
 \backslash
 
 \backslash
@@ -1596,9 +1596,9 @@ realincall               &                &                &
 
 \begin_layout Plain Layout
 
-realincpercapall         &                &                &           
-     &                &                &                &              
-  &                &                & $-0.09$        
+loglgbtrevperlgbtcapita2 &              &              &              &
+              &              &              & $0.16$       &            
+  &              &              
 \backslash
 
 \backslash
@@ -1607,9 +1607,75 @@ realincpercapall         &                &                &
 
 \begin_layout Plain Layout
 
-                         &                &                &           
-     &                &                &                &              
-  &                &                & $(0.09)$       
+                         &              &              &              &
+              &              &              & $(0.19)$     &            
+  &              &              
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+incomeall                &              &              &              &
+              &              &              &              & $0.00$     
+  &              &              
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                         &              &              &              &
+              &              &              &              & $(0.00)$   
+  &              &              
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+realincall               &              &              &              &
+              &              &              &              &           
+   & $0.00$       &              
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                         &              &              &              &
+              &              &              &              &           
+   & $(0.00)$     &              
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+realincpercapall         &              &              &              &
+              &              &              &              &           
+   &              & $-0.06$      
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                         &              &              &              &
+              &              &              &              &           
+   &              & $(0.13)$     
 \backslash
 
 \backslash
@@ -1625,9 +1691,9 @@ hline
 
 \begin_layout Plain Layout
 
-AIC                      & 121.27         & 121.89         & 122.07       
-  & 121.92         & 120.47         & 122.07         & 121.63         & 121.38
-         & 121.40         & 120.31         
+AIC                      & 99.52        & 99.15        & 98.48        & 98.38
+        & 99.33        & 98.48        & 98.83        & 99.49        & 99.48 
+       & 99.21        
 \backslash
 
 \backslash
@@ -1636,9 +1702,9 @@ AIC                      & 121.27         & 121.89         & 122.07
 
 \begin_layout Plain Layout
 
-BIC                      & 149.14         & 149.76         & 149.94       
-  & 149.79         & 148.34         & 149.94         & 149.50         & 149.25
-         & 149.27         & 148.18         
+BIC                      & 139.88       & 139.51       & 138.84       & 138.74
+       & 139.69       & 138.84       & 139.19       & 139.85       & 139.84 
+      & 139.57       
 \backslash
 
 \backslash
@@ -1647,9 +1713,9 @@ BIC                      & 149.14         & 149.76         & 149.94
 
 \begin_layout Plain Layout
 
-Log Likelihood           & -54.64         & -54.95         & -55.03       
-  & -54.96         & -54.23         & -55.03         & -54.82         & -54.69
-         & -54.70         & -54.15         
+Log Likelihood           & -40.76       & -40.58       & -40.24       & -40.19
+       & -40.66       & -40.24       & -40.42       & -40.74       & -40.74 
+      & -40.61       
 \backslash
 
 \backslash
@@ -1658,9 +1724,9 @@ Log Likelihood           & -54.64         & -54.95         & -55.03
 
 \begin_layout Plain Layout
 
-Deviance                 & 109.27         & 109.89         & 110.07       
-  & 109.92         & 108.47         & 110.07         & 109.63         & 109.38
-         & 109.40         & 108.31         
+Deviance                 & 81.52        & 81.15        & 80.48        & 80.38
+        & 81.33        & 80.48        & 80.83        & 81.49        & 81.48 
+       & 81.21        
 \backslash
 
 \backslash
@@ -1671,9 +1737,9 @@ Deviance                 & 109.27         & 109.89         & 110.07
 
 Num.
  obs.
-                & 769            & 769            & 769            & 769
-            & 769            & 769            & 769            & 769   
-         & 769            & 769            
+                & 655          & 655          & 655          & 655     
+     & 655          & 655          & 655          & 655          & 655 
+         & 655          
 \backslash
 
 \backslash
@@ -1728,10 +1794,6 @@ end{table}
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -1756,8 +1818,8 @@ begin{table}
 
 
 \backslash
-caption{Event History Analysis of Transgender Discrimination Policy with
- Controls, Models 11-19}
+caption{Event History Analysis of Transgender Anti-Discrimination Policy
+ with Controls, Models 11-19}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1800,9 +1862,9 @@ hline
 
 \begin_layout Plain Layout
 
-(Intercept)               & $-17.91^{***}$ & $-17.90^{***}$ & $-18.10^{***}$
- & $-17.50^{***}$ & $-17.50^{***}$ & $-16.55^{***}$ & $-16.89^{***}$ & $-16.87^{***}$
- & $-16.89^{***}$ 
+(Intercept)               & $-34.01^{*}$ & $-34.05^{*}$ & $-34.01^{*}$ & $-33.86^{*}
+$ & $-33.91^{*}$ & $-38.93^{*}$ & $-35.37^{*}$ & $-35.76^{*}$ & $-43.62^{*}$
+ 
 \backslash
 
 \backslash
@@ -1811,9 +1873,9 @@ hline
 
 \begin_layout Plain Layout
 
-                          & $(4.39)$       & $(4.39)$       & $(4.45)$    
-   & $(4.36)$       & $(4.36)$       & $(4.26)$       & $(4.28)$       & $(4.28)$
-       & $(4.21)$       
+                          & $(14.81)$    & $(14.83)$    & $(14.76)$    & $(15.11)$
+    & $(15.16)$    & $(16.17)$    & $(15.70)$    & $(15.81)$    & $(18.15)$ 
+   
 \backslash
 
 \backslash
@@ -1822,9 +1884,9 @@ hline
 
 \begin_layout Plain Layout
 
-citi6013                  & $-0.03$        & $-0.03$        & $-0.03$     
-   & $-0.03$        & $-0.03$        & $-0.02$        & $-0.02$        & $-0.02$
-        & $-0.02$        
+citi6013                  & $-0.04$      & $-0.04$      & $-0.04$      & $-0.04$
+      & $-0.04$      & $-0.05$      & $-0.04$      & $-0.04$      & $-0.05$ 
+     
 \backslash
 
 \backslash
@@ -1833,9 +1895,9 @@ citi6013                  & $-0.03$        & $-0.03$        & $-0.03$
 
 \begin_layout Plain Layout
 
-                          & $(0.03)$       & $(0.03)$       & $(0.03)$    
-   & $(0.03)$       & $(0.03)$       & $(0.03)$       & $(0.03)$       & $(0.03)$
-       & $(0.03)$       
+                          & $(0.04)$     & $(0.04)$     & $(0.04)$     & $(0.04)$
+     & $(0.04)$     & $(0.04)$     & $(0.04)$     & $(0.04)$     & $(0.04)$ 
+    
 \backslash
 
 \backslash
@@ -1846,8 +1908,85 @@ citi6013                  & $-0.03$        & $-0.03$        & $-0.03$
 
 inst6013
 \backslash
-_adacope         & $0.07^{***}$   & $0.07^{***}$   & $0.07^{***}$   & $0.07^{***}$
-   & $0.07^{***}$   & $0.07^{***}$   & $0.07^{***}$   & $0.07^{***}$   & $0.07^{***}$
+_adacope         & $0.09^{**}$  & $0.09^{**}$  & $0.09^{**}$  & $0.09^{**}$
+  & $0.09^{**}$  & $0.11^{***}$ & $0.09^{***}$ & $0.09^{***}$ & $0.12^{***}$
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          & $(0.03)$     & $(0.03)$     & $(0.03)$     & $(0.03)$
+     & $(0.03)$     & $(0.03)$     & $(0.03)$     & $(0.03)$     & $(0.04)$ 
+    
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+MeanOppLP                 & $0.46$       & $0.46$       & $0.46$       & $0.45$
+       & $0.45$       & $0.51$       & $0.47$       & $0.48$       & $0.57$ 
+      
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          & $(0.24)$     & $(0.24)$     & $(0.24)$     & $(0.25)$
+     & $(0.25)$     & $(0.26)$     & $(0.26)$     & $(0.26)$     & $(0.29)$ 
+    
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ssph                      & $-4.07$      & $-4.14$      & $-3.99$      & $-4.16$
+      & $-4.26$      & $-5.66$      & $-4.69$      & $-4.89$      & $-6.81$ 
+     
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          & $(4.58)$     & $(4.60)$     & $(4.57)$     & $(4.59)$
+     & $(4.60)$     & $(4.72)$     & $(4.67)$     & $(4.69)$     & $(5.04)$ 
+    
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Williams                  & $16.74$      & $17.22$      & $16.07$      & $23.00$
+      & $23.80$      & $60.86$      & $34.40$      & $36.18$      & $63.54$ 
+     
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          & $(69.05)$    & $(69.10)$    & $(69.16)$    & $(69.89)$
+    & $(69.99)$    & $(73.24)$    & $(70.53)$    & $(70.68)$    & $(73.72)$ 
    
 \backslash
 
@@ -1857,9 +1996,9 @@ _adacope         & $0.07^{***}$   & $0.07^{***}$   & $0.07^{***}$   & $0.07^{***
 
 \begin_layout Plain Layout
 
-                          & $(0.02)$       & $(0.02)$       & $(0.02)$    
-   & $(0.02)$       & $(0.02)$       & $(0.02)$       & $(0.02)$       & $(0.02)$
-       & $(0.02)$       
+squire                    & $-2.72$      & $-2.89$      & $-2.40$      & $-3.84$
+      & $-4.10$      & $-4.91$      & $-4.60$      & $-4.79$      & $-3.09$ 
+     
 \backslash
 
 \backslash
@@ -1868,9 +2007,9 @@ _adacope         & $0.07^{***}$   & $0.07^{***}$   & $0.07^{***}$   & $0.07^{***
 
 \begin_layout Plain Layout
 
-MeanOppLP                 & $0.19^{*}$     & $0.19^{*}$     & $0.19^{*}$  
-   & $0.19^{*}$     & $0.19^{*}$     & $0.17$         & $0.17$         & $0.17$
-         & $0.16$         
+                          & $(3.32)$     & $(3.43)$     & $(3.12)$     & $(3.29)$
+     & $(3.38)$     & $(3.24)$     & $(3.12)$     & $(3.13)$     & $(2.95)$ 
+    
 \backslash
 
 \backslash
@@ -1879,9 +2018,9 @@ MeanOppLP                 & $0.19^{*}$     & $0.19^{*}$     & $0.19^{*}$
 
 \begin_layout Plain Layout
 
-                          & $(0.09)$       & $(0.09)$       & $(0.09)$    
-   & $(0.09)$       & $(0.09)$       & $(0.09)$       & $(0.09)$       & $(0.09)$
-       & $(0.09)$       
+evangelical               & $15.06$      & $15.12$      & $14.98$      & $15.04$
+      & $15.12$      & $18.22$      & $15.96$      & $16.26$      & $20.71$ 
+     
 \backslash
 
 \backslash
@@ -1890,9 +2029,9 @@ MeanOppLP                 & $0.19^{*}$     & $0.19^{*}$     & $0.19^{*}$
 
 \begin_layout Plain Layout
 
-ssph                      & $-0.30$        & $-0.25$        & $-0.31$     
-   & $-0.52$        & $-0.50$        & $-0.52$        & $-0.55$        & $-0.57$
-        & $-0.75$        
+                          & $(12.20)$    & $(12.22)$    & $(12.16)$    & $(12.41)$
+    & $(12.44)$    & $(13.00)$    & $(12.85)$    & $(12.94)$    & $(14.38)$ 
+   
 \backslash
 
 \backslash
@@ -1901,9 +2040,9 @@ ssph                      & $-0.30$        & $-0.25$        & $-0.31$
 
 \begin_layout Plain Layout
 
-                          & $(2.92)$       & $(2.93)$       & $(2.91)$    
-   & $(2.89)$       & $(2.89)$       & $(2.94)$       & $(2.90)$       & $(2.91)$
-       & $(3.00)$       
+incomeno234               & $0.00$       &              &              &
+              &              &              &              &           
+   &              
 \backslash
 
 \backslash
@@ -1912,20 +2051,9 @@ ssph                      & $-0.30$        & $-0.25$        & $-0.31$
 
 \begin_layout Plain Layout
 
-incomeno234               & $-0.00$        &                &           
-     &                &                &                &              
-  &                &                
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-                          & $(0.00)$       &                &           
-     &                &                &                &              
-  &                &                
+                          & $(0.00)$     &              &              &
+              &              &              &              &           
+   &              
 \backslash
 
 \backslash
@@ -1936,9 +2064,9 @@ incomeno234               & $-0.00$        &                &
 
 realinc
 \backslash
-_smallno234       &                & $-0.00$        &                &  
-              &                &                &                &     
-           &                
+_smallno234       &              & $0.00$       &              &        
+      &              &              &              &              &    
+          
 \backslash
 
 \backslash
@@ -1947,9 +2075,9 @@ _smallno234       &                & $-0.00$        &                &
 
 \begin_layout Plain Layout
 
-                          &                & $(0.00)$       &           
-     &                &                &                &              
-  &                &                
+                          &              & $(0.00)$     &              &
+              &              &              &              &           
+   &              
 \backslash
 
 \backslash
@@ -1960,9 +2088,9 @@ _smallno234       &                & $-0.00$        &                &
 
 realincpercap
 \backslash
-_smallno234 &                &                & $-0.22$        &        
-        &                &                &                &           
-     &                
+_smallno234 &              &              & $0.05$       &              &
+              &              &              &              &           
+   
 \backslash
 
 \backslash
@@ -1971,9 +2099,9 @@ _smallno234 &                &                & $-0.22$        &
 
 \begin_layout Plain Layout
 
-                          &                &                & $(0.28)$  
-     &                &                &                &              
-  &                &                
+                          &              &              & $(0.28)$     &
+              &              &              &              &           
+   &              
 \backslash
 
 \backslash
@@ -1982,9 +2110,9 @@ _smallno234 &                &                & $-0.22$        &
 
 \begin_layout Plain Layout
 
-assetsall                 &                &                &          
-      & $-0.00$        &                &                &              
-  &                &                
+assetsall                 &              &              &              &
+ $0.00$       &              &              &              &            
+  &              
 \backslash
 
 \backslash
@@ -1993,9 +2121,9 @@ assetsall                 &                &                &
 
 \begin_layout Plain Layout
 
-                          &                &                &          
-      & $(0.00)$       &                &                &              
-  &                &                
+                          &              &              &              &
+ $(0.00)$     &              &              &              &            
+  &              
 \backslash
 
 \backslash
@@ -2004,9 +2132,9 @@ assetsall                 &                &                &
 
 \begin_layout Plain Layout
 
-realastall                &                &                &          
-      &                & $-0.00$        &                &              
-  &                &                
+realastall                &              &              &              &
+              & $0.00$       &              &              &            
+  &              
 \backslash
 
 \backslash
@@ -2015,9 +2143,9 @@ realastall                &                &                &
 
 \begin_layout Plain Layout
 
-                          &                &                &          
-      &                & $(0.00)$       &                &              
-  &                &                
+                          &              &              &              &
+              & $(0.00)$     &              &              &            
+  &              
 \backslash
 
 \backslash
@@ -2026,9 +2154,9 @@ realastall                &                &                &
 
 \begin_layout Plain Layout
 
-realastpercapall          &                &                &          
-      &                &                & $0.02$         &              
-  &                &                
+realastpercapall          &              &              &              &
+              &              & $0.13^{**}$  &              &            
+  &              
 \backslash
 
 \backslash
@@ -2037,9 +2165,9 @@ realastpercapall          &                &                &
 
 \begin_layout Plain Layout
 
-                          &                &                &          
-      &                &                & $(0.04)$       &              
-  &                &                
+                          &              &              &              &
+              &              & $(0.05)$     &              &            
+  &              
 \backslash
 
 \backslash
@@ -2048,9 +2176,9 @@ realastpercapall          &                &                &
 
 \begin_layout Plain Layout
 
-assetsno234               &                &                &          
-      &                &                &                & $0.00$       
-  &                &                
+assetsno234               &              &              &              &
+              &              &              & $0.00^{*}$   &            
+  &              
 \backslash
 
 \backslash
@@ -2059,9 +2187,9 @@ assetsno234               &                &                &
 
 \begin_layout Plain Layout
 
-                          &                &                &          
-      &                &                &                & $(0.00)$     
-  &                &                
+                          &              &              &              &
+              &              &              & $(0.00)$     &            
+  &              
 \backslash
 
 \backslash
@@ -2072,9 +2200,9 @@ assetsno234               &                &                &
 
 realast
 \backslash
-_smallno234       &                &                &                & 
-               &                &                &                & $0.00$
-         &                
+_smallno234       &              &              &              &       
+       &              &              &              & $0.00^{*}$   &    
+          
 \backslash
 
 \backslash
@@ -2083,9 +2211,9 @@ _smallno234       &                &                &                &
 
 \begin_layout Plain Layout
 
-                          &                &                &          
-      &                &                &                &             
-   & $(0.00)$       &                
+                          &              &              &              &
+              &              &              &              & $(0.00)$   
+  &              
 \backslash
 
 \backslash
@@ -2096,9 +2224,9 @@ _smallno234       &                &                &                &
 
 realastpercap
 \backslash
-_smallno234 &                &                &                &       
-         &                &                &                &          
-      & $0.09^{*}$     
+_smallno234 &              &              &              &             
+ &              &              &              &              & $0.16^{**}$
+  
 \backslash
 
 \backslash
@@ -2107,9 +2235,9 @@ _smallno234 &                &                &                &
 
 \begin_layout Plain Layout
 
-                          &                &                &          
-      &                &                &                &             
-   &                & $(0.04)$       
+                          &              &              &              &
+              &              &              &              &           
+   & $(0.05)$     
 \backslash
 
 \backslash
@@ -2125,9 +2253,9 @@ hline
 
 \begin_layout Plain Layout
 
-AIC                       & 121.36         & 121.40         & 121.12      
-   & 121.93         & 121.94         & 121.74         & 122.06         & 122.05
-         & 118.67         
+AIC                       & 99.43        & 99.40        & 99.50        & 98.55
+        & 98.45        & 93.60        & 95.52        & 95.33        & 91.41 
+       
 \backslash
 
 \backslash
@@ -2136,9 +2264,9 @@ AIC                       & 121.36         & 121.40         & 121.12
 
 \begin_layout Plain Layout
 
-BIC                       & 149.23         & 149.27         & 148.99      
-   & 149.80         & 149.81         & 149.61         & 149.93         & 149.92
-         & 146.54         
+BIC                       & 139.80       & 139.76       & 139.86       & 138.91
+       & 138.81       & 133.96       & 135.88       & 135.69       & 131.77 
+      
 \backslash
 
 \backslash
@@ -2147,9 +2275,9 @@ BIC                       & 149.23         & 149.27         & 148.99
 
 \begin_layout Plain Layout
 
-Log Likelihood            & -54.68         & -54.70         & -54.56      
-   & -54.97         & -54.97         & -54.87         & -55.03         & -55.02
-         & -53.34         
+Log Likelihood            & -40.72       & -40.70       & -40.75       & -40.28
+       & -40.22       & -37.80       & -38.76       & -38.67       & -36.71 
+      
 \backslash
 
 \backslash
@@ -2158,9 +2286,9 @@ Log Likelihood            & -54.68         & -54.70         & -54.56
 
 \begin_layout Plain Layout
 
-Deviance                  & 109.36         & 109.40         & 109.12      
-   & 109.93         & 109.94         & 109.74         & 110.06         & 110.05
-         & 106.67         
+Deviance                  & 81.43        & 81.40        & 81.50        & 80.55
+        & 80.45        & 75.60        & 77.52        & 77.33        & 73.41 
+       
 \backslash
 
 \backslash
@@ -2171,9 +2299,9 @@ Deviance                  & 109.36         & 109.40         & 109.12
 
 Num.
  obs.
-                 & 769            & 769            & 769            & 769
-            & 769            & 769            & 769            & 769   
-         & 769            
+                 & 655          & 655          & 655          & 655    
+      & 655          & 655          & 655          & 655          & 655
+          
 \backslash
 
 \backslash
@@ -2256,8 +2384,8 @@ begin{table}
 
 
 \backslash
-caption{Event History Analysis of Gay Discrimination Policy with added Controls,
- 1-10}
+caption{Event History Analysis of Gay Anti-Discrimination Policy with added
+ Controls, 1-10}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2300,9 +2428,9 @@ hline
 
 \begin_layout Plain Layout
 
-(Intercept)              & $-33.05^{***}$ & $-35.73^{***}$ & $-36.71^{***}$
- & $-37.26^{***}$ & $-34.17^{***}$ & $-36.72^{***}$ & $-36.79^{***}$ & $-36.79^{***}$
- & $-37.93^{***}$ & $-35.50^{***}$ 
+(Intercept)              & $-72.42^{**}$ & $-90.15^{***}$ & $-90.46^{***}$
+ & $-78.50^{**}$ & $-76.99^{***}$ & $-90.47^{***}$ & $-76.87^{**}$ & $-69.73^{**}$
+ & $-69.90^{**}$ & $-79.61^{***}$ 
 \backslash
 
 \backslash
@@ -2311,9 +2439,9 @@ hline
 
 \begin_layout Plain Layout
 
-                         & $(9.06)$       & $(9.44)$       & $(9.78)$     
-  & $(9.10)$       & $(8.54)$       & $(9.78)$       & $(8.84)$       & $(10.19)$
-      & $(10.52)$      & $(8.96)$       
+                         & $(23.56)$     & $(25.62)$      & $(25.73)$     
+ & $(24.46)$     & $(23.20)$      & $(25.74)$      & $(24.45)$     & $(22.54)$
+     & $(22.66)$     & $(23.93)$      
 \backslash
 
 \backslash
@@ -2322,9 +2450,9 @@ hline
 
 \begin_layout Plain Layout
 
-citi6013                 & $-0.01$        & $-0.04$        & $-0.04$      
-  & $0.02$         & $-0.00$        & $-0.04$        & $0.02$         & $0.00$
-         & $0.01$         & $0.00$         
+citi6013                 & $-0.02$       & $-0.01$        & $-0.01$       
+ & $0.03$        & $0.02$         & $-0.01$        & $0.03$        & $0.00$ 
+       & $0.00$        & $0.02$         
 \backslash
 
 \backslash
@@ -2333,9 +2461,9 @@ citi6013                 & $-0.01$        & $-0.04$        & $-0.04$
 
 \begin_layout Plain Layout
 
-                         & $(0.05)$       & $(0.05)$       & $(0.05)$     
-  & $(0.04)$       & $(0.05)$       & $(0.05)$       & $(0.04)$       & $(0.04)$
-       & $(0.04)$       & $(0.04)$       
+                         & $(0.07)$      & $(0.07)$       & $(0.07)$      
+ & $(0.06)$      & $(0.06)$       & $(0.07)$       & $(0.06)$      & $(0.06)$
+      & $(0.06)$      & $(0.06)$       
 \backslash
 
 \backslash
@@ -2346,9 +2474,9 @@ citi6013                 & $-0.01$        & $-0.04$        & $-0.04$
 
 inst6013
 \backslash
-_adacope        & $0.06^{*}$     & $0.07^{**}$    & $0.08^{**}$    & $0.06^{**}$
-    & $0.06^{*}$     & $0.08^{**}$    & $0.05^{*}$     & $0.05^{*}$     & $0.05^{*}$
-     & $0.05^{*}$     
+_adacope        & $0.08^{*}$    & $0.07^{*}$     & $0.07^{*}$     & $0.06^{*}$
+    & $0.05^{*}$     & $0.07^{*}$     & $0.05^{*}$    & $0.06^{*}$    & $0.06^{*}$
+    & $0.05^{*}$     
 \backslash
 
 \backslash
@@ -2357,9 +2485,9 @@ _adacope        & $0.06^{*}$     & $0.07^{**}$    & $0.08^{**}$    & $0.06^{**}$
 
 \begin_layout Plain Layout
 
-                         & $(0.02)$       & $(0.03)$       & $(0.03)$     
-  & $(0.02)$       & $(0.02)$       & $(0.03)$       & $(0.02)$       & $(0.02)$
-       & $(0.02)$       & $(0.02)$       
+                         & $(0.03)$      & $(0.03)$       & $(0.03)$      
+ & $(0.03)$      & $(0.02)$       & $(0.03)$       & $(0.02)$      & $(0.03)$
+      & $(0.03)$      & $(0.02)$       
 \backslash
 
 \backslash
@@ -2368,9 +2496,9 @@ _adacope        & $0.06^{*}$     & $0.07^{**}$    & $0.08^{**}$    & $0.06^{**}$
 
 \begin_layout Plain Layout
 
-MeanOppLP                & $0.49^{**}$    & $0.56^{**}$    & $0.58^{**}$  
-  & $0.55^{**}$    & $0.51^{**}$    & $0.58^{**}$    & $0.52^{**}$    & $0.57^{**}$
-    & $0.59^{**}$    & $0.54^{**}$    
+MeanOppLP                & $1.26^{**}$   & $1.56^{***}$   & $1.57^{***}$  
+ & $1.29^{**}$   & $1.32^{**}$    & $1.57^{***}$   & $1.27^{**}$   & $1.21^{**}$
+   & $1.21^{**}$   & $1.37^{**}$    
 \backslash
 
 \backslash
@@ -2379,9 +2507,9 @@ MeanOppLP                & $0.49^{**}$    & $0.56^{**}$    & $0.58^{**}$
 
 \begin_layout Plain Layout
 
-                         & $(0.19)$       & $(0.19)$       & $(0.19)$     
-  & $(0.18)$       & $(0.17)$       & $(0.19)$       & $(0.17)$       & $(0.21)$
-       & $(0.21)$       & $(0.18)$       
+                         & $(0.42)$      & $(0.45)$       & $(0.46)$      
+ & $(0.43)$      & $(0.41)$       & $(0.46)$       & $(0.43)$      & $(0.40)$
+      & $(0.40)$      & $(0.43)$       
 \backslash
 
 \backslash
@@ -2390,9 +2518,9 @@ MeanOppLP                & $0.49^{**}$    & $0.56^{**}$    & $0.58^{**}$
 
 \begin_layout Plain Layout
 
-ssph                     & $-4.20$        & $-5.76$        & $-6.22$      
-  & $-3.09$        & $-4.59$        & $-6.22$        & $-3.29$        & $-5.38$
-        & $-5.67$        & $-4.27$        
+ssph                     & $-16.47^{*}$  & $-21.91^{**}$  & $-22.15^{**}$ 
+ & $-11.97$      & $-16.46^{*}$   & $-22.15^{**}$  & $-12.52$      & $-15.38^{*}$
+  & $-15.32^{*}$  & $-18.03^{*}$   
 \backslash
 
 \backslash
@@ -2401,9 +2529,9 @@ ssph                     & $-4.20$        & $-5.76$        & $-6.22$
 
 \begin_layout Plain Layout
 
-                         & $(4.65)$       & $(4.52)$       & $(4.59)$     
-  & $(4.54)$       & $(4.50)$       & $(4.59)$       & $(4.57)$       & $(4.78)$
-       & $(4.81)$       & $(4.56)$       
+                         & $(7.52)$      & $(7.91)$       & $(7.94)$      
+ & $(7.58)$      & $(7.28)$       & $(7.94)$       & $(7.77)$      & $(7.14)$
+      & $(7.11)$      & $(7.93)$       
 \backslash
 
 \backslash
@@ -2412,9 +2540,9 @@ ssph                     & $-4.20$        & $-5.76$        & $-6.22$
 
 \begin_layout Plain Layout
 
-lgbtrev2010adj           & $0.00$         &                &            
-    &                &                &                &               
- &                &                &                
+Williams                 & $-1.59$       & $14.25$        & $21.86$       
+ & $-28.73$      & $-16.42$       & $21.88$        & $-39.73$      & $-15.54$
+      & $-15.76$      & $-13.55$       
 \backslash
 
 \backslash
@@ -2423,9 +2551,9 @@ lgbtrev2010adj           & $0.00$         &                &
 
 \begin_layout Plain Layout
 
-                         & $(0.00)$       &                &            
-    &                &                &                &               
- &                &                &                
+                         & $(67.01)$     & $(67.22)$      & $(68.61)$     
+ & $(66.68)$     & $(66.99)$      & $(68.61)$      & $(66.92)$     & $(66.32)$
+     & $(66.21)$     & $(67.75)$      
 \backslash
 
 \backslash
@@ -2434,9 +2562,9 @@ lgbtrev2010adj           & $0.00$         &                &
 
 \begin_layout Plain Layout
 
-lgbtrevpercapita         &                & $1.53$         &            
-    &                &                &                &               
- &                &                &                
+squire                   & $-17.98^{**}$ & $-12.65^{*}$   & $-12.26^{*}$  
+ & $-5.17$       & $-9.50^{*}$    & $-12.26^{*}$   & $-6.44$       & $-17.47^{*}$
+  & $-15.85^{*}$  & $-11.05^{*}$   
 \backslash
 
 \backslash
@@ -2445,9 +2573,9 @@ lgbtrevpercapita         &                & $1.53$         &
 
 \begin_layout Plain Layout
 
-                         &                & $(0.95)$       &            
-    &                &                &                &               
- &                &                &                
+                         & $(6.81)$      & $(5.06)$       & $(5.04)$      
+ & $(4.76)$      & $(4.51)$       & $(5.04)$       & $(4.70)$      & $(7.87)$
+      & $(8.00)$      & $(5.36)$       
 \backslash
 
 \backslash
@@ -2456,9 +2584,9 @@ lgbtrevpercapita         &                & $1.53$         &
 
 \begin_layout Plain Layout
 
-lgbtrevperlgbtcapita     &                &                & $0.06$     
-    &                &                &                &               
- &                &                &                
+evangelical              & $34.61^{*}$   & $43.96^{*}$    & $43.76^{*}$   
+ & $35.28^{*}$   & $34.98^{*}$    & $43.77^{*}$    & $32.92$       & $32.15$
+       & $32.01$       & $37.16^{*}$    
 \backslash
 
 \backslash
@@ -2467,9 +2595,9 @@ lgbtrevperlgbtcapita     &                &                & $0.06$
 
 \begin_layout Plain Layout
 
-                         &                &                & $(0.03)$   
-    &                &                &                &               
- &                &                &                
+                         & $(17.63)$     & $(17.91)$      & $(17.92)$     
+ & $(17.10)$     & $(16.73)$      & $(17.92)$      & $(17.07)$     & $(16.66)$
+     & $(16.56)$     & $(17.28)$      
 \backslash
 
 \backslash
@@ -2478,9 +2606,9 @@ lgbtrevperlgbtcapita     &                &                & $0.06$
 
 \begin_layout Plain Layout
 
-loglgbtrev               &                &                &           
-     & $-0.12$        &                &                &               
- &                &                &                
+lgbtrev2010adj           & $0.00^{*}$    &                &             
+   &               &                &                &               & 
+              &               &                
 \backslash
 
 \backslash
@@ -2489,9 +2617,9 @@ loglgbtrev               &                &                &
 
 \begin_layout Plain Layout
 
-                         &                &                &           
-     & $(0.07)$       &                &                &               
- &                &                &                
+                         & $(0.00)$      &                &             
+   &               &                &                &               & 
+              &               &                
 \backslash
 
 \backslash
@@ -2500,9 +2628,9 @@ loglgbtrev               &                &                &
 
 \begin_layout Plain Layout
 
-logrevperlgbtcap         &                &                &           
-     &                & $-0.01$        &                &               
- &                &                &                
+lgbtrevpercapita         &               & $3.08^{*}$     &             
+   &               &                &                &               & 
+              &               &                
 \backslash
 
 \backslash
@@ -2511,9 +2639,9 @@ logrevperlgbtcap         &                &                &
 
 \begin_layout Plain Layout
 
-                         &                &                &           
-     &                & $(0.27)$       &                &               
- &                &                &                
+                         &               & $(1.36)$       &             
+   &               &                &                &               & 
+              &               &                
 \backslash
 
 \backslash
@@ -2522,9 +2650,9 @@ logrevperlgbtcap         &                &                &
 
 \begin_layout Plain Layout
 
-lgbtrevperlgbtcapita2    &                &                &           
-     &                &                & $0.06$         &               
- &                &                &                
+lgbtrevperlgbtcapita     &               &                & $0.11^{*}$  
+   &               &                &                &               & 
+              &               &                
 \backslash
 
 \backslash
@@ -2533,9 +2661,9 @@ lgbtrevperlgbtcapita2    &                &                &
 
 \begin_layout Plain Layout
 
-                         &                &                &           
-     &                &                & $(0.03)$       &               
- &                &                &                
+                         &               &                & $(0.05)$    
+   &               &                &                &               & 
+              &               &                
 \backslash
 
 \backslash
@@ -2544,9 +2672,9 @@ lgbtrevperlgbtcapita2    &                &                &
 
 \begin_layout Plain Layout
 
-loglgbtrevperlgbtcapita2 &                &                &           
-     &                &                &                & $-0.22$       
- &                &                &                
+loglgbtrev               &               &                &            
+    & $-0.14$       &                &                &               & 
+              &               &                
 \backslash
 
 \backslash
@@ -2555,9 +2683,9 @@ loglgbtrevperlgbtcapita2 &                &                &
 
 \begin_layout Plain Layout
 
-                         &                &                &           
-     &                &                &                & $(0.14)$      
- &                &                &                
+                         &               &                &            
+    & $(0.10)$      &                &                &               & 
+              &               &                
 \backslash
 
 \backslash
@@ -2566,9 +2694,9 @@ loglgbtrevperlgbtcapita2 &                &                &
 
 \begin_layout Plain Layout
 
-incomeall                &                &                &           
-     &                &                &                &              
-  & $-0.00$        &                &                
+logrevperlgbtcap         &               &                &            
+    &               & $0.21$         &                &               & 
+              &               &                
 \backslash
 
 \backslash
@@ -2577,9 +2705,9 @@ incomeall                &                &                &
 
 \begin_layout Plain Layout
 
-                         &                &                &           
-     &                &                &                &              
-  & $(0.00)$       &                &                
+                         &               &                &            
+    &               & $(0.39)$       &                &               & 
+              &               &                
 \backslash
 
 \backslash
@@ -2588,9 +2716,9 @@ incomeall                &                &                &
 
 \begin_layout Plain Layout
 
-realincall               &                &                &           
-     &                &                &                &              
-  &                & $-0.00$        &                
+lgbtrevperlgbtcapita2    &               &                &            
+    &               &                & $0.11^{*}$     &               & 
+              &               &                
 \backslash
 
 \backslash
@@ -2599,9 +2727,9 @@ realincall               &                &                &
 
 \begin_layout Plain Layout
 
-                         &                &                &           
-     &                &                &                &              
-  &                & $(0.00)$       &                
+                         &               &                &            
+    &               &                & $(0.05)$       &               & 
+              &               &                
 \backslash
 
 \backslash
@@ -2610,9 +2738,9 @@ realincall               &                &                &
 
 \begin_layout Plain Layout
 
-realincpercapall         &                &                &           
-     &                &                &                &              
-  &                &                & $-0.06$        
+loglgbtrevperlgbtcapita2 &               &                &            
+    &               &                &                & $-0.23$       & 
+              &               &                
 \backslash
 
 \backslash
@@ -2621,9 +2749,75 @@ realincpercapall         &                &                &
 
 \begin_layout Plain Layout
 
-                         &                &                &           
-     &                &                &                &              
-  &                &                & $(0.10)$       
+                         &               &                &            
+    &               &                &                & $(0.22)$      & 
+              &               &                
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+incomeall                &               &                &            
+    &               &                &                &               &
+ $0.00$        &               &                
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                         &               &                &            
+    &               &                &                &               &
+ $(0.00)$      &               &                
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+realincall               &               &                &            
+    &               &                &                &               &
+               & $0.00$        &                
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                         &               &                &            
+    &               &                &                &               &
+               & $(0.00)$      &                
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+realincpercapall         &               &                &            
+    &               &                &                &               &
+               &               & $0.11$         
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                         &               &                &            
+    &               &                &                &               &
+               &               & $(0.14)$       
 \backslash
 
 \backslash
@@ -2639,9 +2833,9 @@ hline
 
 \begin_layout Plain Layout
 
-AIC                      & 88.99          & 86.80          & 86.02        
-  & 85.49          & 89.09          & 86.02          & 86.83          & 88.79
-          & 88.55          & 88.60          
+AIC                      & 77.58         & 76.49          & 75.97         
+ & 80.28         & 81.99          & 75.97          & 81.19         & 80.22  
+       & 81.02         & 81.73          
 \backslash
 
 \backslash
@@ -2650,9 +2844,9 @@ AIC                      & 88.99          & 86.80          & 86.02
 
 \begin_layout Plain Layout
 
-BIC                      & 115.51         & 113.32         & 112.54       
-  & 112.01         & 115.61         & 112.54         & 113.35         & 115.31
-         & 115.07         & 115.12         
+BIC                      & 115.97        & 114.87         & 114.36        
+ & 118.66        & 120.38         & 114.35         & 119.58        & 118.60 
+       & 119.41        & 120.11         
 \backslash
 
 \backslash
@@ -2661,9 +2855,9 @@ BIC                      & 115.51         & 113.32         & 112.54
 
 \begin_layout Plain Layout
 
-Log Likelihood           & -38.49         & -37.40         & -37.01       
-  & -36.75         & -38.54         & -37.01         & -37.42         & -38.40
-         & -38.28         & -38.30         
+Log Likelihood           & -29.79        & -29.24         & -28.98        
+ & -31.14        & -32.00         & -28.98         & -31.60        & -31.11 
+       & -31.51        & -31.86         
 \backslash
 
 \backslash
@@ -2672,9 +2866,9 @@ Log Likelihood           & -38.49         & -37.40         & -37.01
 
 \begin_layout Plain Layout
 
-Deviance                 & 76.99          & 74.80          & 74.02        
-  & 73.49          & 77.09          & 74.02          & 74.83          & 76.79
-          & 76.55          & 76.60          
+Deviance                 & 59.58         & 58.49          & 57.97         
+ & 62.28         & 63.99          & 57.97          & 63.19         & 62.22  
+       & 63.02         & 63.73          
 \backslash
 
 \backslash
@@ -2685,9 +2879,9 @@ Deviance                 & 76.99          & 74.80          & 74.02
 
 Num.
  obs.
-                & 614            & 614            & 614            & 614
-            & 614            & 614            & 614            & 614   
-         & 614            & 614            
+                & 526           & 526            & 526            & 526
+           & 526            & 526            & 526           & 526     
+      & 526           & 526            
 \backslash
 
 \backslash
@@ -2770,8 +2964,8 @@ begin{table}
 
 
 \backslash
-caption{Event History Analysis of Gay Discrimination Policy with added Controls,
- 11-19}
+caption{Event History Analysis of Gay Anti-Discrimination Policy with added
+ Controls, 11-19}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2814,9 +3008,9 @@ hline
 
 \begin_layout Plain Layout
 
-(Intercept)               & $-35.98^{***}$ & $-36.77^{***}$ & $-34.67^{***}$
- & $-30.55^{***}$ & $-31.36^{***}$ & $-36.13^{***}$ & $-35.88^{***}$ & $-35.24^{***}$
- & $-38.13^{***}$ 
+(Intercept)               & $-76.92^{**}$ & $-76.00^{**}$ & $-76.57^{**}$ &
+ $-82.84^{**}$ & $-81.40^{**}$ & $-85.83^{**}$ & $-85.88^{**}$ & $-84.98^{**}$
+ & $-84.53^{**}$ 
 \backslash
 
 \backslash
@@ -2825,9 +3019,9 @@ hline
 
 \begin_layout Plain Layout
 
-                          & $(9.59)$       & $(9.87)$       & $(8.77)$    
-   & $(8.53)$       & $(8.89)$       & $(9.48)$       & $(9.37)$       & $(9.15)$
-       & $(9.99)$       
+                          & $(24.12)$     & $(23.78)$     & $(24.00)$     &
+ $(27.27)$     & $(26.74)$     & $(27.27)$     & $(28.19)$     & $(27.85)$  
+   & $(27.55)$     
 \backslash
 
 \backslash
@@ -2836,9 +3030,9 @@ hline
 
 \begin_layout Plain Layout
 
-citi6013                  & $0.00$         & $0.00$         & $0.00$      
-   & $-0.02$        & $-0.01$        & $-0.01$        & $-0.01$        & $-0.01$
-        & $-0.01$        
+citi6013                  & $0.02$        & $0.02$        & $0.02$        &
+ $-0.01$       & $-0.02$       & $0.01$        & $0.01$        & $0.01$     
+   & $0.01$        
 \backslash
 
 \backslash
@@ -2847,9 +3041,9 @@ citi6013                  & $0.00$         & $0.00$         & $0.00$
 
 \begin_layout Plain Layout
 
-                          & $(0.04)$       & $(0.04)$       & $(0.04)$    
-   & $(0.05)$       & $(0.05)$       & $(0.05)$       & $(0.05)$       & $(0.05)$
-       & $(0.05)$       
+                          & $(0.06)$      & $(0.06)$      & $(0.06)$      &
+ $(0.07)$      & $(0.07)$      & $(0.06)$      & $(0.07)$      & $(0.06)$   
+   & $(0.06)$      
 \backslash
 
 \backslash
@@ -2860,8 +3054,8 @@ citi6013                  & $0.00$         & $0.00$         & $0.00$
 
 inst6013
 \backslash
-_adacope         & $0.05^{*}$     & $0.05^{*}$     & $0.05^{*}$     & $0.07^{**}$
-    & $0.07^{*}$     & $0.07^{**}$    & $0.08^{**}$    & $0.08^{**}$    & $0.07^{**}$
+_adacope         & $0.06^{*}$    & $0.06^{*}$    & $0.05^{*}$    & $0.09^{**}$
+   & $0.09^{**}$   & $0.07^{*}$    & $0.07^{*}$    & $0.07^{*}$    & $0.06^{*}$
     
 \backslash
 
@@ -2871,9 +3065,9 @@ _adacope         & $0.05^{*}$     & $0.05^{*}$     & $0.05^{*}$     & $0.07^{**}
 
 \begin_layout Plain Layout
 
-                          & $(0.02)$       & $(0.02)$       & $(0.02)$    
-   & $(0.03)$       & $(0.03)$       & $(0.03)$       & $(0.03)$       & $(0.03)$
-       & $(0.02)$       
+                          & $(0.03)$      & $(0.03)$      & $(0.02)$      &
+ $(0.03)$      & $(0.04)$      & $(0.03)$      & $(0.03)$      & $(0.03)$   
+   & $(0.03)$      
 \backslash
 
 \backslash
@@ -2882,9 +3076,9 @@ _adacope         & $0.05^{*}$     & $0.05^{*}$     & $0.05^{*}$     & $0.07^{**}
 
 \begin_layout Plain Layout
 
-MeanOppLP                 & $0.55^{**}$    & $0.57^{**}$    & $0.52^{**}$ 
-   & $0.43^{*}$     & $0.45^{*}$     & $0.55^{**}$    & $0.53^{**}$    & $0.52^{**}$
-    & $0.58^{**}$    
+MeanOppLP                 & $1.32^{**}$   & $1.30^{**}$   & $1.31^{**}$   &
+ $1.42^{**}$   & $1.40^{**}$   & $1.47^{**}$   & $1.47^{**}$   & $1.45^{**}$
+   & $1.44^{**}$   
 \backslash
 
 \backslash
@@ -2893,9 +3087,9 @@ MeanOppLP                 & $0.55^{**}$    & $0.57^{**}$    & $0.52^{**}$
 
 \begin_layout Plain Layout
 
-                          & $(0.20)$       & $(0.20)$       & $(0.18)$    
-   & $(0.18)$       & $(0.19)$       & $(0.19)$       & $(0.19)$       & $(0.18)$
-       & $(0.20)$       
+                          & $(0.43)$      & $(0.42)$      & $(0.43)$      &
+ $(0.48)$      & $(0.47)$      & $(0.48)$      & $(0.50)$      & $(0.49)$   
+   & $(0.49)$      
 \backslash
 
 \backslash
@@ -2904,9 +3098,9 @@ MeanOppLP                 & $0.55^{**}$    & $0.57^{**}$    & $0.52^{**}$
 
 \begin_layout Plain Layout
 
-ssph                      & $-5.18$        & $-5.37$        & $-4.68$     
-   & $-3.58$        & $-3.86$        & $-6.31$        & $-5.09$        & $-4.94$
-        & $-6.21$        
+ssph                      & $-16.27^{*}$  & $-16.14^{*}$  & $-16.00^{*}$  &
+ $-20.67^{*}$  & $-20.24^{*}$  & $-20.28^{*}$  & $-19.86^{*}$  & $-19.58^{*}$
+  & $-19.14^{*}$  
 \backslash
 
 \backslash
@@ -2915,9 +3109,9 @@ ssph                      & $-5.18$        & $-5.37$        & $-4.68$
 
 \begin_layout Plain Layout
 
-                          & $(4.67)$       & $(4.69)$       & $(4.53)$    
-   & $(4.53)$       & $(4.56)$       & $(4.77)$       & $(4.66)$       & $(4.62)$
-       & $(4.81)$       
+                          & $(7.48)$      & $(7.41)$      & $(7.40)$      &
+ $(8.28)$      & $(8.17)$      & $(8.18)$      & $(8.45)$      & $(8.37)$   
+   & $(8.20)$      
 \backslash
 
 \backslash
@@ -2926,9 +3120,9 @@ ssph                      & $-5.18$        & $-5.37$        & $-4.68$
 
 \begin_layout Plain Layout
 
-incomeno234               & $-0.00$        &                &           
-     &                &                &                &              
-  &                &                
+Williams                  & $-23.57$      & $-22.58$      & $-26.32$      &
+ $25.80$       & $24.02$       & $7.31$        & $6.90$        & $5.25$     
+   & $-0.65$       
 \backslash
 
 \backslash
@@ -2937,9 +3131,75 @@ incomeno234               & $-0.00$        &                &
 
 \begin_layout Plain Layout
 
-                          & $(0.00)$       &                &           
-     &                &                &                &              
-  &                &                
+                          & $(64.55)$     & $(64.75)$     & $(64.64)$     &
+ $(74.44)$     & $(73.98)$     & $(70.88)$     & $(70.52)$     & $(70.35)$  
+   & $(69.28)$     
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+squire                    & $-11.48^{*}$  & $-11.23^{*}$  & $-9.11^{*}$   &
+ $-17.64^{**}$ & $-18.38^{**}$ & $-10.20^{*}$  & $-9.96^{*}$   & $-10.02^{*}$
+  & $-8.98$       
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          & $(5.38)$      & $(5.51)$      & $(4.44)$      &
+ $(5.97)$      & $(6.23)$      & $(4.81)$      & $(4.78)$      & $(4.75)$   
+   & $(4.70)$      
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+evangelical               & $34.70^{*}$   & $34.23^{*}$   & $33.75^{*}$   &
+ $38.69$       & $38.45$       & $38.85^{*}$   & $38.78^{*}$   & $38.43^{*}$
+   & $37.77^{*}$   
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          & $(17.35)$     & $(17.16)$     & $(16.94)$     &
+ $(20.09)$     & $(19.82)$     & $(18.91)$     & $(19.68)$     & $(19.49)$  
+   & $(19.10)$     
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+incomeno234               & $0.00$        &               &             
+  &               &               &               &               &    
+           &               
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          & $(0.00)$      &               &             
+  &               &               &               &               &    
+           &               
 \backslash
 
 \backslash
@@ -2950,9 +3210,9 @@ incomeno234               & $-0.00$        &                &
 
 realinc
 \backslash
-_smallno234       &                & $-0.00$        &                &  
-              &                &                &                &     
-           &                
+_smallno234       &               & $0.00$        &               &     
+          &               &               &               &            
+   &               
 \backslash
 
 \backslash
@@ -2961,9 +3221,9 @@ _smallno234       &                & $-0.00$        &                &
 
 \begin_layout Plain Layout
 
-                          &                & $(0.00)$       &           
-     &                &                &                &              
-  &                &                
+                          &               & $(0.00)$      &             
+  &               &               &               &               &    
+           &               
 \backslash
 
 \backslash
@@ -2974,9 +3234,9 @@ _smallno234       &                & $-0.00$        &                &
 
 realincpercap
 \backslash
-_smallno234 &                &                & $-0.11$        &        
-        &                &                &                &           
-     &                
+_smallno234 &               &               & $0.07$        &           
+    &               &               &               &               &  
+             
 \backslash
 
 \backslash
@@ -2985,9 +3245,9 @@ _smallno234 &                &                & $-0.11$        &
 
 \begin_layout Plain Layout
 
-                          &                &                & $(0.34)$  
-     &                &                &                &              
-  &                &                
+                          &               &               & $(0.21)$    
+  &               &               &               &               &    
+           &               
 \backslash
 
 \backslash
@@ -2996,9 +3256,9 @@ _smallno234 &                &                & $-0.11$        &
 
 \begin_layout Plain Layout
 
-assetsall                 &                &                &          
-      & $0.00$         &                &                &              
-  &                &                
+assetsall                 &               &               &            
+   & $0.00^{**}$   &               &               &               &    
+           &               
 \backslash
 
 \backslash
@@ -3007,9 +3267,9 @@ assetsall                 &                &                &
 
 \begin_layout Plain Layout
 
-                          &                &                &          
-      & $(0.00)$       &                &                &              
-  &                &                
+                          &               &               &            
+   & $(0.00)$      &               &               &               &    
+           &               
 \backslash
 
 \backslash
@@ -3018,9 +3278,9 @@ assetsall                 &                &                &
 
 \begin_layout Plain Layout
 
-realastall                &                &                &          
-      &                & $0.00$         &                &              
-  &                &                
+realastall                &               &               &            
+   &               & $0.00^{*}$    &               &               &    
+           &               
 \backslash
 
 \backslash
@@ -3029,9 +3289,9 @@ realastall                &                &                &
 
 \begin_layout Plain Layout
 
-                          &                &                &          
-      &                & $(0.00)$       &                &              
-  &                &                
+                          &               &               &            
+   &               & $(0.00)$      &               &               &    
+           &               
 \backslash
 
 \backslash
@@ -3040,9 +3300,9 @@ realastall                &                &                &
 
 \begin_layout Plain Layout
 
-realastpercapall          &                &                &          
-      &                &                & $0.08$         &              
-  &                &                
+realastpercapall          &               &               &            
+   &               &               & $0.08^{*}$    &               &    
+           &               
 \backslash
 
 \backslash
@@ -3051,9 +3311,9 @@ realastpercapall          &                &                &
 
 \begin_layout Plain Layout
 
-                          &                &                &          
-      &                &                & $(0.04)$       &              
-  &                &                
+                          &               &               &            
+   &               &               & $(0.04)$      &               &    
+           &               
 \backslash
 
 \backslash
@@ -3062,9 +3322,9 @@ realastpercapall          &                &                &
 
 \begin_layout Plain Layout
 
-assetsno234               &                &                &          
-      &                &                &                & $0.00^{*}$   
-  &                &                
+assetsno234               &               &               &            
+   &               &               &               & $0.00^{*}$    &    
+           &               
 \backslash
 
 \backslash
@@ -3073,9 +3333,9 @@ assetsno234               &                &                &
 
 \begin_layout Plain Layout
 
-                          &                &                &          
-      &                &                &                & $(0.00)$     
-  &                &                
+                          &               &               &            
+   &               &               &               & $(0.00)$      &    
+           &               
 \backslash
 
 \backslash
@@ -3086,9 +3346,9 @@ assetsno234               &                &                &
 
 realast
 \backslash
-_smallno234       &                &                &                & 
-               &                &                &                & $0.00$
-         &                
+_smallno234       &               &               &               &    
+           &               &               &               & $0.00^{*}$ 
+   &               
 \backslash
 
 \backslash
@@ -3097,9 +3357,9 @@ _smallno234       &                &                &                &
 
 \begin_layout Plain Layout
 
-                          &                &                &          
-      &                &                &                &             
-   & $(0.00)$       &                
+                          &               &               &            
+   &               &               &               &               & $(0.00)$
+      &               
 \backslash
 
 \backslash
@@ -3110,9 +3370,9 @@ _smallno234       &                &                &                &
 
 realastpercap
 \backslash
-_smallno234 &                &                &                &       
-         &                &                &                &          
-      & $0.08^{*}$     
+_smallno234 &               &               &               &          
+     &               &               &               &               & $0.07$
+        
 \backslash
 
 \backslash
@@ -3121,9 +3381,9 @@ _smallno234 &                &                &                &
 
 \begin_layout Plain Layout
 
-                          &                &                &          
-      &                &                &                &             
-   &                & $(0.04)$       
+                          &               &               &            
+   &               &               &               &               &   
+            & $(0.04)$      
 \backslash
 
 \backslash
@@ -3139,9 +3399,9 @@ hline
 
 \begin_layout Plain Layout
 
-AIC                       & 88.83          & 88.66          & 88.97       
-   & 87.92          & 88.57          & 86.47          & 85.79          & 86.32
-          & 85.49          
+AIC                       & 81.54         & 81.75         & 82.19         &
+ 74.78         & 75.69         & 78.70         & 78.43         & 78.86      
+   & 79.49         
 \backslash
 
 \backslash
@@ -3150,9 +3410,9 @@ AIC                       & 88.83          & 88.66          & 88.97
 
 \begin_layout Plain Layout
 
-BIC                       & 115.35         & 115.18         & 115.49      
-   & 114.44         & 115.09         & 112.99         & 112.31         & 112.84
-         & 112.01         
+BIC                       & 119.93        & 120.14        & 120.58        &
+ 113.17        & 114.07        & 117.09        & 116.82        & 117.25     
+   & 117.87        
 \backslash
 
 \backslash
@@ -3161,9 +3421,9 @@ BIC                       & 115.35         & 115.18         & 115.49
 
 \begin_layout Plain Layout
 
-Log Likelihood            & -38.42         & -38.33         & -38.49      
-   & -37.96         & -38.28         & -37.24         & -36.89         & -37.16
-         & -36.75         
+Log Likelihood            & -31.77        & -31.88        & -32.10        &
+ -28.39        & -28.84        & -30.35        & -30.21        & -30.43     
+   & -30.74        
 \backslash
 
 \backslash
@@ -3172,9 +3432,9 @@ Log Likelihood            & -38.42         & -38.33         & -38.49
 
 \begin_layout Plain Layout
 
-Deviance                  & 76.83          & 76.66          & 76.97       
-   & 75.92          & 76.57          & 74.47          & 73.79          & 74.32
-          & 73.49          
+Deviance                  & 63.54         & 63.75         & 64.19         &
+ 56.78         & 57.69         & 60.70         & 60.43         & 60.86      
+   & 61.49         
 \backslash
 
 \backslash
@@ -3185,9 +3445,9 @@ Deviance                  & 76.83          & 76.66          & 76.97
 
 Num.
  obs.
-                 & 614            & 614            & 614            & 614
-            & 614            & 614            & 614            & 614   
-         & 614            
+                 & 526           & 526           & 526           & 526 
+          & 526           & 526           & 526           & 526        
+   & 526           
 \backslash
 
 \backslash
@@ -3208,6 +3468,1511 @@ hline
 multicolumn{10}{l}{
 \backslash
 scriptsize{$^{***}p<0.001$, $^{**}p<0.01$, $^*p<0.05$}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{table:coefficients}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{table}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{table}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{An Examination of Real Assets Per Capita on Transgender Anti-discriminat
+ion}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{l c c c c c c c }
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+ & Model 1 & Model 2 & Model 3 & Model 4 & Model 5 & Model 6 & Model 7 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+(Intercept)       & $-8.01^{***}$ & $-9.45^{***}$ & $-15.95^{***}$ & $-16.55^{***}$
+   & $-17.18^{***}$   & $-18.78^{***}$ & $-38.93^{*}$     
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                  & $(1.12)$      & $(1.56)$      & $(3.91)$       & $(4.26)$
+         & $(4.39)$         & $(5.51)$       & $(16.17)$        
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+citi6013          & $0.07^{***}$  & $0.02$        & $-0.02$        & $-0.02$
+          & $-0.03$          & $-0.05$        & $-0.05$          
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                  & $(0.02)$      & $(0.02)$      & $(0.03)$       & $(0.03)$
+         & $(0.03)$         & $(0.04)$       & $(0.04)$         
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+realastpercapall  & $0.03$        & $0.04$        & $0.02$         & $0.02$
+           & $0.03$           & $0.12^{*}$     & $0.13^{**}$      
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                  & $(0.03)$      & $(0.03)$      & $(0.03)$       & $(0.04)$
+         & $(0.04)$         & $(0.05)$       & $(0.05)$         
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+inst6013
+\backslash
+_adacope &               & $0.07^{***}$  & $0.07^{***}$   & $0.07^{***}$  
+   & $0.07^{***}$     & $0.10^{***}$   & $0.11^{***}$     
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                  &               & $(0.02)$      & $(0.02)$       & $(0.02)$
+         & $(0.02)$         & $(0.03)$       & $(0.03)$         
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+MeanOppLP         &               &               & $0.15^{*}$     & $0.17^{
+\backslash
+bullet}$ & $0.17^{
+\backslash
+bullet}$ & $0.18$         & $0.51^{
+\backslash
+bullet}$ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                  &               &               & $(0.07)$       & $(0.09)$
+         & $(0.09)$         & $(0.11)$       & $(0.26)$         
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ssph              &               &               &                & $-0.52$
+          & $-1.97$          & $-2.58$        & $-5.66$          
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                  &               &               &                & $(2.94)$
+         & $(3.37)$         & $(3.94)$       & $(4.72)$         
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Williams          &               &               &                &   
+               & $52.99$          & $42.14$        & $60.86$          
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                  &               &               &                &   
+               & $(57.12)$        & $(68.80)$      & $(73.24)$        
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+squire            &               &               &                &   
+               &                  & $-3.52$        & $-4.91$          
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                  &               &               &                &   
+               &                  & $(2.94)$       & $(3.24)$         
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+evangelical       &               &               &                &   
+               &                  &                & $18.22$          
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                  &               &               &                &   
+               &                  &                & $(13.00)$        
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+AIC               & 143.56        & 129.37        & 126.92         & 121.74
+           & 122.89           & 93.73          & 93.60            
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+BIC               & 157.75        & 148.29        & 150.57         & 149.61
+           & 155.41           & 129.61         & 133.96           
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Log Likelihood    & -68.78        & -60.68        & -58.46         & -54.87
+           & -54.45           & -38.87         & -37.80           
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Deviance          & 137.56        & 121.37        & 116.92         & 109.74
+           & 108.89           & 77.73          & 75.60            
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Num.
+ obs.
+         & 837           & 837           & 837            & 769        
+      & 769              & 655            & 655              
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{8}{l}{
+\backslash
+scriptsize{$^{***}p<0.001$, $^{**}p<0.01$, $^*p<0.05$, $^{
+\backslash
+bullet}p<0.1$}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{table:coefficients}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{table}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{table}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{An Examination of Real Assets Per Capita on Gay Anti-discrimination}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{l c c c c c c c }
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+ & Model 1 & Model 2 & Model 3 & Model 4 & Model 5 & Model 6 & Model 7 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+(Intercept)       & $-10.85^{***}$ & $-10.95^{***}$ & $-31.34^{***}$ & $-36.13^{***}
+$   & $-36.67^{***}$   & $-46.41^{***}$   & $-85.83^{**}$ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                  & $(1.74)$       & $(1.84)$       & $(8.03)$       & $(9.48)$
+         & $(9.77)$         & $(12.62)$        & $(27.27)$     
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+citi6013          & $0.13^{***}$   & $0.08^{*}$     & $0.00$         & $-0.01$
+          & $-0.02$          & $-0.03$          & $0.01$        
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                  & $(0.03)$       & $(0.03)$       & $(0.04)$       & $(0.05)$
+         & $(0.05)$         & $(0.06)$         & $(0.06)$      
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+realastpercapall  & $0.07^{*}$     & $0.09^{**}$    & $0.06$         & $0.08^{
+\backslash
+bullet}$ & $0.09^{
+\backslash
+bullet}$ & $0.09^{
+\backslash
+bullet}$ & $0.08^{*}$    
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                  & $(0.03)$       & $(0.03)$       & $(0.04)$       & $(0.04)$
+         & $(0.05)$         & $(0.05)$         & $(0.04)$      
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+inst6013
+\backslash
+_adacope &                & $0.04^{*}$     & $0.07^{**}$    & $0.07^{**}$ 
+     & $0.08^{**}$      & $0.07^{*}$       & $0.07^{*}$    
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                  &                & $(0.02)$       & $(0.02)$       & $(0.03)$
+         & $(0.03)$         & $(0.03)$         & $(0.03)$      
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+MeanOppLP         &                &                & $0.40^{**}$    & $0.55^{**}$
+      & $0.55^{**}$      & $0.82^{**}$      & $1.47^{**}$   
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                  &                &                & $(0.13)$       & $(0.19)$
+         & $(0.19)$         & $(0.25)$         & $(0.48)$      
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ssph              &                &                &                & $-6.31$
+          & $-7.16$          & $-12.66^{*}$     & $-20.28^{*}$  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                  &                &                &                & $(4.77)$
+         & $(5.29)$         & $(5.98)$         & $(8.18)$      
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Williams          &                &                &                & 
+                 & $24.64$          & $9.90$           & $7.31$        
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                  &                &                &                & 
+                 & $(62.75)$        & $(75.61)$        & $(70.88)$     
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+squire            &                &                &                & 
+                 &                  & $-6.04$          & $-10.20^{*}$  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                  &                &                &                & 
+                 &                  & $(3.81)$         & $(4.81)$      
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+evangelical       &                &                &                & 
+                 &                  &                  & $38.85^{*}$   
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                  &                &                &                & 
+                 &                  &                  & $(18.91)$     
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+AIC               & 104.79         & 99.68          & 86.26          & 86.47
+            & 88.32            & 82.02            & 78.70         
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+BIC               & 118.32         & 117.72         & 108.81         & 112.99
+           & 119.26           & 116.14           & 117.09        
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Log Likelihood    & -49.39         & -45.84         & -38.13         & -37.24
+           & -37.16           & -33.01           & -30.35        
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Deviance          & 98.79          & 91.68          & 76.26          & 74.47
+            & 74.32            & 66.02            & 60.70         
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Num.
+ obs.
+         & 672            & 672            & 672            & 614      
+        & 614              & 526              & 526           
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{8}{l}{
+\backslash
+scriptsize{$^{***}p<0.001$, $^{**}p<0.01$, $^*p<0.05$, $^{
+\backslash
+bullet}p<0.1$}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{table:coefficients}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{table}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{table}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{A further examination of real assets per capita on Transgender Anti-disc
+rimination, sans certain groups}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{l c c c c c c c }
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+ & Model 1 & Model 2 & Model 3 & Model 4 & Model 5 & Model 6 & Model 7 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+(Intercept)               & $-8.20^{***}$ & $-10.15^{***}$ & $-15.87^{***}$
+   & $-16.89^{***}$   & $-17.99^{***}$   & $-20.48^{***}$   & $-43.62^{*}$ 
+    
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          & $(1.15)$      & $(1.73)$       & $(3.80)$     
+    & $(4.21)$         & $(4.44)$         & $(5.91)$         & $(18.15)$   
+     
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+citi6013                  & $0.07^{***}$  & $0.02$         & $-0.02$      
+    & $-0.02$          & $-0.04$          & $-0.04$          & $-0.05$     
+     
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          & $(0.02)$      & $(0.02)$       & $(0.03)$     
+    & $(0.03)$         & $(0.03)$         & $(0.04)$         & $(0.04)$    
+     
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+realastpercap
+\backslash
+_smallno234 & $0.06^{*}$    & $0.11^{**}$    & $0.09^{*}$       & $0.09^{*}$
+       & $0.11^{*}$       & $0.15^{**}$      & $0.16^{**}$      
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          & $(0.03)$      & $(0.04)$       & $(0.04)$     
+    & $(0.04)$         & $(0.04)$         & $(0.05)$         & $(0.05)$    
+     
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+inst6013
+\backslash
+_adacope         &               & $0.08^{***}$   & $0.07^{***}$     & $0.07^{***}$
+     & $0.08^{***}$     & $0.11^{***}$     & $0.12^{***}$     
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          &               & $(0.02)$       & $(0.02)$    
+     & $(0.02)$         & $(0.02)$         & $(0.03)$         & $(0.04)$   
+      
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+MeanOppLP                 &               &                & $0.13^{
+\backslash
+bullet}$ & $0.16^{
+\backslash
+bullet}$ & $0.17^{
+\backslash
+bullet}$ & $0.20^{
+\backslash
+bullet}$ & $0.57^{
+\backslash
+bullet}$ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          &               &                & $(0.07)$   
+      & $(0.09)$         & $(0.09)$         & $(0.12)$         & $(0.29)$  
+       
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ssph                      &               &                &           
+       & $-0.75$          & $-2.55$          & $-2.83$          & $-6.81$  
+        
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          &               &                &           
+       & $(3.00)$         & $(3.42)$         & $(3.90)$         & $(5.04)$ 
+        
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Williams                  &               &                &           
+       &                  & $64.79$          & $34.28$          & $63.54$ 
+         
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          &               &                &           
+       &                  & $(56.40)$        & $(66.28)$        & $(73.72)$
+        
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+squire                    &               &                &           
+       &                  &                  & $-1.88$          & $-3.09$
+          
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          &               &                &           
+       &                  &                  & $(2.71)$         & $(2.95)$
+         
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+evangelical               &               &                &           
+       &                  &                  &                  & $20.71$
+          
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          &               &                &           
+       &                  &                  &                  & $(14.38)$
+        
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+AIC                       & 142.05        & 125.56         & 123.73       
+    & 118.67           & 119.37           & 91.64            & 91.41       
+     
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+BIC                       & 156.24        & 144.48         & 147.38       
+    & 146.54           & 151.89           & 127.51           & 131.77      
+     
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Log Likelihood            & -68.02        & -58.78         & -56.86       
+    & -53.34           & -52.69           & -37.82           & -36.71      
+     
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Deviance                  & 136.05        & 117.56         & 113.73       
+    & 106.67           & 105.37           & 75.64            & 73.41       
+     
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Num.
+ obs.
+                 & 837           & 837            & 837              & 769
+              & 769              & 655              & 655              
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{8}{l}{
+\backslash
+scriptsize{$^{***}p<0.001$, $^{**}p<0.01$, $^*p<0.05$, $^{
+\backslash
+bullet}p<0.1$}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{table:coefficients}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{table}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{table}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{A further examination of real assets per capita on Gay Anti-discriminati
+on, sans certain groups}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{l c c c c c c c }
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+ & Model 1 & Model 2 & Model 3 & Model 4 & Model 5 & Model 6 & Model 7 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+(Intercept)               & $-10.82^{***}$ & $-10.76^{***}$ & $-33.10^{***}$
+ & $-38.13^{***}$ & $-38.38^{***}$ & $-45.67^{***}$   & $-84.53^{**}$     
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          & $(1.73)$       & $(1.77)$       & $(8.50)$    
+   & $(9.99)$       & $(10.15)$      & $(12.23)$        & $(27.55)$        
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+citi6013                  & $0.13^{***}$   & $0.08^{*}$     & $0.00$      
+   & $-0.01$        & $-0.01$        & $-0.02$          & $0.01$           
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          & $(0.03)$       & $(0.03)$       & $(0.04)$    
+   & $(0.05)$       & $(0.05)$       & $(0.05)$         & $(0.06)$         
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+realastpercap
+\backslash
+_smallno234 & $0.06^{*}$     & $0.09^{**}$    & $0.07^{*}$     & $0.08^{*}$
+     & $0.09^{*}$     & $0.08^{
+\backslash
+bullet}$ & $0.07^{
+\backslash
+bullet}$  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          & $(0.03)$       & $(0.03)$       & $(0.04)$    
+   & $(0.04)$       & $(0.04)$       & $(0.04)$         & $(0.04)$         
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+inst6013
+\backslash
+_adacope         &                & $0.04^{*}$     & $0.07^{**}$    & $0.07^{**}$
+    & $0.07^{**}$    & $0.06^{*}$       & $0.06^{*}$        
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          &                & $(0.02)$       & $(0.02)$   
+    & $(0.02)$       & $(0.02)$       & $(0.03)$         & $(0.03)$        
+  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+MeanOppLP                 &                &                & $0.43^{**}$
+    & $0.58^{**}$    & $0.58^{**}$    & $0.80^{**}$      & $1.44^{**}$     
+  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          &                &                & $(0.14)$  
+     & $(0.20)$       & $(0.20)$       & $(0.25)$         & $(0.49)$       
+   
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ssph                      &                &                &          
+      & $-6.21$        & $-6.61$        & $-11.09^{*}$     & $-19.14^{*}$  
+    
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          &                &                &          
+      & $(4.81)$       & $(5.22)$       & $(5.66)$         & $(8.20)$      
+    
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Williams                  &                &                &          
+      &                & $11.95$        & $-2.23$          & $-0.65$      
+     
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          &                &                &          
+      &                & $(59.01)$      & $(72.23)$        & $(69.28)$    
+     
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+squire                    &                &                &          
+      &                &                & $-5.07$          & $-8.98^{
+\backslash
+bullet}$ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          &                &                &          
+      &                &                & $(3.82)$         & $(4.70)$    
+      
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+evangelical               &                &                &          
+      &                &                &                  & $37.77^{*}$
+       
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          &                &                &          
+      &                &                &                  & $(19.10)$  
+       
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+AIC                       & 105.55         & 100.94         & 85.20       
+   & 85.49          & 87.45          & 82.32            & 79.49            
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+BIC                       & 119.08         & 118.98         & 107.75      
+   & 112.01         & 118.39         & 116.44           & 117.87           
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Log Likelihood            & -49.77         & -46.47         & -37.60      
+   & -36.75         & -36.72         & -33.16           & -30.74           
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Deviance                  & 99.55          & 92.94          & 75.20       
+   & 73.49          & 73.45          & 66.32            & 61.49            
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Num.
+ obs.
+                 & 672            & 672            & 672            & 614
+            & 614            & 526              & 526               
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{8}{l}{
+\backslash
+scriptsize{$^{***}p<0.001$, $^{**}p<0.01$, $^*p<0.05$, $^{
+\backslash
+bullet}p<0.1$}}
 \end_layout
 
 \begin_layout Plain Layout
