@@ -130,6 +130,17 @@ colnames(stateopp) <- paste0(colnames(stateopp), "LP")
 
 taylorlgbt2 <- merge(taylorlgbt2, stateopp, by.x = "statename", by.y = "StateLP", all.x = TRUE)
 
+## ## Extrapolate Dr. Fording's data to the years 2014-2015
+colstoex <- grep("601", colnames(taylorlgbt2), value = T)
+datsub <- taylorlgbt2[, c("statename", colstoex)]
+## Split the subset by state name and rejoin after extrapolating to
+## 2015 using the na.locf command from the zoo package.
+datsplit <- split(datsub, datsub$statename)
+datsplit <- lapply(datsplit, zoo::na.locf)
+datsplit <- rbind.fill(datsplit)
+## And return the newly full columns to taylorlgbt2
+taylorlgbt2[, colnames(datsub)[2:4]] <- datsplit[,2:4]
+
 ## Get rid of the match codes, abbreviations and bmfyear, as they've done their part
 taylorlgbt2 <- taylorlgbt2[, -grep("matchcode", colnames(taylorlgbt2))]
 taylorlgbt2 <- taylorlgbt2[, -grep("newyear", colnames(taylorlgbt2))]

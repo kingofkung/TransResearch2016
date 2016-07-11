@@ -4,7 +4,7 @@
 \begin{center}
 \begin{tabular}{l c c c c c c c c c c c c c c }
 \hline
- & Model 1 & Model 2 & Model 3 & Model 4 & Income As Percentage & Model 6 & Model 7 & Model 8 & Model 9 & Model 10 & Model 11 & Model 12 & Model 13 & Model 14 \\
+ & Model 1 & Model 2 & Model 3 & Model 4 & Model 5 & Model 6 & Model 7 & Model 8 & Model 9 & Model 10 & Model 11 & Model 12 & Model 13 & Model 14 \\
 \hline
 MeanOppLP                                                 & $0.37^{***}$  &              &              &              &              &              &              &               &               &               &               &               &               &               \\
                                                           & $(0.06)$      &              &              &              &              &              &              &               &               &               &               &               &               &               \\

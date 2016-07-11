@@ -118,9 +118,9 @@ hline
 
 \begin_layout Plain Layout
 
- & Model 1 & Model 2 & Model 3 & Model 4 & Income As Percentage & Model
- 6 & Model 7 & Model 8 & Model 9 & Model 10 & Model 11 & Model 12 & Model
- 13 & Model 14 
+ & Model 1 & Model 2 & Model 3 & Model 4 & Model 5 & Model 6 & Model 7 &
+ Model 8 & Model 9 & Model 10 & Model 11 & Model 12 & Model 13 & Model 14
+ 
 \backslash
 
 \backslash
@@ -476,10 +476,10 @@ CivUnionsLP                                               &
 
 \begin_layout Plain Layout
 
-High Priority To Achieve Basic Equality|Building Equality & $21.44^{***}$
- & $3.12^{***}$ & $3.17^{***}$ & $4.99^{***}$ & $0.45^{*}$   & $0.78^{**}$  &
- $0.64^{*}$   & $30.04^{***}$ & $16.66^{***}$ & $36.71^{***}$ & $22.84^{***}$
- & $10.75^{***}$ & $14.45^{***}$ & $12.85^{***}$ 
+Cutpoint 1: High Priority To Achieve Basic Equality|Building Equality &
+ $21.44^{***}$ & $3.12^{***}$ & $3.17^{***}$ & $4.99^{***}$ & $0.45^{*}$   &
+ $0.78^{**}$  & $0.64^{*}$   & $30.04^{***}$ & $16.66^{***}$ & $36.71^{***}$
+ & $22.84^{***}$ & $10.75^{***}$ & $14.45^{***}$ & $12.85^{***}$ 
 \backslash
 
 \backslash
@@ -500,10 +500,10 @@ High Priority To Achieve Basic Equality|Building Equality & $21.44^{***}$
 
 \begin_layout Plain Layout
 
-Building Equality|Solidifying Equality                    & $23.07^{***}$
- & $4.65^{***}$ & $4.66^{***}$ & $6.18^{***}$ & $1.29^{***}$ & $1.66^{***}$ &
- $1.45^{***}$ & $31.69^{***}$ & $17.87^{***}$ & $38.06^{***}$ & $24.10^{***}$
- & $12.28^{***}$ & $15.97^{***}$ & $14.39^{***}$ 
+Cutpoint 2: Building Equality|Solidifying Equality                    &
+ $23.07^{***}$ & $4.65^{***}$ & $4.66^{***}$ & $6.18^{***}$ & $1.29^{***}$ &
+ $1.66^{***}$ & $1.45^{***}$ & $31.69^{***}$ & $17.87^{***}$ & $38.06^{***}$
+ & $24.10^{***}$ & $12.28^{***}$ & $15.97^{***}$ & $14.39^{***}$ 
 \backslash
 
 \backslash
@@ -524,10 +524,10 @@ Building Equality|Solidifying Equality                    & $23.07^{***}$
 
 \begin_layout Plain Layout
 
-Solidifying Equality|Working Toward Innovative Equality   & $24.36^{***}$
- & $5.90^{***}$ & $5.90^{***}$ & $7.30^{***}$ & $2.26^{***}$ & $2.65^{***}$ &
- $2.38^{***}$ & $32.93^{***}$ & $18.93^{***}$ & $39.18^{***}$ & $25.21^{***}$
- & $13.54^{***}$ & $17.27^{***}$ & $15.64^{***}$ 
+Cutpoint 3: Solidifying Equality|Working Toward Innovative Equality   &
+ $24.36^{***}$ & $5.90^{***}$ & $5.90^{***}$ & $7.30^{***}$ & $2.26^{***}$ &
+ $2.65^{***}$ & $2.38^{***}$ & $32.93^{***}$ & $18.93^{***}$ & $39.18^{***}$
+ & $25.21^{***}$ & $13.54^{***}$ & $17.27^{***}$ & $15.64^{***}$ 
 \backslash
 
 \backslash
@@ -1912,6 +1912,28 @@ ssph                      & $-0.30$        & $-0.25$        & $-0.31$
 
 \begin_layout Plain Layout
 
+incomeno234               & $-0.00$        &                &           
+     &                &                &                &              
+  &                &                
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          & $(0.00)$       &                &           
+     &                &                &                &              
+  &                &                
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
 realinc
 \backslash
 _smallno234       &                & $-0.00$        &                &  
@@ -1926,28 +1948,6 @@ _smallno234       &                & $-0.00$        &                &
 \begin_layout Plain Layout
 
                           &                & $(0.00)$       &           
-     &                &                &                &              
-  &                &                
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-incomeno234               & $-0.00$        &                &           
-     &                &                &                &              
-  &                &                
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-                          & $(0.00)$       &                &           
      &                &                &                &              
   &                &                
 \backslash
