@@ -5,6 +5,9 @@
 \save_transient_properties true
 \origin unavailable
 \textclass article
+\begin_preamble
+ \usepackage{relsize}
+\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
 \language english
@@ -3530,7 +3533,7 @@ begin{table}
 
 
 \backslash
-caption{An examination of real assets per capita on Transgender Anti-discriminat
+caption{An Examination of Real Assets Per Capita on Transgender Anti-discriminat
 ion}
 \end_layout
 
@@ -3574,7 +3577,7 @@ hline
 \begin_layout Plain Layout
 
 (Intercept)       & $-8.01^{***}$ & $-9.45^{***}$ & $-15.95^{***}$ & $-16.55^{***}$
- & $-17.18^{***}$ & $-18.78^{***}$ & $-38.93^{*}$ 
+   & $-17.18^{***}$   & $-18.78^{***}$ & $-38.93^{*}$     
 \backslash
 
 \backslash
@@ -3584,7 +3587,7 @@ hline
 \begin_layout Plain Layout
 
                   & $(1.12)$      & $(1.56)$      & $(3.91)$       & $(4.26)$
-       & $(4.39)$       & $(5.51)$       & $(16.17)$    
+         & $(4.39)$         & $(5.51)$       & $(16.17)$        
 \backslash
 
 \backslash
@@ -3594,7 +3597,7 @@ hline
 \begin_layout Plain Layout
 
 citi6013          & $0.07^{***}$  & $0.02$        & $-0.02$        & $-0.02$
-        & $-0.03$        & $-0.05$        & $-0.05$      
+          & $-0.03$          & $-0.05$        & $-0.05$          
 \backslash
 
 \backslash
@@ -3604,7 +3607,7 @@ citi6013          & $0.07^{***}$  & $0.02$        & $-0.02$        & $-0.02$
 \begin_layout Plain Layout
 
                   & $(0.02)$      & $(0.02)$      & $(0.03)$       & $(0.03)$
-       & $(0.03)$       & $(0.04)$       & $(0.04)$     
+         & $(0.03)$         & $(0.04)$       & $(0.04)$         
 \backslash
 
 \backslash
@@ -3614,7 +3617,7 @@ citi6013          & $0.07^{***}$  & $0.02$        & $-0.02$        & $-0.02$
 \begin_layout Plain Layout
 
 realastpercapall  & $0.03$        & $0.04$        & $0.02$         & $0.02$
-         & $0.03$         & $0.12^{*}$     & $0.13^{**}$  
+           & $0.03$           & $0.12^{*}$     & $0.13^{**}$      
 \backslash
 
 \backslash
@@ -3624,7 +3627,7 @@ realastpercapall  & $0.03$        & $0.04$        & $0.02$         & $0.02$
 \begin_layout Plain Layout
 
                   & $(0.03)$      & $(0.03)$      & $(0.03)$       & $(0.04)$
-       & $(0.04)$       & $(0.05)$       & $(0.05)$     
+         & $(0.04)$         & $(0.05)$       & $(0.05)$         
 \backslash
 
 \backslash
@@ -3636,7 +3639,7 @@ realastpercapall  & $0.03$        & $0.04$        & $0.02$         & $0.02$
 inst6013
 \backslash
 _adacope &               & $0.07^{***}$  & $0.07^{***}$   & $0.07^{***}$  
- & $0.07^{***}$   & $0.10^{***}$   & $0.11^{***}$ 
+   & $0.07^{***}$     & $0.10^{***}$   & $0.11^{***}$     
 \backslash
 
 \backslash
@@ -3646,7 +3649,7 @@ _adacope &               & $0.07^{***}$  & $0.07^{***}$   & $0.07^{***}$
 \begin_layout Plain Layout
 
                   &               & $(0.02)$      & $(0.02)$       & $(0.02)$
-       & $(0.02)$       & $(0.03)$       & $(0.03)$     
+         & $(0.02)$         & $(0.03)$       & $(0.03)$         
 \backslash
 
 \backslash
@@ -3655,8 +3658,13 @@ _adacope &               & $0.07^{***}$  & $0.07^{***}$   & $0.07^{***}$
 
 \begin_layout Plain Layout
 
-MeanOppLP         &               &               & $0.15^{*}$     & $0.17$
-         & $0.17$         & $0.18$         & $0.51$       
+MeanOppLP         &               &               & $0.15^{*}$     & $0.17^{
+\backslash
+dagger}$ & $0.17^{
+\backslash
+dagger}$ & $0.18$         & $0.51^{
+\backslash
+dagger}$ 
 \backslash
 
 \backslash
@@ -3666,7 +3674,7 @@ MeanOppLP         &               &               & $0.15^{*}$     & $0.17$
 \begin_layout Plain Layout
 
                   &               &               & $(0.07)$       & $(0.09)$
-       & $(0.09)$       & $(0.11)$       & $(0.26)$     
+         & $(0.09)$         & $(0.11)$       & $(0.26)$         
 \backslash
 
 \backslash
@@ -3676,7 +3684,7 @@ MeanOppLP         &               &               & $0.15^{*}$     & $0.17$
 \begin_layout Plain Layout
 
 ssph              &               &               &                & $-0.52$
-        & $-1.97$        & $-2.58$        & $-5.66$      
+          & $-1.97$          & $-2.58$        & $-5.66$          
 \backslash
 
 \backslash
@@ -3686,7 +3694,7 @@ ssph              &               &               &                & $-0.52$
 \begin_layout Plain Layout
 
                   &               &               &                & $(2.94)$
-       & $(3.37)$       & $(3.94)$       & $(4.72)$     
+         & $(3.37)$         & $(3.94)$       & $(4.72)$         
 \backslash
 
 \backslash
@@ -3696,7 +3704,7 @@ ssph              &               &               &                & $-0.52$
 \begin_layout Plain Layout
 
 Williams          &               &               &                &   
-             & $52.99$        & $42.14$        & $60.86$      
+               & $52.99$          & $42.14$        & $60.86$          
 \backslash
 
 \backslash
@@ -3706,7 +3714,7 @@ Williams          &               &               &                &
 \begin_layout Plain Layout
 
                   &               &               &                &   
-             & $(57.12)$      & $(68.80)$      & $(73.24)$    
+               & $(57.12)$        & $(68.80)$      & $(73.24)$        
 \backslash
 
 \backslash
@@ -3716,7 +3724,7 @@ Williams          &               &               &                &
 \begin_layout Plain Layout
 
 squire            &               &               &                &   
-             &                & $-3.52$        & $-4.91$      
+               &                  & $-3.52$        & $-4.91$          
 \backslash
 
 \backslash
@@ -3726,7 +3734,7 @@ squire            &               &               &                &
 \begin_layout Plain Layout
 
                   &               &               &                &   
-             &                & $(2.94)$       & $(3.24)$     
+               &                  & $(2.94)$       & $(3.24)$         
 \backslash
 
 \backslash
@@ -3736,7 +3744,7 @@ squire            &               &               &                &
 \begin_layout Plain Layout
 
 evangelical       &               &               &                &   
-             &                &                & $18.22$      
+               &                  &                & $18.22$          
 \backslash
 
 \backslash
@@ -3746,7 +3754,7 @@ evangelical       &               &               &                &
 \begin_layout Plain Layout
 
                   &               &               &                &   
-             &                &                & $(13.00)$    
+               &                  &                & $(13.00)$        
 \backslash
 
 \backslash
@@ -3763,7 +3771,7 @@ hline
 \begin_layout Plain Layout
 
 AIC               & 143.56        & 129.37        & 126.92         & 121.74
-         & 122.89         & 93.73          & 93.60        
+           & 122.89           & 93.73          & 93.60            
 \backslash
 
 \backslash
@@ -3773,7 +3781,7 @@ AIC               & 143.56        & 129.37        & 126.92         & 121.74
 \begin_layout Plain Layout
 
 BIC               & 157.75        & 148.29        & 150.57         & 149.61
-         & 155.41         & 129.61         & 133.96       
+           & 155.41           & 129.61         & 133.96           
 \backslash
 
 \backslash
@@ -3783,7 +3791,7 @@ BIC               & 157.75        & 148.29        & 150.57         & 149.61
 \begin_layout Plain Layout
 
 Log Likelihood    & -68.78        & -60.68        & -58.46         & -54.87
-         & -54.45         & -38.87         & -37.80       
+           & -54.45           & -38.87         & -37.80           
 \backslash
 
 \backslash
@@ -3793,7 +3801,7 @@ Log Likelihood    & -68.78        & -60.68        & -58.46         & -54.87
 \begin_layout Plain Layout
 
 Deviance          & 137.56        & 121.37        & 116.92         & 109.74
-         & 108.89         & 77.73          & 75.60        
+           & 108.89           & 77.73          & 75.60            
 \backslash
 
 \backslash
@@ -3805,7 +3813,7 @@ Deviance          & 137.56        & 121.37        & 116.92         & 109.74
 Num.
  obs.
          & 837           & 837           & 837            & 769        
-    & 769            & 655            & 655          
+      & 769              & 655            & 655              
 \backslash
 
 \backslash
@@ -3825,7 +3833,9 @@ hline
 \backslash
 multicolumn{8}{l}{
 \backslash
-scriptsize{$^{***}p<0.001$, $^{**}p<0.01$, $^*p<0.05$}}
+scriptsize{$^{***}p<0.001$, $^{**}p<0.01$, $^*p<0.05$, $^{
+\backslash
+dagger}p<0.1$}}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3888,7 +3898,7 @@ begin{table}
 
 
 \backslash
-caption{An examination of real assets per capita on Gay Anti-discrimination}
+caption{An Examination of Real Assets Per Capita on Gay Anti-discrimination}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3931,7 +3941,7 @@ hline
 \begin_layout Plain Layout
 
 (Intercept)       & $-10.85^{***}$ & $-10.95^{***}$ & $-31.34^{***}$ & $-36.13^{***}
-$ & $-36.67^{***}$ & $-46.41^{***}$ & $-85.83^{**}$ 
+$   & $-36.67^{***}$   & $-46.41^{***}$   & $-85.83^{**}$ 
 \backslash
 
 \backslash
@@ -3941,7 +3951,7 @@ $ & $-36.67^{***}$ & $-46.41^{***}$ & $-85.83^{**}$
 \begin_layout Plain Layout
 
                   & $(1.74)$       & $(1.84)$       & $(8.03)$       & $(9.48)$
-       & $(9.77)$       & $(12.62)$      & $(27.27)$     
+         & $(9.77)$         & $(12.62)$        & $(27.27)$     
 \backslash
 
 \backslash
@@ -3951,7 +3961,7 @@ $ & $-36.67^{***}$ & $-46.41^{***}$ & $-85.83^{**}$
 \begin_layout Plain Layout
 
 citi6013          & $0.13^{***}$   & $0.08^{*}$     & $0.00$         & $-0.01$
-        & $-0.02$        & $-0.03$        & $0.01$        
+          & $-0.02$          & $-0.03$          & $0.01$        
 \backslash
 
 \backslash
@@ -3961,7 +3971,7 @@ citi6013          & $0.13^{***}$   & $0.08^{*}$     & $0.00$         & $-0.01$
 \begin_layout Plain Layout
 
                   & $(0.03)$       & $(0.03)$       & $(0.04)$       & $(0.05)$
-       & $(0.05)$       & $(0.06)$       & $(0.06)$      
+         & $(0.05)$         & $(0.06)$         & $(0.06)$      
 \backslash
 
 \backslash
@@ -3970,8 +3980,13 @@ citi6013          & $0.13^{***}$   & $0.08^{*}$     & $0.00$         & $-0.01$
 
 \begin_layout Plain Layout
 
-realastpercapall  & $0.07^{*}$     & $0.09^{**}$    & $0.06$         & $0.08$
-         & $0.09$         & $0.09$         & $0.08^{*}$    
+realastpercapall  & $0.07^{*}$     & $0.09^{**}$    & $0.06$         & $0.08^{
+\backslash
+dagger}$ & $0.09^{
+\backslash
+dagger}$ & $0.09^{
+\backslash
+dagger}$ & $0.08^{*}$    
 \backslash
 
 \backslash
@@ -3981,7 +3996,7 @@ realastpercapall  & $0.07^{*}$     & $0.09^{**}$    & $0.06$         & $0.08$
 \begin_layout Plain Layout
 
                   & $(0.03)$       & $(0.03)$       & $(0.04)$       & $(0.04)$
-       & $(0.05)$       & $(0.05)$       & $(0.04)$      
+         & $(0.05)$         & $(0.05)$         & $(0.04)$      
 \backslash
 
 \backslash
@@ -3993,7 +4008,7 @@ realastpercapall  & $0.07^{*}$     & $0.09^{**}$    & $0.06$         & $0.08$
 inst6013
 \backslash
 _adacope &                & $0.04^{*}$     & $0.07^{**}$    & $0.07^{**}$ 
-   & $0.08^{**}$    & $0.07^{*}$     & $0.07^{*}$    
+     & $0.08^{**}$      & $0.07^{*}$       & $0.07^{*}$    
 \backslash
 
 \backslash
@@ -4003,7 +4018,7 @@ _adacope &                & $0.04^{*}$     & $0.07^{**}$    & $0.07^{**}$
 \begin_layout Plain Layout
 
                   &                & $(0.02)$       & $(0.02)$       & $(0.03)$
-       & $(0.03)$       & $(0.03)$       & $(0.03)$      
+         & $(0.03)$         & $(0.03)$         & $(0.03)$      
 \backslash
 
 \backslash
@@ -4013,7 +4028,7 @@ _adacope &                & $0.04^{*}$     & $0.07^{**}$    & $0.07^{**}$
 \begin_layout Plain Layout
 
 MeanOppLP         &                &                & $0.40^{**}$    & $0.55^{**}$
-    & $0.55^{**}$    & $0.82^{**}$    & $1.47^{**}$   
+      & $0.55^{**}$      & $0.82^{**}$      & $1.47^{**}$   
 \backslash
 
 \backslash
@@ -4023,7 +4038,7 @@ MeanOppLP         &                &                & $0.40^{**}$    & $0.55^{**
 \begin_layout Plain Layout
 
                   &                &                & $(0.13)$       & $(0.19)$
-       & $(0.19)$       & $(0.25)$       & $(0.48)$      
+         & $(0.19)$         & $(0.25)$         & $(0.48)$      
 \backslash
 
 \backslash
@@ -4033,7 +4048,7 @@ MeanOppLP         &                &                & $0.40^{**}$    & $0.55^{**
 \begin_layout Plain Layout
 
 ssph              &                &                &                & $-6.31$
-        & $-7.16$        & $-12.66^{*}$   & $-20.28^{*}$  
+          & $-7.16$          & $-12.66^{*}$     & $-20.28^{*}$  
 \backslash
 
 \backslash
@@ -4043,7 +4058,7 @@ ssph              &                &                &                & $-6.31$
 \begin_layout Plain Layout
 
                   &                &                &                & $(4.77)$
-       & $(5.29)$       & $(5.98)$       & $(8.18)$      
+         & $(5.29)$         & $(5.98)$         & $(8.18)$      
 \backslash
 
 \backslash
@@ -4053,7 +4068,7 @@ ssph              &                &                &                & $-6.31$
 \begin_layout Plain Layout
 
 Williams          &                &                &                & 
-               & $24.64$        & $9.90$         & $7.31$        
+                 & $24.64$          & $9.90$           & $7.31$        
 \backslash
 
 \backslash
@@ -4063,7 +4078,7 @@ Williams          &                &                &                &
 \begin_layout Plain Layout
 
                   &                &                &                & 
-               & $(62.75)$      & $(75.61)$      & $(70.88)$     
+                 & $(62.75)$        & $(75.61)$        & $(70.88)$     
 \backslash
 
 \backslash
@@ -4073,7 +4088,7 @@ Williams          &                &                &                &
 \begin_layout Plain Layout
 
 squire            &                &                &                & 
-               &                & $-6.04$        & $-10.20^{*}$  
+                 &                  & $-6.04$          & $-10.20^{*}$  
 \backslash
 
 \backslash
@@ -4083,7 +4098,7 @@ squire            &                &                &                &
 \begin_layout Plain Layout
 
                   &                &                &                & 
-               &                & $(3.81)$       & $(4.81)$      
+                 &                  & $(3.81)$         & $(4.81)$      
 \backslash
 
 \backslash
@@ -4093,7 +4108,7 @@ squire            &                &                &                &
 \begin_layout Plain Layout
 
 evangelical       &                &                &                & 
-               &                &                & $38.85^{*}$   
+                 &                  &                  & $38.85^{*}$   
 \backslash
 
 \backslash
@@ -4103,7 +4118,7 @@ evangelical       &                &                &                &
 \begin_layout Plain Layout
 
                   &                &                &                & 
-               &                &                & $(18.91)$     
+                 &                  &                  & $(18.91)$     
 \backslash
 
 \backslash
@@ -4120,7 +4135,7 @@ hline
 \begin_layout Plain Layout
 
 AIC               & 104.79         & 99.68          & 86.26          & 86.47
-          & 88.32          & 82.02          & 78.70         
+            & 88.32            & 82.02            & 78.70         
 \backslash
 
 \backslash
@@ -4130,7 +4145,7 @@ AIC               & 104.79         & 99.68          & 86.26          & 86.47
 \begin_layout Plain Layout
 
 BIC               & 118.32         & 117.72         & 108.81         & 112.99
-         & 119.26         & 116.14         & 117.09        
+           & 119.26           & 116.14           & 117.09        
 \backslash
 
 \backslash
@@ -4140,7 +4155,7 @@ BIC               & 118.32         & 117.72         & 108.81         & 112.99
 \begin_layout Plain Layout
 
 Log Likelihood    & -49.39         & -45.84         & -38.13         & -37.24
-         & -37.16         & -33.01         & -30.35        
+           & -37.16           & -33.01           & -30.35        
 \backslash
 
 \backslash
@@ -4150,7 +4165,7 @@ Log Likelihood    & -49.39         & -45.84         & -38.13         & -37.24
 \begin_layout Plain Layout
 
 Deviance          & 98.79          & 91.68          & 76.26          & 74.47
-          & 74.32          & 66.02          & 60.70         
+            & 74.32            & 66.02            & 60.70         
 \backslash
 
 \backslash
@@ -4162,7 +4177,7 @@ Deviance          & 98.79          & 91.68          & 76.26          & 74.47
 Num.
  obs.
          & 672            & 672            & 672            & 614      
-      & 614            & 526            & 526           
+        & 614              & 526              & 526           
 \backslash
 
 \backslash
@@ -4182,7 +4197,9 @@ hline
 \backslash
 multicolumn{8}{l}{
 \backslash
-scriptsize{$^{***}p<0.001$, $^{**}p<0.01$, $^*p<0.05$}}
+scriptsize{$^{***}p<0.001$, $^{**}p<0.01$, $^*p<0.05$, $^{
+\backslash
+dagger}p<0.1$}}
 \end_layout
 
 \begin_layout Plain Layout
@@ -4288,8 +4305,9 @@ hline
 
 \begin_layout Plain Layout
 
-(Intercept)               & $-10.82^{***}$ & $-10.76^{***}$ & $-33.10^{***}$
- & $-38.13^{***}$ & $-38.38^{***}$ & $-45.67^{***}$ & $-84.53^{**}$   
+(Intercept)               & $-8.20^{***}$ & $-10.15^{***}$ & $-15.87^{***}$
+   & $-16.89^{***}$   & $-17.99^{***}$   & $-20.48^{***}$   & $-43.62^{*}$ 
+    
 \backslash
 
 \backslash
@@ -4298,8 +4316,9 @@ hline
 
 \begin_layout Plain Layout
 
-                          & $(1.73)$       & $(1.77)$       & $(8.50)$    
-   & $(9.99)$       & $(10.15)$      & $(12.23)$      & $(27.55)$       
+                          & $(1.15)$      & $(1.73)$       & $(3.80)$     
+    & $(4.21)$         & $(4.44)$         & $(5.91)$         & $(18.15)$   
+     
 \backslash
 
 \backslash
@@ -4308,8 +4327,9 @@ hline
 
 \begin_layout Plain Layout
 
-citi6013                  & $0.13^{***}$   & $0.08^{*}$     & $0.00$      
-   & $-0.01$        & $-0.01$        & $-0.02$        & $0.01$          
+citi6013                  & $0.07^{***}$  & $0.02$         & $-0.02$      
+    & $-0.02$          & $-0.04$          & $-0.04$          & $-0.05$     
+     
 \backslash
 
 \backslash
@@ -4318,8 +4338,9 @@ citi6013                  & $0.13^{***}$   & $0.08^{*}$     & $0.00$
 
 \begin_layout Plain Layout
 
-                          & $(0.03)$       & $(0.03)$       & $(0.04)$    
-   & $(0.05)$       & $(0.05)$       & $(0.05)$       & $(0.06)$        
+                          & $(0.02)$      & $(0.02)$       & $(0.03)$     
+    & $(0.03)$         & $(0.03)$         & $(0.04)$         & $(0.04)$    
+     
 \backslash
 
 \backslash
@@ -4330,12 +4351,8 @@ citi6013                  & $0.13^{***}$   & $0.08^{*}$     & $0.00$
 
 realastpercap
 \backslash
-_smallno234 & $0.06^{*}$     & $0.09^{**}$    & $0.07^{*}$     & $0.08^{*}$
-     & $0.09^{*}$     & $0.08^{
-\backslash
-cdot}$ & $0.07^{
-\backslash
-cdot}$  
+_smallno234 & $0.06^{*}$    & $0.11^{**}$    & $0.09^{*}$       & $0.09^{*}$
+       & $0.11^{*}$       & $0.15^{**}$      & $0.16^{**}$      
 \backslash
 
 \backslash
@@ -4344,8 +4361,9 @@ cdot}$
 
 \begin_layout Plain Layout
 
-                          & $(0.03)$       & $(0.03)$       & $(0.04)$    
-   & $(0.04)$       & $(0.04)$       & $(0.04)$       & $(0.04)$        
+                          & $(0.03)$      & $(0.04)$       & $(0.04)$     
+    & $(0.04)$         & $(0.04)$         & $(0.05)$         & $(0.05)$    
+     
 \backslash
 
 \backslash
@@ -4356,8 +4374,8 @@ cdot}$
 
 inst6013
 \backslash
-_adacope         &                & $0.04^{*}$     & $0.07^{**}$    & $0.07^{**}$
-    & $0.07^{**}$    & $0.06^{*}$     & $0.06^{*}$      
+_adacope         &               & $0.08^{***}$   & $0.07^{***}$     & $0.07^{***}$
+     & $0.08^{***}$     & $0.11^{***}$     & $0.12^{***}$     
 \backslash
 
 \backslash
@@ -4366,8 +4384,9 @@ _adacope         &                & $0.04^{*}$     & $0.07^{**}$    & $0.07^{**}
 
 \begin_layout Plain Layout
 
-                          &                & $(0.02)$       & $(0.02)$   
-    & $(0.02)$       & $(0.02)$       & $(0.03)$       & $(0.03)$        
+                          &               & $(0.02)$       & $(0.02)$    
+     & $(0.02)$         & $(0.02)$         & $(0.03)$         & $(0.04)$   
+      
 \backslash
 
 \backslash
@@ -4376,8 +4395,17 @@ _adacope         &                & $0.04^{*}$     & $0.07^{**}$    & $0.07^{**}
 
 \begin_layout Plain Layout
 
-MeanOppLP                 &                &                & $0.43^{**}$
-    & $0.58^{**}$    & $0.58^{**}$    & $0.80^{**}$    & $1.44^{**}$     
+MeanOppLP                 &               &                & $0.13^{
+\backslash
+dagger}$ & $0.16^{
+\backslash
+dagger}$ & $0.17^{
+\backslash
+dagger}$ & $0.20^{
+\backslash
+dagger}$ & $0.57^{
+\backslash
+dagger}$ 
 \backslash
 
 \backslash
@@ -4386,8 +4414,9 @@ MeanOppLP                 &                &                & $0.43^{**}$
 
 \begin_layout Plain Layout
 
-                          &                &                & $(0.14)$  
-     & $(0.20)$       & $(0.20)$       & $(0.25)$       & $(0.49)$        
+                          &               &                & $(0.07)$   
+      & $(0.09)$         & $(0.09)$         & $(0.12)$         & $(0.29)$  
+       
 \backslash
 
 \backslash
@@ -4396,8 +4425,9 @@ MeanOppLP                 &                &                & $0.43^{**}$
 
 \begin_layout Plain Layout
 
-ssph                      &                &                &          
-      & $-6.21$        & $-6.61$        & $-11.09^{*}$   & $-19.14^{*}$    
+ssph                      &               &                &           
+       & $-0.75$          & $-2.55$          & $-2.83$          & $-6.81$  
+        
 \backslash
 
 \backslash
@@ -4406,8 +4436,9 @@ ssph                      &                &                &
 
 \begin_layout Plain Layout
 
-                          &                &                &          
-      & $(4.81)$       & $(5.22)$       & $(5.66)$       & $(8.20)$        
+                          &               &                &           
+       & $(3.00)$         & $(3.42)$         & $(3.90)$         & $(5.04)$ 
+        
 \backslash
 
 \backslash
@@ -4416,9 +4447,9 @@ ssph                      &                &                &
 
 \begin_layout Plain Layout
 
-Williams                  &                &                &          
-      &                & $11.95$        & $-2.23$        & $-0.65$        
- 
+Williams                  &               &                &           
+       &                  & $64.79$          & $34.28$          & $63.54$ 
+         
 \backslash
 
 \backslash
@@ -4427,9 +4458,9 @@ Williams                  &                &                &
 
 \begin_layout Plain Layout
 
-                          &                &                &          
-      &                & $(59.01)$      & $(72.23)$      & $(69.28)$      
- 
+                          &               &                &           
+       &                  & $(56.40)$        & $(66.28)$        & $(73.72)$
+        
 \backslash
 
 \backslash
@@ -4438,21 +4469,9 @@ Williams                  &                &                &
 
 \begin_layout Plain Layout
 
-squire                    &                &                &          
-      &                &                & $-5.07$        & $-8.98^{
-\backslash
-cdot}$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-                          &                &                &          
-      &                &                & $(3.82)$       & $(4.70)$      
-  
+squire                    &               &                &           
+       &                  &                  & $-1.88$          & $-3.09$
+          
 \backslash
 
 \backslash
@@ -4461,9 +4480,9 @@ cdot}$
 
 \begin_layout Plain Layout
 
-evangelical               &                &                &          
-      &                &                &                & $37.77^{*}$  
-   
+                          &               &                &           
+       &                  &                  & $(2.71)$         & $(2.95)$
+         
 \backslash
 
 \backslash
@@ -4472,9 +4491,20 @@ evangelical               &                &                &
 
 \begin_layout Plain Layout
 
-                          &                &                &          
-      &                &                &                & $(19.10)$    
-   
+evangelical               &               &                &           
+       &                  &                  &                  & $20.71$
+          
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          &               &                &           
+       &                  &                  &                  & $(14.38)$
+        
 \backslash
 
 \backslash
@@ -4490,8 +4520,9 @@ hline
 
 \begin_layout Plain Layout
 
-AIC                       & 105.55         & 100.94         & 85.20       
-   & 85.49          & 87.45          & 82.32          & 79.49           
+AIC                       & 142.05        & 125.56         & 123.73       
+    & 118.67           & 119.37           & 91.64            & 91.41       
+     
 \backslash
 
 \backslash
@@ -4500,8 +4531,9 @@ AIC                       & 105.55         & 100.94         & 85.20
 
 \begin_layout Plain Layout
 
-BIC                       & 119.08         & 118.98         & 107.75      
-   & 112.01         & 118.39         & 116.44         & 117.87          
+BIC                       & 156.24        & 144.48         & 147.38       
+    & 146.54           & 151.89           & 127.51           & 131.77      
+     
 \backslash
 
 \backslash
@@ -4510,8 +4542,9 @@ BIC                       & 119.08         & 118.98         & 107.75
 
 \begin_layout Plain Layout
 
-Log Likelihood            & -49.77         & -46.47         & -37.60      
-   & -36.75         & -36.72         & -33.16         & -30.74          
+Log Likelihood            & -68.02        & -58.78         & -56.86       
+    & -53.34           & -52.69           & -37.82           & -36.71      
+     
 \backslash
 
 \backslash
@@ -4520,8 +4553,9 @@ Log Likelihood            & -49.77         & -46.47         & -37.60
 
 \begin_layout Plain Layout
 
-Deviance                  & 99.55          & 92.94          & 75.20       
-   & 73.49          & 73.45          & 66.32          & 61.49           
+Deviance                  & 136.05        & 117.56         & 113.73       
+    & 106.67           & 105.37           & 75.64            & 73.41       
+     
 \backslash
 
 \backslash
@@ -4532,8 +4566,8 @@ Deviance                  & 99.55          & 92.94          & 75.20
 
 Num.
  obs.
-                 & 672            & 672            & 672            & 614
-            & 614            & 526            & 526             
+                 & 837           & 837            & 837              & 769
+              & 769              & 655              & 655              
 \backslash
 
 \backslash
@@ -4555,7 +4589,7 @@ multicolumn{8}{l}{
 \backslash
 scriptsize{$^{***}p<0.001$, $^{**}p<0.01$, $^*p<0.05$, $^{
 \backslash
-cdot}p<0.1$}}
+dagger}p<0.1$}}
 \end_layout
 
 \begin_layout Plain Layout
@@ -4662,7 +4696,7 @@ hline
 \begin_layout Plain Layout
 
 (Intercept)               & $-10.82^{***}$ & $-10.76^{***}$ & $-33.10^{***}$
- & $-38.13^{***}$ & $-38.38^{***}$ & $-45.67^{***}$ & $-84.53^{**}$   
+ & $-38.13^{***}$ & $-38.38^{***}$ & $-45.67^{***}$   & $-84.53^{**}$     
 \backslash
 
 \backslash
@@ -4672,7 +4706,8 @@ hline
 \begin_layout Plain Layout
 
                           & $(1.73)$       & $(1.77)$       & $(8.50)$    
-   & $(9.99)$       & $(10.15)$      & $(12.23)$      & $(27.55)$       
+   & $(9.99)$       & $(10.15)$      & $(12.23)$        & $(27.55)$        
+ 
 \backslash
 
 \backslash
@@ -4682,7 +4717,8 @@ hline
 \begin_layout Plain Layout
 
 citi6013                  & $0.13^{***}$   & $0.08^{*}$     & $0.00$      
-   & $-0.01$        & $-0.01$        & $-0.02$        & $0.01$          
+   & $-0.01$        & $-0.01$        & $-0.02$          & $0.01$           
+ 
 \backslash
 
 \backslash
@@ -4692,7 +4728,8 @@ citi6013                  & $0.13^{***}$   & $0.08^{*}$     & $0.00$
 \begin_layout Plain Layout
 
                           & $(0.03)$       & $(0.03)$       & $(0.04)$    
-   & $(0.05)$       & $(0.05)$       & $(0.05)$       & $(0.06)$        
+   & $(0.05)$       & $(0.05)$       & $(0.05)$         & $(0.06)$         
+ 
 \backslash
 
 \backslash
@@ -4706,9 +4743,9 @@ realastpercap
 _smallno234 & $0.06^{*}$     & $0.09^{**}$    & $0.07^{*}$     & $0.08^{*}$
      & $0.09^{*}$     & $0.08^{
 \backslash
-cdot}$ & $0.07^{
+dagger}$ & $0.07^{
 \backslash
-cdot}$  
+dagger}$  
 \backslash
 
 \backslash
@@ -4718,7 +4755,8 @@ cdot}$
 \begin_layout Plain Layout
 
                           & $(0.03)$       & $(0.03)$       & $(0.04)$    
-   & $(0.04)$       & $(0.04)$       & $(0.04)$       & $(0.04)$        
+   & $(0.04)$       & $(0.04)$       & $(0.04)$         & $(0.04)$         
+ 
 \backslash
 
 \backslash
@@ -4730,7 +4768,7 @@ cdot}$
 inst6013
 \backslash
 _adacope         &                & $0.04^{*}$     & $0.07^{**}$    & $0.07^{**}$
-    & $0.07^{**}$    & $0.06^{*}$     & $0.06^{*}$      
+    & $0.07^{**}$    & $0.06^{*}$       & $0.06^{*}$        
 \backslash
 
 \backslash
@@ -4740,91 +4778,7 @@ _adacope         &                & $0.04^{*}$     & $0.07^{**}$    & $0.07^{**}
 \begin_layout Plain Layout
 
                           &                & $(0.02)$       & $(0.02)$   
-    & $(0.02)$       & $(0.02)$       & $(0.03)$       & $(0.03)$        
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-MeanOppLP                 &                &                & $0.43^{**}$
-    & $0.58^{**}$    & $0.58^{**}$    & $0.80^{**}$    & $1.44^{**}$     
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-                          &                &                & $(0.14)$  
-     & $(0.20)$       & $(0.20)$       & $(0.25)$       & $(0.49)$        
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-ssph                      &                &                &          
-      & $-6.21$        & $-6.61$        & $-11.09^{*}$   & $-19.14^{*}$    
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-                          &                &                &          
-      & $(4.81)$       & $(5.22)$       & $(5.66)$       & $(8.20)$        
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Williams                  &                &                &          
-      &                & $11.95$        & $-2.23$        & $-0.65$        
- 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-                          &                &                &          
-      &                & $(59.01)$      & $(72.23)$      & $(69.28)$      
- 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-squire                    &                &                &          
-      &                &                & $-5.07$        & $-8.98^{
-\backslash
-cdot}$ 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-                          &                &                &          
-      &                &                & $(3.82)$       & $(4.70)$      
+    & $(0.02)$       & $(0.02)$       & $(0.03)$         & $(0.03)$        
   
 \backslash
 
@@ -4834,8 +4788,19 @@ cdot}$
 
 \begin_layout Plain Layout
 
-evangelical               &                &                &          
-      &                &                &                & $37.77^{*}$  
+MeanOppLP                 &                &                & $0.43^{**}$
+    & $0.58^{**}$    & $0.58^{**}$    & $0.80^{**}$      & $1.44^{**}$     
+  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          &                &                & $(0.14)$  
+     & $(0.20)$       & $(0.20)$       & $(0.25)$         & $(0.49)$       
    
 \backslash
 
@@ -4845,9 +4810,87 @@ evangelical               &                &                &
 
 \begin_layout Plain Layout
 
+ssph                      &                &                &          
+      & $-6.21$        & $-6.61$        & $-11.09^{*}$     & $-19.14^{*}$  
+    
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
                           &                &                &          
-      &                &                &                & $(19.10)$    
-   
+      & $(4.81)$       & $(5.22)$       & $(5.66)$         & $(8.20)$      
+    
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Williams                  &                &                &          
+      &                & $11.95$        & $-2.23$          & $-0.65$      
+     
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          &                &                &          
+      &                & $(59.01)$      & $(72.23)$        & $(69.28)$    
+     
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+squire                    &                &                &          
+      &                &                & $-5.07$          & $-8.98^{
+\backslash
+dagger}$ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          &                &                &          
+      &                &                & $(3.82)$         & $(4.70)$    
+      
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+evangelical               &                &                &          
+      &                &                &                  & $37.77^{*}$
+       
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+                          &                &                &          
+      &                &                &                  & $(19.10)$  
+       
 \backslash
 
 \backslash
@@ -4864,7 +4907,8 @@ hline
 \begin_layout Plain Layout
 
 AIC                       & 105.55         & 100.94         & 85.20       
-   & 85.49          & 87.45          & 82.32          & 79.49           
+   & 85.49          & 87.45          & 82.32            & 79.49            
+ 
 \backslash
 
 \backslash
@@ -4874,7 +4918,8 @@ AIC                       & 105.55         & 100.94         & 85.20
 \begin_layout Plain Layout
 
 BIC                       & 119.08         & 118.98         & 107.75      
-   & 112.01         & 118.39         & 116.44         & 117.87          
+   & 112.01         & 118.39         & 116.44           & 117.87           
+ 
 \backslash
 
 \backslash
@@ -4884,7 +4929,8 @@ BIC                       & 119.08         & 118.98         & 107.75
 \begin_layout Plain Layout
 
 Log Likelihood            & -49.77         & -46.47         & -37.60      
-   & -36.75         & -36.72         & -33.16         & -30.74          
+   & -36.75         & -36.72         & -33.16           & -30.74           
+ 
 \backslash
 
 \backslash
@@ -4894,7 +4940,8 @@ Log Likelihood            & -49.77         & -46.47         & -37.60
 \begin_layout Plain Layout
 
 Deviance                  & 99.55          & 92.94          & 75.20       
-   & 73.49          & 73.45          & 66.32          & 61.49           
+   & 73.49          & 73.45          & 66.32            & 61.49            
+ 
 \backslash
 
 \backslash
@@ -4906,7 +4953,7 @@ Deviance                  & 99.55          & 92.94          & 75.20
 Num.
  obs.
                  & 672            & 672            & 672            & 614
-            & 614            & 526            & 526             
+            & 614            & 526              & 526               
 \backslash
 
 \backslash
@@ -4928,7 +4975,7 @@ multicolumn{8}{l}{
 \backslash
 scriptsize{$^{***}p<0.001$, $^{**}p<0.01$, $^*p<0.05$, $^{
 \backslash
-cdot}p<0.1$}}
+dagger}p<0.1$}}
 \end_layout
 
 \begin_layout Plain Layout
@@ -4969,6 +5016,10 @@ end{table}
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 

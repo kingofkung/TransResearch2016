@@ -4,6 +4,8 @@ library(MASS)
 library(texreg)
 library(rockchalk)
 
+
+
 ##' create custom glm function suitable for bulk regression orders
 ##' @title custom glm
 ##' @param x a vector containing the independent variables that we want to consider
@@ -147,7 +149,7 @@ write.table(gdlatex1, file = paste0(outlocgit, "gdlatex1.txt"), quote = F, row.n
 write.table(gdlatex2, file = paste0(outlocgit, "gdlatex2.txt"), quote = F, row.names = F, col.names = F)
 
 # some isolated varsofint
-dotsym <- "\\bullet"
+dotsym <- "\\dagger"
 
 smallno234ivs <- lapply(typcont, c, "realastpercap_smallno234")
 no234mods <- lapply(smallno234ivs, customglm, deev = "trans_dis")

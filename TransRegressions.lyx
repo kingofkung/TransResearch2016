@@ -5,6 +5,9 @@
 \save_transient_properties true
 \origin unavailable
 \textclass article
+\begin_preamble
+ \usepackage{relsize}
+\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
 \language english
@@ -3657,11 +3660,11 @@ _adacope &               & $0.07^{***}$  & $0.07^{***}$   & $0.07^{***}$
 
 MeanOppLP         &               &               & $0.15^{*}$     & $0.17^{
 \backslash
-bullet}$ & $0.17^{
+dagger}$ & $0.17^{
 \backslash
-bullet}$ & $0.18$         & $0.51^{
+dagger}$ & $0.18$         & $0.51^{
 \backslash
-bullet}$ 
+dagger}$ 
 \backslash
 
 \backslash
@@ -3832,7 +3835,7 @@ multicolumn{8}{l}{
 \backslash
 scriptsize{$^{***}p<0.001$, $^{**}p<0.01$, $^*p<0.05$, $^{
 \backslash
-bullet}p<0.1$}}
+dagger}p<0.1$}}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3979,11 +3982,11 @@ citi6013          & $0.13^{***}$   & $0.08^{*}$     & $0.00$         & $-0.01$
 
 realastpercapall  & $0.07^{*}$     & $0.09^{**}$    & $0.06$         & $0.08^{
 \backslash
-bullet}$ & $0.09^{
+dagger}$ & $0.09^{
 \backslash
-bullet}$ & $0.09^{
+dagger}$ & $0.09^{
 \backslash
-bullet}$ & $0.08^{*}$    
+dagger}$ & $0.08^{*}$    
 \backslash
 
 \backslash
@@ -4196,7 +4199,7 @@ multicolumn{8}{l}{
 \backslash
 scriptsize{$^{***}p<0.001$, $^{**}p<0.01$, $^*p<0.05$, $^{
 \backslash
-bullet}p<0.1$}}
+dagger}p<0.1$}}
 \end_layout
 
 \begin_layout Plain Layout
@@ -4394,15 +4397,15 @@ _adacope         &               & $0.08^{***}$   & $0.07^{***}$     & $0.07^{**
 
 MeanOppLP                 &               &                & $0.13^{
 \backslash
-bullet}$ & $0.16^{
+dagger}$ & $0.16^{
 \backslash
-bullet}$ & $0.17^{
+dagger}$ & $0.17^{
 \backslash
-bullet}$ & $0.20^{
+dagger}$ & $0.20^{
 \backslash
-bullet}$ & $0.57^{
+dagger}$ & $0.57^{
 \backslash
-bullet}$ 
+dagger}$ 
 \backslash
 
 \backslash
@@ -4586,7 +4589,7 @@ multicolumn{8}{l}{
 \backslash
 scriptsize{$^{***}p<0.001$, $^{**}p<0.01$, $^*p<0.05$, $^{
 \backslash
-bullet}p<0.1$}}
+dagger}p<0.1$}}
 \end_layout
 
 \begin_layout Plain Layout
@@ -4740,9 +4743,9 @@ realastpercap
 _smallno234 & $0.06^{*}$     & $0.09^{**}$    & $0.07^{*}$     & $0.08^{*}$
      & $0.09^{*}$     & $0.08^{
 \backslash
-bullet}$ & $0.07^{
+dagger}$ & $0.07^{
 \backslash
-bullet}$  
+dagger}$  
 \backslash
 
 \backslash
@@ -4854,7 +4857,7 @@ Williams                  &                &                &
 squire                    &                &                &          
       &                &                & $-5.07$          & $-8.98^{
 \backslash
-bullet}$ 
+dagger}$ 
 \backslash
 
 \backslash
@@ -4972,7 +4975,7 @@ multicolumn{8}{l}{
 \backslash
 scriptsize{$^{***}p<0.001$, $^{**}p<0.01$, $^*p<0.05$, $^{
 \backslash
-bullet}p<0.1$}}
+dagger}p<0.1$}}
 \end_layout
 
 \begin_layout Plain Layout
