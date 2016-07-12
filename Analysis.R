@@ -46,7 +46,7 @@ no234cols <- colnames(dat)[grepl("no234", colnames(dat))]
 ## multicollinear with both our ivs of interest as well as the other
 ## institutional variable. We can put it back in if we'd like later
 ## though.
-typcont <- c("citi6013", "inst6013_adacope", laxPhillips[9], "ssph", "Williams", "squire", "evangelical")
+typcont <- c("citi6013", "inst6013_adacope", laxPhillips[9], "Williams", "evangelical")
 typcont <- lapply(seq_along(typcont), function(x) typcont[1:x])
 
 ## get income/Revenue/assets variables and combine them into a list
@@ -90,9 +90,15 @@ onevarHRCmods <- lapply(ivls, function(x) {
 
 })
 onevarHRCmods <- lapply(onevarHRCmods, FUN = extract, include.thresholds = TRUE)
-latextext1 <- texreg(onevarHRCmods,  reorder.coef = NULL, caption.above = TRUE, caption = "Ordered Logistic Regressions using the HRC's classifications")
-## The columns ordered properly
-write.table(latextext1 , file = paste0(outlocgit, "HRCmlist.tex"), quote = F, row.names = F, col.names = F)
+
+## A symbol for all latex documents indicating what we'd like for the .1 threshold
+dotsym <- "\\dagger"
+
+
+latextext1 <- texreg(onevarHRCmods,  reorder.coef = NULL, caption.above = TRUE, caption = "Ordered Logistic Regressions using the HRC's classifications", stars = c(.001, .01, .05, .1), symbol = dotsym)
+
+
+write.table(latextext1 , file = paste0(outlocgit, "HRCmlist.txt"), quote = F, row.names = F, col.names = F)
 
 
 ## Model trans_dis (transgender antidiscrimination statutes) using the
@@ -115,11 +121,11 @@ tdmodsub2 <- tdregsNconts[11:length(tdregsNconts)]
 ## outreg(tdregsNconts, type = "html")
 
 tdcap1 <- "Event History Analysis of Transgender Discrimination Policy with Controls, Models 1-10"
-tdlatex1 <- texreg(tdmodsub1, caption.above = T, caption = tdcap1)
+tdlatex1 <- texreg(tdmodsub1, caption.above = T, caption = tdcap1, stars = c(.001, .01, .05, .1), symbol = dotsym)
 
 tdcap2 <- paste0("Event History Analysis of Transgender Discrimination Policy with Controls, Models 11-", length(tdregsNconts))
 tdmodnames <- paste("Model", 11:length(tdregsNconts))
-tdlatex2 <- texreg(tdmodsub2, caption.above = T, caption = tdcap2, custom.model.names = tdmodnames)
+tdlatex2 <- texreg(tdmodsub2, caption.above = T, caption = tdcap2, custom.model.names = tdmodnames, stars = c(.001, .01, .05, .1), symbol = dotsym)
 
 ## write the results to tables
 write.table(tdlatex1, file = paste0(outlocgit, 'tdmodsub1.txt'), quote = F, row.names = F, col.names = F)
@@ -138,18 +144,17 @@ gdmodsub2 <- gdmods[11:length(gdmods)]
 names(gdmodsub2) <- paste("Model", 11:length(gdmods))
 
 ## outreg(gdmodsub1, type = 'html')
-gdlatex1 <- texreg(gdmodsub1, caption.above = T, caption = "Event History Analysis of Gay Discrimination Policy with added Controls, 1-10")
+gdlatex1 <- texreg(gdmodsub1, caption.above = T, caption = "Event History Analysis of Gay Discrimination Policy with added Controls, 1-10", stars = c(.001, .01, .05, .1), symbol = dotsym)
 
 
 modcap2 <- paste0("Event History Analysis of Gay Discrimination Policy with added Controls, 11-", length(gdmods))
-gdlatex2 <- texreg(gdmodsub2, caption.above = T, caption = modcap2, custom.model.names = paste("Model", 11:length(gdmods)))
+gdlatex2 <- texreg(gdmodsub2, caption.above = T, caption = modcap2, custom.model.names = paste("Model", 11:length(gdmods)), stars = c(.001, .01, .05, .1), symbol = dotsym)
 
 
 write.table(gdlatex1, file = paste0(outlocgit, "gdlatex1.txt"), quote = F, row.names = F, col.names = F)
 write.table(gdlatex2, file = paste0(outlocgit, "gdlatex2.txt"), quote = F, row.names = F, col.names = F)
 
 # some isolated varsofint
-dotsym <- "\\dagger"
 
 smallno234ivs <- lapply(typcont, c, "realastpercap_smallno234")
 no234mods <- lapply(smallno234ivs, customglm, deev = "trans_dis")
