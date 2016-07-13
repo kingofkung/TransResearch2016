@@ -38,4 +38,3 @@ Num. obs.                                                 & 100          & 100  
 \label{table:coefficients}
 \end{center}
 \end{table}
-

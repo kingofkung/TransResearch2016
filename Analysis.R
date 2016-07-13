@@ -108,8 +108,7 @@ onevarHRCmods <- lapply(onevarHRCmods, FUN = extract, include.thresholds = TRUE)
 dotsym <- "\\dagger"
 
 HRCCoefOrder <- c(1, 5:(length(onevarHRCmods) + 3), 2:4)
-latextext1 <- texreg(onevarHRCmods,  reorder.coef = HRCCoefOrder, caption.above = TRUE, caption = "Ordered Logistic Regressions using the HRC's classifications", stars = c(.001, .01, .05, .1), symbol = dotsym)
-write.table(latextext1 , file = paste0(outlocgit, "HRCmlist.txt"), quote = F, row.names = F, col.names = F)
+latextext1 <- texreg(onevarHRCmods,  reorder.coef = HRCCoefOrder, caption.above = TRUE, caption = "Ordered Logistic Regressions using the HRC's classifications", stars = c(.001, .01, .05, .1), symbol = dotsym, file = paste0(outlocgit, "HRCmlist.txt"))
 
 
 ## Start adding files that show how HRC is affected by
@@ -137,15 +136,15 @@ tdmodsub2 <- tdregsNconts[11:length(tdregsNconts)]
 ## outreg(tdregsNconts, type = "html")
 
 tdcap1 <- "Event History Analysis of Transgender Anti-Discrimination Policy with Controls, Models 1-10"
-tdlatex1 <- texreg(tdmodsub1, caption.above = T, caption = tdcap1, stars = c(.001, .01, .05, .1), symbol = dotsym)
+tdlatex1 <- texreg(tdmodsub1, caption.above = T, caption = tdcap1, stars = c(.001, .01, .05, .1), symbol = dotsym, file = paste0(outlocgit, 'tdmodsub1.txt'))
 
 tdcap2 <- paste0("Event History Analysis of Transgender Anti-Discrimination Policy with Controls, Models 11-", length(tdregsNconts))
 tdmodnames <- paste("Model", 11:length(tdregsNconts))
-tdlatex2 <- texreg(tdmodsub2, caption.above = T, caption = tdcap2, custom.model.names = tdmodnames, stars = c(.001, .01, .05, .1), symbol = dotsym)
+tdlatex2 <- texreg(tdmodsub2, caption.above = T, caption = tdcap2, custom.model.names = tdmodnames, stars = c(.001, .01, .05, .1), symbol = dotsym, file = paste0(outlocgit, 'tdmodsub2.txt'))
 
 ## write the results to tables
-write.table(tdlatex1, file = paste0(outlocgit, 'tdmodsub1.txt'), quote = F, row.names = F, col.names = F)
-write.table(tdlatex2, file = paste0(outlocgit, 'tdmodsub2.txt'), quote = F, row.names = F, col.names = F)
+## write.table(tdlatex1, file = paste0(outlocgit, 'tdmodsub1.txt'), quote = F, row.names = F, col.names = F)
+## write.table(tdlatex2, file = paste0(outlocgit, 'tdmodsub2.txt'), quote = F, row.names = F, col.names = F)
 
 
 
@@ -161,33 +160,33 @@ gdmodsub2 <- gdmods[11:length(gdmods)]
 names(gdmodsub2) <- paste("Model", 11:length(gdmods))
 
 ## outreg(gdmodsub1, type = 'html')
-gdlatex1 <- texreg(gdmodsub1, caption.above = T, caption = "Event History Analysis of Gay Anti-Discrimination Policy with added Controls, 1-10", stars = c(.001, .01, .05, .1), symbol = dotsym)
+gdlatex1 <- texreg(gdmodsub1, caption.above = T, caption = "Event History Analysis of Gay Anti-Discrimination Policy with added Controls, 1-10", stars = c(.001, .01, .05, .1), symbol = dotsym, file = paste0(outlocgit, "gdlatex1.txt"))
 
 
 modcap2 <- paste0("Event History Analysis of Gay Anti-Discrimination Policy with added Controls, 11-", length(gdmods))
-gdlatex2 <- texreg(gdmodsub2, caption.above = T, caption = modcap2, custom.model.names = paste("Model", 11:length(gdmods)), stars = c(.001, .01, .05, .1), symbol = dotsym)
+gdlatex2 <- texreg(gdmodsub2, caption.above = T, caption = modcap2, custom.model.names = paste("Model", 11:length(gdmods)), stars = c(.001, .01, .05, .1), symbol = dotsym, file = paste0(outlocgit, "gdlatex2.txt"))
 
 
-write.table(gdlatex1, file = paste0(outlocgit, "gdlatex1.txt"), quote = F, row.names = F, col.names = F)
-write.table(gdlatex2, file = paste0(outlocgit, "gdlatex2.txt"), quote = F, row.names = F, col.names = F)
+## write.table(gdlatex1, file = paste0(outlocgit, "gdlatex1.txt"), quote = F, row.names = F, col.names = F)
+## write.table(gdlatex2, file = paste0(outlocgit, "gdlatex2.txt"), quote = F, row.names = F, col.names = F)
 
 # some isolated varsofint
 
 smallno234ivs <- lapply(typcont, c, "realastpercap_smallno234")
 no234mods <- lapply(smallno234ivs, customglm, deev = "trans_dis")
-no234tex <- texreg(no234mods, caption.above = T, caption = "A further examination of real assets per capita on Transgender Anti-discrimination, sans certain groups", stars = c(.001, .01, .05, .1), symbol = dotsym)
-write.table(no234tex, paste0(outlocgit, "no234textrans.txt"), quote = F, row.names = F, col.names = F)
+no234tex <- texreg(no234mods, caption.above = T, caption = "A further examination of real assets per capita on Transgender Anti-discrimination, sans certain groups", stars = c(.001, .01, .05, .1), symbol = dotsym, file = paste0(outlocgit, "no234textrans.txt"))
+## write.table(no234tex, file = paste0(outlocgit, "no234textrans.txt"), quote = F, row.names = F, col.names = F)
 
 no234mods <- lapply(smallno234ivs, customglm, deev = "gay_disc")
-no234tex <- texreg(no234mods, caption.above = T, caption = "A further examination of real assets per capita on Gay Anti-discrimination, sans certain groups", stars = c(.001, .01, .05, .1), symbol = dotsym)
-write.table(no234tex, paste0(outlocgit, "no234texgay.txt"), quote = F, row.names = F, col.names = F)
+no234tex <- texreg(no234mods, caption.above = T, caption = "A further examination of real assets per capita on Gay Anti-discrimination, sans certain groups", stars = c(.001, .01, .05, .1), symbol = dotsym, file = paste0(outlocgit, "no234texgay.txt"))
+## write.table(no234tex, paste0(outlocgit, "no234texgay.txt"), quote = F, row.names = F, col.names = F)
 
 realastivs <- lapply(typcont, c, "realastpercapall")
 for(i in c("gay_disc", "trans_dis")[1:2]){
     mods <- lapply(realastivs, customglm, deev = i)
     ifelse(i == "trans_dis", mcap <- "An Examination of Real Assets Per Capita on Transgender Anti-discrimination", mcap <- "An Examination of Real Assets Per Capita on Gay Anti-discrimination")
-    mtex <- texreg(mods, caption.above = T, caption = mcap, stars = c(.001, .01, .05, .1), symbol = dotsym)
-    write.table(mtex, paste0(outlocgit, "realastpercapall",i, ".txt"), quote = F, row.names = F, col.names = F)
+    mtex <- texreg(mods, caption.above = T, caption = mcap, stars = c(.001, .01, .05, .1), symbol = dotsymx, paste0(outlocgit, "realastpercapall",i, ".txt"))
+    ## write.table(mte, quote = F, row.names = F, col.names = F)
 }
 ## lapply(mods, summary)
 
