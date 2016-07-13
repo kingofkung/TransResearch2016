@@ -1,0 +1,34 @@
+
+\begin{table}
+\caption{Event History Analysis of Transgender Anti-Discrimination}
+\begin{center}
+\begin{tabular}{l c c c c c c }
+\hline
+ & Model 1 & Model 2 & Model 3 & Model 4 & Model 5 & Model 6 \\
+\hline
+(Intercept)       & $-9.53^{***}$ & $-8.85^{***}$ & $-8.32^{***}$ & $-4.09^{***}$ & $-4.13^{***}$ & $-19.29^{***}$ \\
+                  & $(1.43)$      & $(1.37)$      & $(1.05)$      & $(0.29)$      & $(0.32)$      & $(4.66)$       \\
+inst6013\_adacope & $0.07^{***}$  &               &               &               &               &                \\
+                  & $(0.02)$      &               &               &               &               &                \\
+inst6014\_nom     &               & $0.07^{***}$  &               &               &               &                \\
+                  &               & $(0.02)$      &               &               &               &                \\
+citi6013          &               &               & $0.07^{***}$  &               &               &                \\
+                  &               &               & $(0.02)$      &               &               &                \\
+realincpercapall  &               &               &               & $0.04$        &               &                \\
+                  &               &               &               & $(0.03)$      &               &                \\
+orgcountall       &               &               &               &               & $0.00$        &                \\
+                  &               &               &               &               & $(0.00)$      &                \\
+JobsLP            &               &               &               &               &               & $0.23^{**}$    \\
+                  &               &               &               &               &               & $(0.07)$       \\
+\hline
+AIC               & 157.96        & 168.37        & 170.56        & 161.20        & 161.23        & 173.81         \\
+BIC               & 168.57        & 178.98        & 181.17        & 170.66        & 170.69        & 184.42         \\
+Log Likelihood    & -76.98        & -82.19        & -83.28        & -78.60        & -78.62        & -84.91         \\
+Deviance          & 153.96        & 164.37        & 166.56        & 157.20        & 157.23        & 169.81         \\
+Num. obs.         & 1486          & 1486          & 1486          & 837           & 837           & 1486           \\
+\hline
+\multicolumn{7}{l}{\scriptsize{$^{***}p<0.001$, $^{**}p<0.01$, $^*p<0.05$}}
+\end{tabular}
+\label{table:coefficients}
+\end{center}
+\end{table}

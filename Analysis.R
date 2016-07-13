@@ -12,10 +12,10 @@ library(rockchalk)
 ##' @param deev A character version of our dv of choice.
 ##' @return a glm model with deev ~ x, where x is a the of variables of interest
 ##' @author Benjamin Rogers
-customglm <- function(x, deev){
+customglm <- function(x, deev, thedata = dat){
     x <- ifelse(length(x) > 1, paste0(x, collapse = "+"), x)
     u <- as.formula(paste(deev, x, sep = " ~ "))
-    eval(bquote(glm(.(u), family = "binomial", data = dat)))
+    eval(bquote(glm(.(u), family = "binomial", data = thedata)))
 }
 
 ##' create custom Ordered logistic regression for bulk regressions
@@ -59,7 +59,7 @@ no234cols <- colnames(dat)[grepl("no234", colnames(dat))]
 ## multicollinear with both our ivs of interest as well as the other
 ## institutional variable. We can put it back in if we'd like later
 ## though.
-typcont <- c("citi6013", "inst6013_adacope", laxPhillips[5], "Williams", "evangelical")
+typcont <- c("citi6013", "inst6013_adacope", laxPhillips[5], "evangelical")
 typcont <- lapply(seq_along(typcont), function(x) typcont[1:x])
 
 ## get income/Revenue/assets variables and combine them into a list
@@ -80,11 +80,10 @@ dat$ScoreCardCats <- factor(dat$ScoreCardCats, levels = SCCLvls)
 ## levels(dat$ScoreCardCats)
 
 SCCdat <- dat[ !is.na(dat$ScoreCardCats),]
-## head(SCCdat)
 
-## Find out which columns in SCCdat are entirely composed of na's
-nacols <- apply(SCCdat, 2, function(x) all(is.na(x)))
-## names(nacols[!nacols==T])
+SCCdat <- SCCdat[, unlist(lapply(SCCdat, function(x) !all(is.na(x))))]
+
+## head(SCCdat)
 
 ## Models for ScoreCardCats ordinal Logit regression
 ## Incomeall isn't working correctly, but its square root and percentages return a result
@@ -185,9 +184,50 @@ realastivs <- lapply(typcont, c, "realastpercapall")
 for(i in c("gay_disc", "trans_dis")[1:2]){
     mods <- lapply(realastivs, customglm, deev = i)
     ifelse(i == "trans_dis", mcap <- "An Examination of Real Assets Per Capita on Transgender Anti-discrimination", mcap <- "An Examination of Real Assets Per Capita on Gay Anti-discrimination")
-    mtex <- texreg(mods, caption.above = T, caption = mcap, stars = c(.001, .01, .05, .1), symbol = dotsymx, paste0(outlocgit, "realastpercapall",i, ".txt"))
+    ifelse(i == "gay_disc", modsavr <- mods, modsavr <- c(modsavr, mods))
+    mtex <- texreg(mods, caption.above = T, caption = mcap, stars = c(.001, .01, .05, .1), symbol = dotsym, paste0(outlocgit, "realastpercapall",i, ".txt"))
     ## write.table(mte, quote = F, row.names = F, col.names = F)
 }
-## lapply(mods, summary)
 
 
+## So now let's take another look at that HRC data
+typcont[[1]] %in% colnames(SCCdat)
+
+incasstrevVars %in% colnames(SCCdat)
+
+unique(unlist(toreg)) %in% colnames(SCCdat)
+
+dv3 <- "ScoreCardCats"
+
+lapply(toreg[[1]], custompolr, dv3, thedat = SCCdat)
+
+dv3 %in% colnames(SCCdat)
+SCCdat[, toreg[[1]]]
+
+
+## joined F-test for two measures of same-sex resources
+compvars <- c("ssph", "Williams", "realastpercap_smallno234", "realastpercapall")
+ivsforF <- lapply(compvars, function(u) c( typcont[[4]], u))
+
+freemodtrans <- customglm(typcont[[4]], dv1)
+freemodgay <- customglm(typcont[[4]], dv2)
+
+
+fmodtrans1 <- customglm(typcont[[4]], dv1, model.frame(compmodstrans[[1]]))
+
+
+compmodstrans <- lapply(ivsforF, customglm, dv1, freemodtrans$model)
+compmodsgay <- lapply(ivsforF, customglm, dv2)
+
+lapply(compmodstrans, function(x){
+    freemod <- customglm(typcont[[4]], dv1, model.frame(x))
+    anova(freemod, x, test = "Chisq")
+})
+
+lapply(compmodsgay, function(x){
+    freemod <- customglm(typcont[[4]], dv2, model.frame(x))
+    anova(freemod, x, test = "Chisq")
+})
+
+## Possibly what he's looking for?
+drop1(customglm( c(compvars, typcont[[4]]), dv1), test = "F")
