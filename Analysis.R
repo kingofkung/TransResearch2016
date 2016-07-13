@@ -16,7 +16,20 @@ customglm <- function(x, deev){
     x <- ifelse(length(x) > 1, paste0(x, collapse = "+"), x)
     u <- as.formula(paste(deev, x, sep = " ~ "))
     eval(bquote(glm(.(u), family = "binomial", data = dat)))
-    }
+}
+
+##' create custom Ordered logistic regression for bulk regressions
+##' @title custom polr
+##' @param x the independent variable or independent variables of interest as a vector
+##' @param deev the dependent variable of interest
+##' @param thedata the data to model the formula on
+##' @return a polr model in the form deev ~ x
+##' @author Benjamin Rogers
+custompolr <- function(x, deev, thedata = dat){
+    x <- ifelse(length(x) > 1, paste0(x, collapse = "+"), x)
+    u <- as.formula(paste(deev, x, sep = " ~ "))
+    eval(bquote(polr(.(u), data = thedata, method = "logistic")))
+}
 
 
 loc <- "/Users/bjr/Dropbox/LGBT Interest group data/"
@@ -81,7 +94,7 @@ SCCdat$iaperc <- SCCdat$incomeall/sum(as.numeric(SCCdat$incomeall))
 incomeall <- as.numeric(SCCdat$incomeall)
 
 ## Create the IVs we'd like
-ivls <- c("MeanOppLP", "inst6013_adacope", "inst6014_nom", "citi6013", "iaperc", "realincpercapall", "orgcountall", laxPhillips[2:8])
+ivls <- c( "inst6013_adacope", "inst6014_nom", "citi6013", "iaperc", "realincpercapall", "orgcountall", laxPhillips[5])
 
 ## And apply across all single function levels
 onevarHRCmods <- lapply(ivls, function(x) {
@@ -94,11 +107,12 @@ onevarHRCmods <- lapply(onevarHRCmods, FUN = extract, include.thresholds = TRUE)
 ## A symbol for all latex documents indicating what we'd like for the .1 threshold
 dotsym <- "\\dagger"
 
-
-latextext1 <- texreg(onevarHRCmods,  reorder.coef = NULL, caption.above = TRUE, caption = "Ordered Logistic Regressions using the HRC's classifications", stars = c(.001, .01, .05, .1), symbol = dotsym)
-
-
+HRCCoefOrder <- c(1, 5:(length(onevarHRCmods) + 3), 2:4)
+latextext1 <- texreg(onevarHRCmods,  reorder.coef = HRCCoefOrder, caption.above = TRUE, caption = "Ordered Logistic Regressions using the HRC's classifications", stars = c(.001, .01, .05, .1), symbol = dotsym)
 write.table(latextext1 , file = paste0(outlocgit, "HRCmlist.txt"), quote = F, row.names = F, col.names = F)
+
+
+## Start adding files that show how HRC is affected by
 
 
 ## Model trans_dis (transgender antidiscrimination statutes) using the
@@ -107,6 +121,8 @@ write.table(latextext1 , file = paste0(outlocgit, "HRCmlist.txt"), quote = F, ro
 
 dv1 <- "trans_dis"
 
+simplervar <- lapply(ivls[-4], customglm, dv1)
+texreg(simplervar, file = paste0(outlocgit, "simplevartransdisc.txt"), caption.above = T, caption = "Event History Analysis of Transgender Anti-Discrimination")
 
 ## Bind control variables we want to the variables we want to consider in a variable called toreg.
 ## Note to self, it appears that we get what we want if we list the variable of interest last rather than first.
@@ -130,6 +146,7 @@ tdlatex2 <- texreg(tdmodsub2, caption.above = T, caption = tdcap2, custom.model.
 ## write the results to tables
 write.table(tdlatex1, file = paste0(outlocgit, 'tdmodsub1.txt'), quote = F, row.names = F, col.names = F)
 write.table(tdlatex2, file = paste0(outlocgit, 'tdmodsub2.txt'), quote = F, row.names = F, col.names = F)
+
 
 
 ## Begin working on gay discrimination variables
@@ -173,3 +190,5 @@ for(i in c("gay_disc", "trans_dis")[1:2]){
     write.table(mtex, paste0(outlocgit, "realastpercapall",i, ".txt"), quote = F, row.names = F, col.names = F)
 }
 ## lapply(mods, summary)
+
+
