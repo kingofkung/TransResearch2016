@@ -46,7 +46,7 @@ no234cols <- colnames(dat)[grepl("no234", colnames(dat))]
 ## multicollinear with both our ivs of interest as well as the other
 ## institutional variable. We can put it back in if we'd like later
 ## though.
-typcont <- c("citi6013", "inst6013_adacope", laxPhillips[9], "Williams", "evangelical")
+typcont <- c("citi6013", "inst6013_adacope", laxPhillips[5], "Williams", "evangelical")
 typcont <- lapply(seq_along(typcont), function(x) typcont[1:x])
 
 ## get income/Revenue/assets variables and combine them into a list
@@ -120,10 +120,10 @@ tdmodsub2 <- tdregsNconts[11:length(tdregsNconts)]
 
 ## outreg(tdregsNconts, type = "html")
 
-tdcap1 <- "Event History Analysis of Transgender Discrimination Policy with Controls, Models 1-10"
+tdcap1 <- "Event History Analysis of Transgender Anti-Discrimination Policy with Controls, Models 1-10"
 tdlatex1 <- texreg(tdmodsub1, caption.above = T, caption = tdcap1, stars = c(.001, .01, .05, .1), symbol = dotsym)
 
-tdcap2 <- paste0("Event History Analysis of Transgender Discrimination Policy with Controls, Models 11-", length(tdregsNconts))
+tdcap2 <- paste0("Event History Analysis of Transgender Anti-Discrimination Policy with Controls, Models 11-", length(tdregsNconts))
 tdmodnames <- paste("Model", 11:length(tdregsNconts))
 tdlatex2 <- texreg(tdmodsub2, caption.above = T, caption = tdcap2, custom.model.names = tdmodnames, stars = c(.001, .01, .05, .1), symbol = dotsym)
 
@@ -144,10 +144,10 @@ gdmodsub2 <- gdmods[11:length(gdmods)]
 names(gdmodsub2) <- paste("Model", 11:length(gdmods))
 
 ## outreg(gdmodsub1, type = 'html')
-gdlatex1 <- texreg(gdmodsub1, caption.above = T, caption = "Event History Analysis of Gay Discrimination Policy with added Controls, 1-10", stars = c(.001, .01, .05, .1), symbol = dotsym)
+gdlatex1 <- texreg(gdmodsub1, caption.above = T, caption = "Event History Analysis of Gay Anti-Discrimination Policy with added Controls, 1-10", stars = c(.001, .01, .05, .1), symbol = dotsym)
 
 
-modcap2 <- paste0("Event History Analysis of Gay Discrimination Policy with added Controls, 11-", length(gdmods))
+modcap2 <- paste0("Event History Analysis of Gay Anti-Discrimination Policy with added Controls, 11-", length(gdmods))
 gdlatex2 <- texreg(gdmodsub2, caption.above = T, caption = modcap2, custom.model.names = paste("Model", 11:length(gdmods)), stars = c(.001, .01, .05, .1), symbol = dotsym)
 
 
