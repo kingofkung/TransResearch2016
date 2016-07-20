@@ -1,0 +1,32 @@
+
+\begin{table}
+\caption{An Examination of the effect of Same Sex Couples Per household, Census 2000 Measures on Gay Anti-discrimination}
+\begin{center}
+\begin{tabular}{l c c c c }
+\hline
+ & Model 1 & Model 2 & Model 3 & Model 4 \\
+\hline
+(Intercept)       & $-10.31^{***}$ & $-10.32^{***}$     & $-17.58^{***}$ & $-10.95$   \\
+                  & $(1.28)$       & $(1.33)$           & $(5.05)$       & $(7.02)$   \\
+citi6013          & $0.07^{***}$   & $0.05^{*}$         & $0.03$         & $0.02$     \\
+                  & $(0.02)$       & $(0.02)$           & $(0.03)$       & $(0.03)$   \\
+censsph2000       & $416.27^{*}$   & $398.32^{\dagger}$ & $213.58$       & $221.65$   \\
+                  & $(200.04)$     & $(206.77)$         & $(235.85)$     & $(229.02)$ \\
+inst6013\_adacope &                & $0.02$             & $0.02$         & $0.03$     \\
+                  &                & $(0.02)$           & $(0.02)$       & $(0.02)$   \\
+JobsLP            &                &                    & $0.15$         & $0.06$     \\
+                  &                &                    & $(0.09)$       & $(0.11)$   \\
+evangelical       &                &                    &                & $-6.70$    \\
+                  &                &                    &                & $(6.34)$   \\
+\hline
+AIC               & 184.17         & 184.19             & 183.01         & 183.92     \\
+BIC               & 199.66         & 204.84             & 208.83         & 214.90     \\
+Log Likelihood    & -89.08         & -88.09             & -86.50         & -85.96     \\
+Deviance          & 178.17         & 176.19             & 173.01         & 171.92     \\
+Num. obs.         & 1292           & 1292               & 1292           & 1292       \\
+\hline
+\multicolumn{5}{l}{\scriptsize{$^{***}p<0.001$, $^{**}p<0.01$, $^*p<0.05$, $^{\dagger}p<0.1$}}
+\end{tabular}
+\label{table:coefficients}
+\end{center}
+\end{table}

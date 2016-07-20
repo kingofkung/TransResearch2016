@@ -1,0 +1,32 @@
+
+\begin{table}
+\caption{An Examination of the effect of Same Sex Couples Per household, ACS 2012 Measures on Gay Anti-discrimination}
+\begin{center}
+\begin{tabular}{l c c c c }
+\hline
+ & Model 1 & Model 2 & Model 3 & Model 4 \\
+\hline
+(Intercept)       & $-9.37^{***}$ & $-9.39^{***}$      & $-17.35^{***}$   & $-11.83$   \\
+                  & $(1.05)$      & $(1.08)$           & $(5.14)$         & $(7.49)$   \\
+citi6013          & $0.06^{***}$  & $0.04^{\dagger}$   & $0.02$           & $0.02$     \\
+                  & $(0.02)$      & $(0.02)$           & $(0.03)$         & $(0.03)$   \\
+acs5ssph2012      & $341.43^{*}$  & $321.54^{\dagger}$ & $190.48$         & $166.72$   \\
+                  & $(171.63)$    & $(174.10)$         & $(192.95)$       & $(192.08)$ \\
+inst6013\_adacope &               & $0.02$             & $0.02$           & $0.03$     \\
+                  &               & $(0.02)$           & $(0.02)$         & $(0.02)$   \\
+JobsLP            &               &                    & $0.15^{\dagger}$ & $0.08$     \\
+                  &               &                    & $(0.09)$         & $(0.11)$   \\
+evangelical       &               &                    &                  & $-5.80$    \\
+                  &               &                    &                  & $(6.71)$   \\
+\hline
+AIC               & 184.42        & 184.37             & 182.84           & 184.09     \\
+BIC               & 199.91        & 205.03             & 208.66           & 215.07     \\
+Log Likelihood    & -89.21        & -88.19             & -86.42           & -86.04     \\
+Deviance          & 178.42        & 176.37             & 172.84           & 172.09     \\
+Num. obs.         & 1292          & 1292               & 1292             & 1292       \\
+\hline
+\multicolumn{5}{l}{\scriptsize{$^{***}p<0.001$, $^{**}p<0.01$, $^*p<0.05$, $^{\dagger}p<0.1$}}
+\end{tabular}
+\label{table:coefficients}
+\end{center}
+\end{table}

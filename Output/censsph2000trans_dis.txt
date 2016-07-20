@@ -1,0 +1,32 @@
+
+\begin{table}
+\caption{An Examination of the effect of Same Sex Couples Per household, Census 2000 Measures on Transgender Anti-discrimination}
+\begin{center}
+\begin{tabular}{l c c c c }
+\hline
+ & Model 1 & Model 2 & Model 3 & Model 4 \\
+\hline
+(Intercept)       & $-9.55^{***}$ & $-10.87^{***}$ & $-14.06^{**}$ & $-8.25$     \\
+                  & $(1.34)$      & $(1.69)$       & $(4.71)$      & $(5.47)$    \\
+citi6013          & $0.05^{**}$   & $0.01$         & $-0.00$       & $-0.01$     \\
+                  & $(0.02)$      & $(0.02)$       & $(0.02)$      & $(0.03)$    \\
+censsph2000       & $369.66$      & $316.21$       & $225.54$      & $214.17$    \\
+                  & $(225.67)$    & $(232.31)$     & $(256.25)$    & $(246.42)$  \\
+inst6013\_adacope &               & $0.06^{**}$    & $0.06^{**}$   & $0.07^{**}$ \\
+                  &               & $(0.02)$       & $(0.02)$      & $(0.02)$    \\
+JobsLP            &               &                & $0.07$        & $-0.01$     \\
+                  &               &                & $(0.09)$      & $(0.08)$    \\
+evangelical       &               &                &               & $-6.41$     \\
+                  &               &                &               & $(6.15)$    \\
+\hline
+AIC               & 169.76        & 159.50         & 160.69        & 161.61      \\
+BIC               & 185.67        & 180.72         & 187.21        & 193.43      \\
+Log Likelihood    & -81.88        & -75.75         & -75.35        & -74.80      \\
+Deviance          & 163.76        & 151.50         & 150.69        & 149.61      \\
+Num. obs.         & 1486          & 1486           & 1486          & 1486        \\
+\hline
+\multicolumn{5}{l}{\scriptsize{$^{***}p<0.001$, $^{**}p<0.01$, $^*p<0.05$, $^{\dagger}p<0.1$}}
+\end{tabular}
+\label{table:coefficients}
+\end{center}
+\end{table}

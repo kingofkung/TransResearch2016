@@ -76,4 +76,5 @@ colnames(nussph) <- gsub("\\s", "", colnames(nussph))
 colnames(nussph) <- tolower(colnames(nussph))
 
 nussph <- nussph[2:nrow(nussph),]
-
+## reorder column names so that the numbers come last\
+colnames(nussph)[3:4] <- paste0(substr(colnames(nussph)[3:4], 5, nchar(colnames(nussph)[3:4])), substr(colnames(nussph)[3:4], 1, 4))

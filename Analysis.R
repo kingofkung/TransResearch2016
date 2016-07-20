@@ -35,6 +35,7 @@ custompolr <- function(x, deev, thedata = dat){
 loc <- "/Users/bjr/Dropbox/LGBT Interest group data/"
 outlocgit <- "/Users/bjr/GitHub/TransResearch2016/Output/"
 outlocdb <- "/Users/bjr/Dropbox/LGBT Interest group data/"
+thedate <- substr(Sys.time(), 1, 10)
 
 dat <- read.csv(paste0(loc,"JT DHM LGBT Group Resources.csv"))
 
@@ -73,10 +74,18 @@ revVars <- grep("rev", colnames(dat), value = T)
 incVars <- grep("inc", colnames(dat), value = T)
 ## Fun fact: | is the or command, and it works in regex the same as elsewhere
 assetVars <- grep("asset|ast", colnames(dat), value = T)
-incasstrevVars <- c(revVars, incVars, assetVars)
+## Need to add ssph variables that Dr. Taylor just made
+
+nussphVars <- grep("ssph", colnames(dat)[(ncol(dat)-10):ncol(dat)], value = T)
+
+incasstrevVars <- c(revVars, incVars, assetVars, nussphVars)
+dat[,nussph]
 
 ## Do a correlation matrix on the variables of interest
-incContsCors <- cor(dat[, unique(unlist(c(deveesofint, typcont, incasstrevVars))) ], use = "pairwise.complete.obs")
+typcont[[4]] %in% colnames(dat)
+
+dsub <- dat[, unique(unlist(c(deveesofint, typcont, incasstrevVars, nussph))) ]
+incContsCors <- cor(dsub, use = "pairwise.complete.obs")
 write.csv(incContsCors, file = paste0(outlocdb, 'ControlsAndGroupresourcescorrelations.csv'))
 
 
@@ -195,6 +204,27 @@ for(i in c("gay_disc", "trans_dis")[1:2]){
     ## write.table(mte, quote = F, row.names = F, col.names = F)
 }
 
+## These shouldn't need to change, but we might want to add one for the ssph
+censussphivs <- lapply(typcont, c, "censsph2000")
+for(i in c("gay_disc", "trans_dis")[1:2]){
+    mods <- lapply(censussphivs, customglm, deev = i)
+    ifelse(i == "trans_dis", mcap <- "An Examination of the effect of Same Sex Couples Per household, Census 2000 Measures on Transgender Anti-discrimination", mcap <- "An Examination of the effect of Same Sex Couples Per household, Census 2000 Measures on Gay Anti-discrimination")
+    ifelse(i == "gay_disc", modsavr <- mods, modsavr <- c(modsavr, mods))
+    mtex <- texreg(mods, caption.above = T, caption = mcap, stars = c(.001, .01, .05, .1), symbol = dotsym, paste0(outlocgit, "censsph2000",i, ".txt"))
+    ## write.table(mte, quote = F, row.names = F, col.names = F)
+}
+
+acs5ssphivs <- lapply(typcont, c, "acs5ssph2012")
+for(i in c("gay_disc", "trans_dis")[1:2]){
+    mods <- lapply(acs5ssphivs, customglm, deev = i)
+    ifelse(i == "trans_dis", mcap <- "An Examination of the effect of Same Sex Couples Per household, ACS 2012 Measures on Transgender Anti-discrimination", mcap <- "An Examination of the effect of Same Sex Couples Per household, ACS 2012 Measures on Gay Anti-discrimination")
+    ifelse(i == "gay_disc", modsavr <- mods, modsavr <- c(modsavr, mods))
+    mtex <- texreg(mods, caption.above = T, caption = mcap, stars = c(.001, .01, .05, .1), symbol = dotsym, paste0(outlocgit, "acs5ssph2012",i, ".txt"))
+    ## write.table(mte, quote = F, row.names = F, col.names = F)
+}
+
+
+
 
 ## So now let's take another look at that HRC data
 typcont[[1]] %in% colnames(SCCdat)
@@ -212,7 +242,7 @@ SCCdat[, toreg[[1]]]
 
 
 ## joined F-test for two measures of same-sex resources
-compvars <- c("ssph", "Williams", "realastpercap_smallno234", "realastpercapall")
+compvars <- c(nussphVars, "Williams", "realastpercap_smallno234", "realastpercapall")
 ivsforF <- lapply(compvars, function(u) c( typcont[[4]], u))
 
 freemodtrans <- customglm(typcont[[4]], dv1)
@@ -236,5 +266,10 @@ lapply(compmodsgay, function(x){
 })
 
 ## Possibly what he's looking for?
-drop1(customglm( c(compvars, typcont[[4]]), dv1), test = "F")
-add1(customglm( c(compvars, typcont[[4]]), dv1), test = "F")
+droptab <- drop1(customglm( c(compvars, typcont[[4]]), dv1), test = "F")
+
+str(droptab)
+
+
+library(xtable)
+print(xtable(droptab), type = "latex", sanitize.text.function = identity)
