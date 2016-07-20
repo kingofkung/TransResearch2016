@@ -38,6 +38,12 @@ outlocdb <- "/Users/bjr/Dropbox/LGBT Interest group data/"
 
 dat <- read.csv(paste0(loc,"JT DHM LGBT Group Resources.csv"))
 
+## Spot check Williams Measures
+## willdat <- unique(dat[!is.na(dat$Williams), c("statename", "Williams")])
+## willdat$Williams
+## write.csv(willdat, file = paste0(outlocdb, "Spotchecker.csv"), row.names = F)
+
+
 ## Have read in data, will conduct some analyses now
 
 ## lgbtrevpercapita is Dr. Taylor's measure
@@ -231,3 +237,4 @@ lapply(compmodsgay, function(x){
 
 ## Possibly what he's looking for?
 drop1(customglm( c(compvars, typcont[[4]]), dv1), test = "F")
+add1(customglm( c(compvars, typcont[[4]]), dv1), test = "F")

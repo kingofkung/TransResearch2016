@@ -65,3 +65,15 @@ head(stcit)
 
 stcit$abb <- unlist(lapply(as.character(stcit$statename),  function(u) state.abb[match(u, state.name)]))
 stcit$matchcode <- paste0(stcit$abb, stcit$year)
+
+
+## read in updated SSPH data
+nussph <- read.xlsx2(paste0(loc, "ssph data 2000 and 2012.xlsx"), 1)
+nussph <- nussph[,1:4]
+## fix columnnames
+colnames(nussph) <- unlist(lapply(nussph[1,], as.character))
+colnames(nussph) <- gsub("\\s", "", colnames(nussph))
+colnames(nussph) <- tolower(colnames(nussph))
+
+nussph <- nussph[2:nrow(nussph),]
+

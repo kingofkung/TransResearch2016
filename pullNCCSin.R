@@ -141,6 +141,11 @@ datsplit <- rbind.fill(datsplit)
 ## And return the newly full columns to taylorlgbt2
 taylorlgbt2[, colnames(datsub)[2:4]] <- datsplit[,2:4]
 
+## merge in the new ssph data, in the variable nussph
+
+taylorlgbt2 <- merge(taylorlgbt2, nussph[,2:4], by.x = "statename", by.y = "geography")
+
+
 ## Get rid of the match codes, abbreviations and bmfyear, as they've done their part
 taylorlgbt2 <- taylorlgbt2[, -grep("matchcode", colnames(taylorlgbt2))]
 taylorlgbt2 <- taylorlgbt2[, -grep("newyear", colnames(taylorlgbt2))]
@@ -150,7 +155,7 @@ taylorlgbt2 <- taylorlgbt2[, -grep("state", colnames(taylorlgbt2))[-1]]
 ## sort it so I don't have to keep doing it when I'm reading the data
 
 taylorlgbt2 <- taylorlgbt2[order(taylorlgbt2$year),]
-taylorlgbt2 <- taylorlgbt2[order(taylorlgbt2$state),]
+taylorlgbt2 <- taylorlgbt2[order(taylorlgbt2$statename),]
 
 ## The Goal: to create a file called JT DHM LGBT Group Resources, with NCCS measures added
 write.csv(taylorlgbt2, paste0(loc,"JT DHM LGBT Group Resources.csv"), row.names = F)
