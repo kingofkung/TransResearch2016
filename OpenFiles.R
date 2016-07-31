@@ -19,8 +19,10 @@ lgbtcollno234$matchcode <- paste0(lgbtcollno234$state, lgbtcollno234$bmfyear)
 ## All rows have a unique match code. You can tell based on this command.
 ## which(table(taylorlgbt$matchcode)>1)
 
-colnames(lgbtallcoll) <- paste0(colnames(lgbtallcoll), "all")
-colnames(lgbtcollno234) <- paste0(colnames(lgbtcollno234), "no234")
+## colnames(lgbtallcoll) <- paste0(colnames(lgbtallcoll), "all")
+## foreign::write.dta(lgbtallcoll, paste0(loc,"jami and don all lgbt group collapse 5.21.16.dta"))
+## colnames(lgbtcollno234) <- paste0(colnames(lgbtcollno234), "no234")
+## foreign::write.dta(lgbtcollno234, paste0(loc,"jami and don lgbt group collapse no 2 3 4 groups  5.21.16.dta"))
 
 
 
