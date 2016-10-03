@@ -38,7 +38,7 @@ outlocdb <- "/Users/bjr/Dropbox/LGBT Interest group data/"
 thedate <- substr(Sys.time(), 1, 10)
 
 dat <- read.csv(paste0(loc,"JT DHM LGBT Group Resources.csv"))
-
+foreign::write.dta(dat, paste0(loc, "JT DHM LGBT Group Resources.dta"))
 ## Spot check Williams Measures
 ## willdat <- unique(dat[!is.na(dat$Williams), c("statename", "Williams")])
 ## willdat$Williams
