@@ -4,8 +4,6 @@ library(MASS)
 library(texreg)
 library(rockchalk)
 
-
-
 ##' create custom glm function suitable for bulk regression orders
 ##' @title custom glm
 ##' @param x a vector containing the independent variables that we want to consider
@@ -31,7 +29,6 @@ custompolr <- function(x, deev, thedata = dat){
     eval(bquote(polr(.(u), data = thedata, method = "logistic")))
 }
 
-
 loc <- "/Users/bjr/Dropbox/LGBT Interest group data/"
 outlocgit <- "/Users/bjr/GitHub/TransResearch2016/Output/"
 outlocdb <- "/Users/bjr/Dropbox/LGBT Interest group data/"
@@ -46,11 +43,8 @@ foreign::write.dta(dat, paste0(loc, "JT DHM LGBT Group Resources.dta"))
 
 
 ## Have read in data, will conduct some analyses now
-
 ## lgbtrevpercapita is Dr. Taylor's measure
-
-## correlations between IVs, dvs
-## make a file with output
+## correlations between IVs, dvs, and make a file with output
 
 realhrccols <- colnames(dat)[grepl("hrc", colnames(dat))]
 laxPhillips <- colnames(dat)[grepl("LP", colnames(dat))]
@@ -165,13 +159,14 @@ tdlatex2 <- texreg(tdmodsub2, caption.above = T, caption = tdcap2, custom.model.
 ## Begin working on gay discrimination variables
 dv2 <- "gay_disc"
 gdmods <- lapply(toreg, customglm, deev = dv2)
-## outreg(gdmods, 'html')
 
-## outreg(gdmods, type = 'html')
+
 ## Write gay discrimination mods to latex tables
 gdmodsub1 <- gdmods[1:10]
 gdmodsub2 <- gdmods[11:length(gdmods)]
 names(gdmodsub2) <- paste("Model", 11:length(gdmods))
+
+predictOMatic(gdmods[[length(gdmods)]], interval = "confidence")
 
 ## outreg(gdmodsub1, type = 'html')
 gdlatex1 <- texreg(gdmodsub1, caption.above = T, caption = "Event History Analysis of Gay Anti-Discrimination Policy with added Controls, 1-10", stars = c(.001, .01, .05, .1), symbol = dotsym, file = paste0(outlocgit, "gdlatex1.txt"))
@@ -180,9 +175,6 @@ gdlatex1 <- texreg(gdmodsub1, caption.above = T, caption = "Event History Analys
 modcap2 <- paste0("Event History Analysis of Gay Anti-Discrimination Policy with added Controls, 11-", length(gdmods))
 gdlatex2 <- texreg(gdmodsub2, caption.above = T, caption = modcap2, custom.model.names = paste("Model", 11:length(gdmods)), stars = c(.001, .01, .05, .1), symbol = dotsym, file = paste0(outlocgit, "gdlatex2.txt"))
 
-
-## write.table(gdlatex1, file = paste0(outlocgit, "gdlatex1.txt"), quote = F, row.names = F, col.names = F)
-## write.table(gdlatex2, file = paste0(outlocgit, "gdlatex2.txt"), quote = F, row.names = F, col.names = F)
 
 # some isolated varsofint
 
@@ -201,7 +193,6 @@ for(i in c("gay_disc", "trans_dis")[1:2]){
     ifelse(i == "trans_dis", mcap <- "An Examination of Real Assets Per Capita on Transgender Anti-discrimination", mcap <- "An Examination of Real Assets Per Capita on Gay Anti-discrimination")
     ifelse(i == "gay_disc", modsavr <- mods, modsavr <- c(modsavr, mods))
     mtex <- texreg(mods, caption.above = T, caption = mcap, stars = c(.001, .01, .05, .1), symbol = dotsym, paste0(outlocgit, "realastpercapall",i, ".txt"))
-    ## write.table(mte, quote = F, row.names = F, col.names = F)
 }
 
 ## These shouldn't need to change, but we might want to add one for the ssph
@@ -211,7 +202,6 @@ for(i in c("gay_disc", "trans_dis")[1:2]){
     ifelse(i == "trans_dis", mcap <- "An Examination of the effect of Same Sex Couples Per household, Census 2000 Measures on Transgender Anti-discrimination", mcap <- "An Examination of the effect of Same Sex Couples Per household, Census 2000 Measures on Gay Anti-discrimination")
     ifelse(i == "gay_disc", modsavr <- mods, modsavr <- c(modsavr, mods))
     mtex <- texreg(mods, caption.above = T, caption = mcap, stars = c(.001, .01, .05, .1), symbol = dotsym, paste0(outlocgit, "censsph2000",i, ".txt"))
-    ## write.table(mte, quote = F, row.names = F, col.names = F)
 }
 
 acs5ssphivs <- lapply(typcont, c, "acs5ssph2012")
@@ -220,7 +210,6 @@ for(i in c("gay_disc", "trans_dis")[1:2]){
     ifelse(i == "trans_dis", mcap <- "An Examination of the effect of Same Sex Couples Per household, ACS 2012 Measures on Transgender Anti-discrimination", mcap <- "An Examination of the effect of Same Sex Couples Per household, ACS 2012 Measures on Gay Anti-discrimination")
     ifelse(i == "gay_disc", modsavr <- mods, modsavr <- c(modsavr, mods))
     mtex <- texreg(mods, caption.above = T, caption = mcap, stars = c(.001, .01, .05, .1), symbol = dotsym, paste0(outlocgit, "acs5ssph2012",i, ".txt"))
-    ## write.table(mte, quote = F, row.names = F, col.names = F)
 }
 
 
