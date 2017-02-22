@@ -35,7 +35,7 @@ outlocdb <- "/Users/bjr/Dropbox/LGBT Interest group data/"
 thedate <- substr(Sys.time(), 1, 10)
 
 dat <- read.csv(paste0(loc,"JT DHM LGBT Group Resources.csv"))
-foreign::write.dta(dat, paste0(loc, "JT DHM LGBT Group Resources.dta"))
+## foreign::write.dta(dat, paste0(loc, "JT DHM LGBT Group Resources.dta"))
 ## Spot check Williams Measures
 ## willdat <- unique(dat[!is.na(dat$Williams), c("statename", "Williams")])
 ## willdat$Williams
@@ -150,11 +150,6 @@ tdcap2 <- paste0("Event History Analysis of Transgender Anti-Discrimination Poli
 tdmodnames <- paste("Model", 11:length(tdregsNconts))
 tdlatex2 <- texreg(tdmodsub2, caption.above = T, caption = tdcap2, custom.model.names = tdmodnames, stars = c(.001, .01, .05, .1), symbol = dotsym, file = paste0(outlocgit, 'tdmodsub2.txt'))
 
-## write the results to tables
-## write.table(tdlatex1, file = paste0(outlocgit, 'tdmodsub1.txt'), quote = F, row.names = F, col.names = F)
-## write.table(tdlatex2, file = paste0(outlocgit, 'tdmodsub2.txt'), quote = F, row.names = F, col.names = F)
-
-
 
 ## Begin working on gay discrimination variables
 dv2 <- "gay_disc"
@@ -166,7 +161,16 @@ gdmodsub1 <- gdmods[1:10]
 gdmodsub2 <- gdmods[11:length(gdmods)]
 names(gdmodsub2) <- paste("Model", 11:length(gdmods))
 
-predictOMatic(gdmods[[length(gdmods)]], interval = "confidence")
+## Make a smaller one for the paper
+
+
+intMod <- gdmods[[length(gdmods)]]
+intDat <- newdata(intMod, "margins", 5)$acs5ssph2012
+predictOMatic(intMod)
+
+
+## Confirmed: The type of prediction is the response for a glm model
+sapply(1:nrow(intDat), function(x, dat = intdat, mod = intMod) predict(intMod, newdata = intDat[x, ], type = "response") )
 
 ## outreg(gdmodsub1, type = 'html')
 gdlatex1 <- texreg(gdmodsub1, caption.above = T, caption = "Event History Analysis of Gay Anti-Discrimination Policy with added Controls, 1-10", stars = c(.001, .01, .05, .1), symbol = dotsym, file = paste0(outlocgit, "gdlatex1.txt"))
