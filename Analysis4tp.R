@@ -3,6 +3,10 @@ library(plyr)
 library(MASS)
 library(texreg)
 library(rockchalk)
+library(stargazer)
+library(arm)
+
+
 
 ##' create custom glm function suitable for bulk regression orders
 ##' @title custom glm
@@ -35,11 +39,6 @@ outlocdb <- "/Users/bjr/Dropbox/LGBT Interest group data/"
 thedate <- substr(Sys.time(), 1, 10)
 
 dat <- read.csv(paste0(loc,"JT DHM LGBT Group Resources.csv"))
-## foreign::write.dta(dat, paste0(loc, "JT DHM LGBT Group Resources.dta"))
-## Spot check Williams Measures
-## willdat <- unique(dat[!is.na(dat$Williams), c("statename", "Williams")])
-## willdat$Williams
-## write.csv(willdat, file = paste0(outlocdb, "Spotchecker.csv"), row.names = F)
 
 
 ## Have read in data, will conduct some analyses now
@@ -78,7 +77,7 @@ dat[,nussph]
 ## Do a correlation matrix on the variables of interest
 typcont[[4]] %in% colnames(dat)
 
-dsub <- dat[, unique(unlist(c(deveesofint, typcont, incasstrevVars, nussph))) ]
+dsub <- dat[, unique(unlist(c(deveesofint, typcont, incasstrevVars, nussphVars))) ]
 incContsCors <- cor(dsub, use = "pairwise.complete.obs")
 write.csv(incContsCors, file = paste0(outlocdb, 'ControlsAndGroupresourcescorrelations.csv'))
 
@@ -163,15 +162,6 @@ gdmodsub1 <- gdmods[1:10]
 gdmodsub2 <- gdmods[11:length(gdmods)]
 names(gdmodsub2) <- paste("Model", 11:length(gdmods))
 
-gd4tp <- gdmods[c(19, 21)]
-texreg(gd4tp)
-
-## Make a smaller one for the paper
-
-
-intMod <- gdmods[[length(gdmods)]]
-intDat <- newdata(intMod, "margins", 5)$acs5ssph2012
-predictOMatic(intMod)
 
 
 ## Confirmed: The type of prediction is the response for a glm model
@@ -190,84 +180,68 @@ gdlatex2 <- texreg(gdmodsub2, caption.above = T, caption = modcap2, custom.model
 smallno234ivs <- lapply(typcont, c, "realastpercap_smallno234")
 no234mods <- lapply(smallno234ivs, customglm, deev = "trans_dis")
 no234tex <- texreg(no234mods, caption.above = T, caption = "A further examination of real assets per capita on Transgender Anti-discrimination, sans certain groups", stars = c(.001, .01, .05, .1), symbol = dotsym, file = paste0(outlocgit, "no234textrans.txt"))
-## write.table(no234tex, file = paste0(outlocgit, "no234textrans.txt"), quote = F, row.names = F, col.names = F)
 
 no234mods <- lapply(smallno234ivs, customglm, deev = "gay_disc")
 no234tex <- texreg(no234mods, caption.above = T, caption = "A further examination of real assets per capita on Gay Anti-discrimination, sans certain groups", stars = c(.001, .01, .05, .1), symbol = dotsym, file = paste0(outlocgit, "no234texgay.txt"))
-## write.table(no234tex, paste0(outlocgit, "no234texgay.txt"), quote = F, row.names = F, col.names = F)
 
 realastivs <- lapply(typcont, c, "realastpercapall")
-for(i in c("gay_disc", "trans_dis")[1:2]){
-    mods <- lapply(realastivs, customglm, deev = i)
-    ifelse(i == "trans_dis", mcap <- "An Examination of Real Assets Per Capita on Transgender Anti-discrimination", mcap <- "An Examination of Real Assets Per Capita on Gay Anti-discrimination")
-    ifelse(i == "gay_disc", modsavr <- mods, modsavr <- c(modsavr, mods))
-    mtex <- texreg(mods, caption.above = T, caption = mcap, stars = c(.001, .01, .05, .1), symbol = dotsym, paste0(outlocgit, "realastpercapall",i, ".txt"))
-}
-
 ## These shouldn't need to change, but we might want to add one for the ssph
 censussphivs <- lapply(typcont, c, "censsph2000")
-for(i in c("gay_disc", "trans_dis")[1:2]){
-    mods <- lapply(censussphivs, customglm, deev = i)
-    ifelse(i == "trans_dis", mcap <- "An Examination of the effect of Same Sex Couples Per household, Census 2000 Measures on Transgender Anti-discrimination", mcap <- "An Examination of the effect of Same Sex Couples Per household, Census 2000 Measures on Gay Anti-discrimination")
-    ifelse(i == "gay_disc", modsavr <- mods, modsavr <- c(modsavr, mods))
-    mtex <- texreg(mods, caption.above = T, caption = mcap, stars = c(.001, .01, .05, .1), symbol = dotsym, paste0(outlocgit, "censsph2000",i, ".txt"))
-}
-
 acs5ssphivs <- lapply(typcont, c, "acs5ssph2012")
-for(i in c("gay_disc", "trans_dis")[1:2]){
-    mods <- lapply(acs5ssphivs, customglm, deev = i)
-    ifelse(i == "trans_dis", mcap <- "An Examination of the effect of Same Sex Couples Per household, ACS 2012 Measures on Transgender Anti-discrimination", mcap <- "An Examination of the effect of Same Sex Couples Per household, ACS 2012 Measures on Gay Anti-discrimination")
-    ifelse(i == "gay_disc", modsavr <- mods, modsavr <- c(modsavr, mods))
-    mtex <- texreg(mods, caption.above = T, caption = mcap, stars = c(.001, .01, .05, .1), symbol = dotsym, paste0(outlocgit, "acs5ssph2012",i, ".txt"))
+
+IVs <- c(censussphivs[4], acs5ssphivs[4], realastivs[4], smallno234ivs[4])
+gdmods4tp <- lapply(IVs, customglm, deev = "gay_disc")
+tdmods4tp <- lapply(IVs, customglm, deev = "trans_dis")
+
+myCovLabs <- c("Constant", "Citizen Ideology", "Insitutional Ideology", "Jobs LP", "Evangelical Population", "SSPH 2000 Census", "SSPH 2012 ACS", "Real Assets", "Real Assets, no 234 groups")
+
+dvLabs <- c(paste0("Sexual Orientation Anti-Discrimination Law: Models 1-", length(gdmods4tp)),
+            paste0("Gender Identity Anti-Discrimination Law: Models ", 1 + length(tdmods4tp), "-", length(gdmods4tp) + length(tdmods4tp)))
+
+stargazer(c(gdmods4tp, tdmods4tp), type = "latex",
+          dep.var.labels = dvLabs,
+          model.numbers = T,
+          covariate.labels = myCovLabs,
+          intercept.bottom = F
+          )
+
+outreg(gdmods4tp)
+
+
+## Make a smaller one for the paper
+
+
+for(i in 1:4){
+    intMod <- gdmods4tp[[i]]
+##
+    lastVar <- names(coef(intMod))[length(coef(intMod))]
+    varVals <- quantile(dat[, lastVar], probs = seq(0, 1, .2), na.rm = T)
+##
+    lsI <- list(nametoHide = varVals)
+    names(lsI)[1] <-  lastVar
+    print(predictOMatic(intMod, predVals = lsI))
 }
 
-
-
-
-## So now let's take another look at that HRC data
-typcont[[1]] %in% colnames(SCCdat)
-
-incasstrevVars %in% colnames(SCCdat)
-
-unique(unlist(toreg)) %in% colnames(SCCdat)
-
-dv3 <- "ScoreCardCats"
-
-lapply(toreg[[1]], custompolr, dv3, thedat = SCCdat)
-
-dv3 %in% colnames(SCCdat)
-SCCdat[, toreg[[1]]]
-
-
-## joined F-test for two measures of same-sex resources
-compvars <- c(nussphVars, "Williams", "realastpercap_smallno234", "realastpercapall")
-ivsforF <- lapply(compvars, function(u) c( typcont[[4]], u))
-
-freemodtrans <- customglm(typcont[[4]], dv1)
-freemodgay <- customglm(typcont[[4]], dv2)
-
-
-fmodtrans1 <- customglm(typcont[[4]], dv1, model.frame(compmodstrans[[1]]))
-
-
-compmodstrans <- lapply(ivsforF, customglm, dv1, freemodtrans$model)
-compmodsgay <- lapply(ivsforF, customglm, dv2)
-
-lapply(compmodstrans, function(x){
-    freemod <- customglm(typcont[[4]], dv1, model.frame(x))
-    anova(freemod, x, test = "Chisq")
+## Make formula, one time
+intMod <- tdmods4tp[[4]]
+myForm <- formula(intMod)
+##
+confMats <- lapply(1:100, function(x, data = dat){
+    set.seed(x)
+    tstRows <- sample(1:nrow(data), nrow(data) * .1)
+    myGlm <- glm(myForm, data[-tstRows,], family = "binomial")
+    myPreds <- predict(myGlm, data[tstRows,], type = "response")
+    preds <- sapply(myPreds, function(i) {ifelse(!is.na(i), rbinom(1, 1,  i), NA)})
+    obs <- data[tstRows, "gay_disc"]
+    cmProp <- prop.table(table(obs, preds))
 })
 
-lapply(compmodsgay, function(x){
-    freemod <- customglm(typcont[[4]], dv2, model.frame(x))
-    anova(freemod, x, test = "Chisq")
-})
-
-## Possibly what he's looking for?
-droptab <- drop1(customglm( c(compvars, typcont[[4]]), dv1), test = "F")
-
-str(droptab)
+getTruePositives <- function(cMat) ifelse(nrow(cMat) == 2 && ncol(cMat) == 2,
+                                          cMat["0", "0"] + cMat["1", "1"],
+                                          cMat["0", "0"])
+TPVals <- sapply(confMats, getTruePositives)
+summarize(TPVals)
 
 
-library(xtable)
-print(xtable(droptab), type = "latex", sanitize.text.function = identity)
+intMod <- gdmods4tp[[3]]
+coefplot(intMod, vertical = TRUE)
