@@ -72,14 +72,18 @@ assetVars <- grep("asset|ast", colnames(dat), value = T)
 nussphVars <- grep("ssph", colnames(dat)[(ncol(dat)-10):ncol(dat)], value = T)
 
 incasstrevVars <- c(revVars, incVars, assetVars, nussphVars)
-dat[,nussph]
 
 ## Do a correlation matrix on the variables of interest
 typcont[[4]] %in% colnames(dat)
 
-dsub <- dat[, unique(unlist(c(deveesofint, typcont, incasstrevVars, nussphVars))) ]
+dsub <- dat[, unique(unlist(c(deveesofint, typcont[[4]], incasstrevVars, nussphVars))) ]
 incContsCors <- cor(dsub, use = "pairwise.complete.obs")
 write.csv(incContsCors, file = paste0(outlocdb, 'ControlsAndGroupresourcescorrelations.csv'))
+
+dsubSmall <- dat[, c(typcont[[4]], "realastpercapall",  "realastpercap_smallno234", nussphVars)]
+littleCors <- cor(dsubSmall, use = "pairwise.complete.obs")
+
+stargazer(littleCors)
 
 
 ## Get ScoreCardCats into the correct Order
