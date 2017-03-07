@@ -168,16 +168,33 @@ texreg(gd4tp)
 
 ## Make a smaller one for the paper
 
-## Get the model we'd like to use in predictOMatic and the name of the variable
-intMod <- td4tp[[1]]
-intVar <- names(coef(intMod)[6])
+rm(atMeanLs)
+atMeanLs <- list("citi6013" = mean(dat$citi6013, na.rm = T),
+     "inst6013_adacope" = mean(dat$inst6013_adacope, na.rm = T),
+     "JobsLP" = mean(dat$JobsLP, na.rm = T),
+     "evangelical" = mean(dat$evangelical, na.rm = T))
 ##
-pVs <- list(mean(dat[, intVar], na.rm = TRUE) + sd(dat[, intVar], na.rm = TRUE) * -2:2)
-names(pVs) <- intVar
-mfx <- predictOMatic(intMod, predVals = pVs)[, 5:6]
-mfx$fitAsPerc <-  (mfx$fit) * 100
-mfx$fitAsFactor <- (mfx$fit)/min(mfx$fit)
-mfx
+## Get the model we'd like to use in predictOMatic and the name of the variable
+intMods <- c(gd4tp, td4tp)
+for(i in seq(intMods)){
+    intMod <- intMods[[i]]
+    intVar <- names(coef(intMod)[6])
+    ##
+atMeanLs[[intVar]] <- mean(dat[, intVar], na.rm = TRUE) + sd(dat[, intVar], na.rm = TRUE) * -2:2
+    ## ## Craft mfx
+    mfx <- predictOMatic(intMod, predVals = atMeanLs, n = 5)[, ]
+    mfx$fitAsPerc <-  (mfx$fit) * 100
+    mfx$fitAsFactor <- (mfx$fit)/min(mfx$fit)
+    ## make sure we know which DV goes with which table. A little hacky
+    mfx$dv <- as.character(formula(intMod)[[2]])
+##
+    ##Write the Results to a table, but only the one time
+    ifelse(i == 1, myAppend <- FALSE, myAppend <- TRUE)
+    ## And write to a .csv file, using write.table so we can append
+    write.table(mfx[,], file = paste0(outlocdb, "BensOutput/MFX.csv"), append = myAppend, sep = ",", row.names = F)
+    ## Needed to do some cleanup. If we don't get rid of the intVar element, it'll just stick around and be a problem
+    atMeanLs[[intVar]] <- NULL
+}
 
 
 ## Confirmed: The type of prediction is the response for a glm model
