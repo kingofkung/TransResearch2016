@@ -79,6 +79,10 @@ status open
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
 % Table created by stargazer v.5.2 by Marek Hlavac, Harvard University.
  E-mail: hlavac at fas.harvard.edu
 \end_layout
@@ -103,7 +107,7 @@ centering
 \backslash
 begin{tabular}{@{
 \backslash
-extracolsep{5pt}} ccccccccc} 
+extracolsep{5pt}} lcccccccc} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -270,9 +274,6 @@ status open
 
 \begin_layout Plain Layout
 
-
-\backslash
-thispagestyle{empty}
 \end_layout
 
 \begin_layout Plain Layout

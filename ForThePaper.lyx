@@ -5,6 +5,9 @@
 \save_transient_properties true
 \origin unavailable
 \textclass article
+\begin_preamble
+\pagestyle{empty}
+\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
 \language english
@@ -76,6 +79,10 @@
 \begin_layout Standard
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -270,9 +277,6 @@ status open
 
 \begin_layout Plain Layout
 
-
-\backslash
-thispagestyle{empty}
 \end_layout
 
 \begin_layout Plain Layout

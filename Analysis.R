@@ -168,10 +168,16 @@ texreg(gd4tp)
 
 ## Make a smaller one for the paper
 
-
-intMod <- gdmods[[length(gdmods)]]
-intDat <- newdata(intMod, "margins", 5)$acs5ssph2012
-predictOMatic(intMod)
+## Get the model we'd like to use in predictOMatic and the name of the variable
+intMod <- td4tp[[1]]
+intVar <- names(coef(intMod)[6])
+##
+pVs <- list(mean(dat[, intVar], na.rm = TRUE) + sd(dat[, intVar], na.rm = TRUE) * -2:2)
+names(pVs) <- intVar
+mfx <- predictOMatic(intMod, predVals = pVs)[, 5:6]
+mfx$fitAsPerc <-  (mfx$fit) * 100
+mfx$fitAsFactor <- (mfx$fit)/min(mfx$fit)
+mfx
 
 
 ## Confirmed: The type of prediction is the response for a glm model
