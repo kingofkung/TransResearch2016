@@ -83,6 +83,9 @@ write.csv(incContsCors, file = paste0(outlocdb, 'ControlsAndGroupresourcescorrel
 dsubSmall <- dat[, c(typcont[[4]], "realastpercapall",  "realastpercap_smallno234", nussphVars)]
 littleCors <- cor(dsubSmall, use = "pairwise.complete.obs")
 
+
+cor.test(dsubSmall[, "realastpercapall"], dsubSmall[, "acs5ssph2012"])
+
 stargazer(littleCors)
 
 
