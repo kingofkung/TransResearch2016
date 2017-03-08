@@ -217,17 +217,36 @@ outreg(gdmods4tp)
 
 ## Make a smaller one for the paper
 
-
-for(i in 1:4){
-    intMod <- gdmods4tp[[i]]
+rm(atMeanLs)
+atMeanLs <- list("citi6013" = mean(dat$citi6013, na.rm = T),
+     "inst6013_adacope" = mean(dat$inst6013_adacope, na.rm = T),
+     "JobsLP" = mean(dat$JobsLP, na.rm = T),
+     "evangelical" = mean(dat$evangelical, na.rm = T))
 ##
-    lastVar <- names(coef(intMod))[length(coef(intMod))]
-    varVals <- quantile(dat[, lastVar], probs = seq(0, 1, .2), na.rm = T)
+## Get the model we'd like to use in predictOMatic and the name of the variable
+intMods <- c(gdmods4tp, tdmods4tp)
+for(i in seq(intMods)){
+    intMod <- intMods[[i]]
+    intVar <- names(coef(intMod)[6])
+    ##
+atMeanLs[[intVar]] <- mean(dat[, intVar], na.rm = TRUE) + sd(dat[, intVar], na.rm = TRUE) * -2:2
+    ## ## Craft mfx
+    mfx <- predictOMatic(intMod, predVals = atMeanLs, n = 5)[, ]
+    mfx$fitAsPerc <-  (mfx$fit) * 100
+    mfx$fitAsFactor <- (mfx$fit)/min(mfx$fit)
+    ## make sure we know which DV goes with which table. A little hacky
+    mfx$dv <- as.character(formula(intMod)[[2]])
 ##
-    lsI <- list(nametoHide = varVals)
-    names(lsI)[1] <-  lastVar
-    print(predictOMatic(intMod, predVals = lsI))
+    ##Write the Results to a table, but only the one time
+    ifelse(i == 1, myAppend <- FALSE, myAppend <- TRUE)
+    ## And write to a .csv file, using write.table so we can append
+    write.table(mfx[,], file = paste0(outlocdb, "BensOutput/MFX.csv"), append = myAppend, sep = ",", row.names = F)
+    ## Needed to do some cleanup. If we don't get rid of the intVar element, it'll just stick around and be a problem
+    atMeanLs[[intVar]] <- NULL
 }
+
+
+
 
 ## Make formula, one time
 intMod <- tdmods4tp[[4]]
