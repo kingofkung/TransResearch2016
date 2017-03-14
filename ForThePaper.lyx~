@@ -5,6 +5,9 @@
 \save_transient_properties true
 \origin unavailable
 \textclass article
+\begin_preamble
+\pagestyle{empty}
+\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
 \language english

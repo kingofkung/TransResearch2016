@@ -35,11 +35,13 @@ custompolr <- function(x, deev, thedata = dat){
 
 loc <- "/Users/bjr/Dropbox/LGBT Interest group data/"
 outlocgit <- "/Users/bjr/GitHub/TransResearch2016/Output/"
-outlocdb <- "/Users/bjr/Dropbox/LGBT Interest group data/"
+outlocdb <- "/Users/bjr/Dropbox/LGBT Interest group data/BensOutput/"
 thedate <- substr(Sys.time(), 1, 10)
 
 dat <- read.csv(paste0(loc,"JT DHM LGBT Group Resources.csv"))
 
+library(xlsx)
+write.xlsx(dat, paste0(outlocdb, "JT DHM LGBT Group Resources.xlsx"))
 
 ## Have read in data, will conduct some analyses now
 ## lgbtrevpercapita is Dr. Taylor's measure
@@ -86,8 +88,18 @@ littleCors <- cor(dsubSmall, use = "pairwise.complete.obs")
 
 cor.test(dsubSmall[, "realastpercapall"], dsubSmall[, "acs5ssph2012"])
 
-stargazer(littleCors)
 
+lcLabs <- c("Citizen Ideology", "ADA COPE Inst Ideo", "Jobs", "Evangelical",
+            "Real Assets PC All", "Real Assets PC Small, No 234 Groups", "SSPH Census 2000", "ACS SSPH 2012")
+
+rownames(littleCors) <- lcLabs
+colnames(littleCors) <- lcLabs
+
+stargazer(littleCors, type = 'html', out = paste0(outlocdb, "LCHTML.html"))
+
+
+library(xlsx)
+write.xlsx(littleCors, file = paste0(outlocdb, "BensDocs.xlsx"))
 
 ## Get ScoreCardCats into the correct Order
 SCCLvls <- c("High Priority To Achieve Basic Equality", "Building Equality", "Solidifying Equality", "Working Toward Innovative Equality")
@@ -205,15 +217,18 @@ myCovLabs <- c("Constant", "Citizen Ideology", "Insitutional Ideology", "Jobs LP
 dvLabs <- c(paste0("Sexual Orientation Anti-Discrimination Law: Models 1-", length(gdmods4tp)),
             paste0("Gender Identity Anti-Discrimination Law: Models ", 1 + length(tdmods4tp), "-", length(gdmods4tp) + length(tdmods4tp)))
 
-stargazer(c(gdmods4tp, tdmods4tp), type = "latex",
+stargazer(c(gdmods4tp, tdmods4tp), type = "html",
           dep.var.labels = dvLabs,
           model.numbers = T,
           covariate.labels = myCovLabs,
-          intercept.bottom = F
+          intercept.bottom = F,
+          out = paste0(outlocdb, "htmlReg.html")
           )
 
 outreg(gdmods4tp)
 
+table(dat$censsph2000, dat$state)
+table(dat$realastpercapall, dat$state)
 
 ## Make a smaller one for the paper
 
