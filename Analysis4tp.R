@@ -1,3 +1,5 @@
+rm(list = ls())
+
 ## We'll store the analyses of the data we collect in here
 library(plyr)
 library(MASS)
@@ -5,6 +7,8 @@ library(texreg)
 library(rockchalk)
 library(stargazer)
 library(arm)
+library(xlsx)
+library(pscl)
 
 
 
@@ -14,10 +18,10 @@ library(arm)
 ##' @param deev A character version of our dv of choice.
 ##' @return a glm model with deev ~ x, where x is a the of variables of interest
 ##' @author Benjamin Rogers
-customglm <- function(x, deev, thedata = dat){
+customglm <- function(x, deev, dat = dat){
     x <- ifelse(length(x) > 1, paste0(x, collapse = "+"), x)
     u <- as.formula(paste(deev, x, sep = " ~ "))
-    eval(bquote(glm(.(u), family = "binomial", data = thedata)))
+    eval(bquote(glm(.(u), family = "binomial", data = dat)))
 }
 
 ##' create custom Ordered logistic regression for bulk regressions
@@ -27,10 +31,10 @@ customglm <- function(x, deev, thedata = dat){
 ##' @param thedata the data to model the formula on
 ##' @return a polr model in the form deev ~ x
 ##' @author Benjamin Rogers
-custompolr <- function(x, deev, thedata = dat){
+custompolr <- function(x, deev, dat = dat){
     x <- ifelse(length(x) > 1, paste0(x, collapse = "+"), x)
     u <- as.formula(paste(deev, x, sep = " ~ "))
-    eval(bquote(polr(.(u), data = thedata, method = "logistic")))
+    eval(bquote(polr(.(u), data = dat, method = "logistic")))
 }
 
 loc <- "/Users/bjr/Dropbox/LGBT Interest group data/"
@@ -39,15 +43,25 @@ outlocdb <- "/Users/bjr/Dropbox/LGBT Interest group data/BensOutput/"
 thedate <- substr(Sys.time(), 1, 10)
 
 dat <- read.csv(paste0(loc,"JT DHM LGBT Group Resources.csv"))
+head(dat)
 
-library(xlsx)
-write.xlsx(dat, paste0(outlocdb, "JT DHM LGBT Group Resources.xlsx"))
+stateWill <- split(dat[, c('statename', "Williams")], f = dat$statename)
+stateWill <- lapply(stateWill, function(x){
+    ##
+    ## browser()
+    valCol <- x[, 2]
+    ## replace na's with non-missing value
+    repVal <- rep(valCol[!is.na(valCol)][1], times = length(valCol))
+    return(data.frame('statename' = as.character(x[, 1]), 'Williams' = round(repVal, 3)))
+})
+stateWill <- do.call(rbind, stateWill)
+dat$Williams <- stateWill$Williams
+## table(dat$statename, dat$Williams)
 
 ## Have read in data, will conduct some analyses now
 ## lgbtrevpercapita is Dr. Taylor's measure
 ## correlations between IVs, dvs, and make a file with output
 
-realhrccols <- colnames(dat)[grepl("hrc", colnames(dat))]
 laxPhillips <- colnames(dat)[grepl("LP", colnames(dat))]
 
 nofacs <- !unlist(lapply(dat, is.factor))
@@ -64,7 +78,7 @@ no234cols <- colnames(dat)[grepl("no234", colnames(dat))]
 typcont <- c("citi6013", "inst6013_adacope", laxPhillips[5], "evangelical")
 typcont <- lapply(seq_along(typcont), function(x) typcont[1:x])
 
-## get income/Revenue/assets variables and combine them into a list
+## ## get income/Revenue/assets variables and combine them into a list
 revVars <- grep("rev", colnames(dat), value = T)
 incVars <- grep("inc", colnames(dat), value = T)
 ## Fun fact: | is the or command, and it works in regex the same as elsewhere
@@ -77,12 +91,13 @@ incasstrevVars <- c(revVars, incVars, assetVars, nussphVars)
 
 ## Do a correlation matrix on the variables of interest
 typcont[[4]] %in% colnames(dat)
+"Williams" %in% colnames(dat)
 
 dsub <- dat[, unique(unlist(c(deveesofint, typcont[[4]], incasstrevVars, nussphVars))) ]
 incContsCors <- cor(dsub, use = "pairwise.complete.obs")
 write.csv(incContsCors, file = paste0(outlocdb, 'ControlsAndGroupresourcescorrelations.csv'))
 
-dsubSmall <- dat[, c(typcont[[4]], "realastpercapall",  "realastpercap_smallno234", nussphVars)]
+dsubSmall <- dat[, c(typcont[[4]], "realastpercapall",  "realastpercap_smallno234", nussphVars, "Williams")]
 littleCors <- cor(dsubSmall, use = "pairwise.complete.obs")
 
 
@@ -90,7 +105,7 @@ cor.test(dsubSmall[, "realastpercapall"], dsubSmall[, "acs5ssph2012"])
 
 
 lcLabs <- c("Citizen Ideology", "ADA COPE Inst Ideo", "Jobs", "Evangelical",
-            "Real Assets PC All", "Real Assets PC Small, No 234 Groups", "SSPH Census 2000", "ACS SSPH 2012")
+            "Real Assets PC All", "Real Assets PC Small, No 234 Groups", "SSPH Census 2000", "ACS SSPH 2012", "Williams")
 
 rownames(littleCors) <- lcLabs
 colnames(littleCors) <- lcLabs
@@ -114,27 +129,9 @@ SCCdat <- SCCdat[, unlist(lapply(SCCdat, function(x) !all(is.na(x))))]
 
 ## Models for ScoreCardCats ordinal Logit regression
 ## Incomeall isn't working correctly, but its square root and percentages return a result
-SCCdat$iasqrt <- sqrt(SCCdat$incomeall)
-SCCdat$iaplus <- SCCdat$incomeall + 1
-SCCdat$iaperc <- SCCdat$incomeall/sum(as.numeric(SCCdat$incomeall))
-incomeall <- as.numeric(SCCdat$incomeall)
 
 ## Create the IVs we'd like
 ivls <- c( "inst6013_adacope", "inst6014_nom", "citi6013", "iaperc", "realincpercapall", "orgcountall", laxPhillips[5])
-
-## And apply across all single function levels
-onevarHRCmods <- lapply(ivls, function(x) {
-    r <- as.formula(paste0("ScoreCardCats ~ ",x))
-    eval(bquote(polr(.(r), data = SCCdat, method = "logistic")))
-
-})
-onevarHRCmods <- lapply(onevarHRCmods, FUN = extract, include.thresholds = TRUE)
-
-## A symbol for all latex documents indicating what we'd like for the .1 threshold
-dotsym <- "\\dagger"
-
-HRCCoefOrder <- c(1, 5:(length(onevarHRCmods) + 3), 2:4)
-latextext1 <- texreg(onevarHRCmods,  reorder.coef = HRCCoefOrder, caption.above = TRUE, caption = "Ordered Logistic Regressions using the HRC's classifications", stars = c(.001, .01, .05, .1), symbol = dotsym, file = paste0(outlocgit, "HRCmlist.txt"))
 
 
 ## Start adding files that show how HRC is affected by
@@ -146,62 +143,32 @@ latextext1 <- texreg(onevarHRCmods,  reorder.coef = HRCCoefOrder, caption.above 
 
 dv1 <- "trans_dis"
 
-simplervar <- lapply(ivls[-4], customglm, dv1)
-texreg(simplervar, file = paste0(outlocgit, "simplevartransdisc.txt"), caption.above = T, caption = "Event History Analysis of Transgender Anti-Discrimination")
+simplervar <- lapply(ivls[-4], customglm, dv1, dat)
 
 ## Bind control variables we want to the variables we want to consider in a variable called toreg.
 ## Note to self, it appears that we get what we want if we list the variable of interest last rather than first.
 toreg <- lapply(incasstrevVars, function(x) c(typcont[[length(typcont)]], x) )
 
-tdregsNconts <- lapply(toreg, customglm, deev = dv1)
-## outreg(tdregsNconts, "html")
+td4tp <- lapply(toreg[c(19, 21)], customglm, deev = dv1, dat = dat)
 
-tdmodsub1 <- tdregsNconts[1:10]
-tdmodsub2 <- tdregsNconts[11:length(tdregsNconts)]
-
-td4tp <- tdregsNconts[c(19, 21)]
+## see what years are used in one of the td4tp measures
+tRows <- as.numeric(rownames(model.frame(td4tp[[1]])))
+## unique(dat[as.numeric(tRows), "year"])
+cbind(dat$statename[tRows], model.frame(td4tp[[1]]))
 
 ## outreg(tdregsNconts, type = "html")
-
-tdcap1 <- "Event History Analysis of Transgender Anti-Discrimination Policy with Controls, Models 1-10"
-tdlatex1 <- texreg(tdmodsub1, caption.above = T, caption = tdcap1, stars = c(.001, .01, .05, .1), symbol = dotsym, file = paste0(outlocgit, 'tdmodsub1.txt'))
-
-tdcap2 <- paste0("Event History Analysis of Transgender Anti-Discrimination Policy with Controls, Models 11-", length(tdregsNconts))
-tdmodnames <- paste("Model", 11:length(tdregsNconts))
-tdlatex2 <- texreg(tdmodsub2, caption.above = T, caption = tdcap2, custom.model.names = tdmodnames, stars = c(.001, .01, .05, .1), symbol = dotsym, file = paste0(outlocgit, 'tdmodsub2.txt'))
 
 
 ## Begin working on gay discrimination variables
 dv2 <- "gay_disc"
-gdmods <- lapply(toreg, customglm, deev = dv2)
-
-
-## Write gay discrimination mods to latex tables
-gdmodsub1 <- gdmods[1:10]
-gdmodsub2 <- gdmods[11:length(gdmods)]
-names(gdmodsub2) <- paste("Model", 11:length(gdmods))
-
-
-
-## Confirmed: The type of prediction is the response for a glm model
-sapply(1:nrow(intDat), function(x, dat = intdat, mod = intMod) predict(intMod, newdata = intDat[x, ], type = "response") )
-
-## outreg(gdmodsub1, type = 'html')
-gdlatex1 <- texreg(gdmodsub1, caption.above = T, caption = "Event History Analysis of Gay Anti-Discrimination Policy with added Controls, 1-10", stars = c(.001, .01, .05, .1), symbol = dotsym, file = paste0(outlocgit, "gdlatex1.txt"))
-
-
-modcap2 <- paste0("Event History Analysis of Gay Anti-Discrimination Policy with added Controls, 11-", length(gdmods))
-gdlatex2 <- texreg(gdmodsub2, caption.above = T, caption = modcap2, custom.model.names = paste("Model", 11:length(gdmods)), stars = c(.001, .01, .05, .1), symbol = dotsym, file = paste0(outlocgit, "gdlatex2.txt"))
 
 
 # some isolated varsofint
 
 smallno234ivs <- lapply(typcont, c, "realastpercap_smallno234")
-no234mods <- lapply(smallno234ivs, customglm, deev = "trans_dis")
-no234tex <- texreg(no234mods, caption.above = T, caption = "A further examination of real assets per capita on Transgender Anti-discrimination, sans certain groups", stars = c(.001, .01, .05, .1), symbol = dotsym, file = paste0(outlocgit, "no234textrans.txt"))
+no234mods <- lapply(smallno234ivs, customglm, deev = "trans_dis", dat = dat)
 
-no234mods <- lapply(smallno234ivs, customglm, deev = "gay_disc")
-no234tex <- texreg(no234mods, caption.above = T, caption = "A further examination of real assets per capita on Gay Anti-discrimination, sans certain groups", stars = c(.001, .01, .05, .1), symbol = dotsym, file = paste0(outlocgit, "no234texgay.txt"))
+no234mods <- lapply(smallno234ivs, customglm, deev = "gay_disc", dat = dat)
 
 realastivs <- lapply(typcont, c, "realastpercapall")
 ## These shouldn't need to change, but we might want to add one for the ssph
@@ -209,8 +176,13 @@ censussphivs <- lapply(typcont, c, "censsph2000")
 acs5ssphivs <- lapply(typcont, c, "acs5ssph2012")
 
 IVs <- c(censussphivs[4], acs5ssphivs[4], realastivs[4], smallno234ivs[4])
-gdmods4tp <- lapply(IVs, customglm, deev = "gay_disc")
-tdmods4tp <- lapply(IVs, customglm, deev = "trans_dis")
+gdmods4tp <- lapply(IVs, customglm, deev = "gay_disc", dat)
+tdmods4tp <- lapply(IVs, customglm, deev = "trans_dis", dat)
+
+## Need to grab pseudo-R^2s
+gdpR2s <- lapply(gdmods4tp, function(x) round(pR2(x)['McFadden'], 3))
+tdpR2s <- lapply(tdmods4tp, function(x) round(pR2(x)['McFadden'], 3))
+
 
 myCovLabs <- c("Constant", "Citizen Ideology", "Insitutional Ideology", "Jobs LP", "Evangelical Population", "SSPH 2000 Census", "SSPH 2012 ACS", "Real Assets", "Real Assets, no 234 groups")
 
@@ -222,10 +194,10 @@ stargazer(c(gdmods4tp, tdmods4tp), type = "html",
           model.numbers = T,
           covariate.labels = myCovLabs,
           intercept.bottom = F,
+          add.lines = list(unlist(c("Pseudo R-Squared", gdpR2s, tdpR2s))),
           out = paste0(outlocdb, "htmlReg.html")
           )
 
-outreg(gdmods4tp)
 
 table(dat$censsph2000, dat$state)
 table(dat$realastpercapall, dat$state)
@@ -244,7 +216,7 @@ for(i in seq(intMods)){
     intMod <- intMods[[i]]
     intVar <- names(coef(intMod)[6])
     ##
-atMeanLs[[intVar]] <- mean(dat[, intVar], na.rm = TRUE) + sd(dat[, intVar], na.rm = TRUE) * -2:2
+    atMeanLs[[intVar]] <- mean(dat[, intVar], na.rm = TRUE) + sd(dat[, intVar], na.rm = TRUE) * -2:2
     ## ## Craft mfx
     mfx <- predictOMatic(intMod, predVals = atMeanLs, n = 5)[, ]
     mfx$fitAsPerc <-  (mfx$fit) * 100
@@ -255,7 +227,7 @@ atMeanLs[[intVar]] <- mean(dat[, intVar], na.rm = TRUE) + sd(dat[, intVar], na.r
     ##Write the Results to a table, but only the one time
     ifelse(i == 1, myAppend <- FALSE, myAppend <- TRUE)
     ## And write to a .csv file, using write.table so we can append
-    write.table(mfx[,], file = paste0(outlocdb, "BensOutput/MFX.csv"), append = myAppend, sep = ",", row.names = F)
+    write.table(mfx[,], file = paste0(outlocdb, "MFX.csv"), append = myAppend, sep = ",", row.names = F)
     ## Needed to do some cleanup. If we don't get rid of the intVar element, it'll just stick around and be a problem
     atMeanLs[[intVar]] <- NULL
 }
