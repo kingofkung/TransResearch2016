@@ -75,7 +75,7 @@ no234cols <- colnames(dat)[grepl("no234", colnames(dat))]
 ## multicollinear with both our ivs of interest as well as the other
 ## institutional variable. We can put it back in if we'd like later
 ## though.
-typcont <- c("citi6013", "inst6013_adacope", laxPhillips[5], "evangelical")
+typcont <- c("citi6013", "inst6013_adacope", laxPhillips[5], "evangelical", "Williams")
 typcont <- lapply(seq_along(typcont), function(x) typcont[1:x])
 
 ## ## get income/Revenue/assets variables and combine them into a list
@@ -93,19 +93,19 @@ incasstrevVars <- c(revVars, incVars, assetVars, nussphVars)
 typcont[[4]] %in% colnames(dat)
 "Williams" %in% colnames(dat)
 
-dsub <- dat[, unique(unlist(c(deveesofint, typcont[[4]], incasstrevVars, nussphVars))) ]
+dsub <- dat[, unique(unlist(c(deveesofint, typcont[[5]], incasstrevVars, nussphVars))) ]
 incContsCors <- cor(dsub, use = "pairwise.complete.obs")
 write.csv(incContsCors, file = paste0(outlocdb, 'ControlsAndGroupresourcescorrelations.csv'))
 
-dsubSmall <- dat[, c(typcont[[4]], "realastpercapall",  "realastpercap_smallno234", nussphVars, "Williams")]
+dsubSmall <- dat[, c(typcont[[5]], "realastpercapall",  "realastpercap_smallno234", nussphVars)]
 littleCors <- cor(dsubSmall, use = "pairwise.complete.obs")
 
 
 cor.test(dsubSmall[, "realastpercapall"], dsubSmall[, "acs5ssph2012"])
 
 
-lcLabs <- c("Citizen Ideology", "ADA COPE Inst Ideo", "Jobs", "Evangelical",
-            "Real Assets PC All", "Real Assets PC Small, No 234 Groups", "SSPH Census 2000", "ACS SSPH 2012", "Williams")
+lcLabs <- c("Citizen Ideology", "ADA COPE Inst Ideo", "Jobs", "Evangelical","Williams",
+            "Real Assets PC All", "Real Assets PC Small, No 234 Groups", "SSPH Census 2000", "ACS SSPH 2012")
 
 rownames(littleCors) <- lcLabs
 colnames(littleCors) <- lcLabs
@@ -175,7 +175,8 @@ realastivs <- lapply(typcont, c, "realastpercapall")
 censussphivs <- lapply(typcont, c, "censsph2000")
 acs5ssphivs <- lapply(typcont, c, "acs5ssph2012")
 
-IVs <- c(censussphivs[4], acs5ssphivs[4], realastivs[4], smallno234ivs[4])
+finalTypCont <- length(typcont)
+IVs <- c(censussphivs[finalTypCont], acs5ssphivs[finalTypCont], realastivs[finalTypCont], smallno234ivs[finalTypCont])
 gdmods4tp <- lapply(IVs, customglm, deev = "gay_disc", dat)
 tdmods4tp <- lapply(IVs, customglm, deev = "trans_dis", dat)
 
@@ -184,7 +185,7 @@ gdpR2s <- lapply(gdmods4tp, function(x) round(pR2(x)['McFadden'], 3))
 tdpR2s <- lapply(tdmods4tp, function(x) round(pR2(x)['McFadden'], 3))
 
 
-myCovLabs <- c("Constant", "Citizen Ideology", "Insitutional Ideology", "Jobs LP", "Evangelical Population", "SSPH 2000 Census", "SSPH 2012 ACS", "Real Assets", "Real Assets, no 234 groups")
+myCovLabs <- c("Constant", "Citizen Ideology", "Insitutional Ideology", "Jobs LP", "Evangelical Population", "Williams Measure", "SSPH 2000 Census", "SSPH 2012 ACS", "Real Assets", "Real Assets, no 234 groups")
 
 dvLabs <- c(paste0("Sexual Orientation Anti-Discrimination Law: Models 1-", length(gdmods4tp)),
             paste0("Gender Identity Anti-Discrimination Law: Models ", 1 + length(tdmods4tp), "-", length(gdmods4tp) + length(tdmods4tp)))
