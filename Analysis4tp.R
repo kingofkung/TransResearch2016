@@ -58,6 +58,19 @@ stateWill <- do.call(rbind, stateWill)
 dat$Williams <- stateWill$Williams
 ## table(dat$statename, dat$Williams)
 
+## Need to lag the measures:: realastpercap_smallno234 and realastpercapall
+stateAst <- split(dat[, c('statename', 'realastpercap_smallno234', 'realastpercapall', 'year')], f = dat$statename)
+stateAst <- lapply(stateAst, function(x){
+    x$realastpercap_smallno234Lagged <- Hmisc::Lag(x$realastpercap_smallno234, 1)
+    x$realastpercapalllagged <- Hmisc::Lag(x$realastpercapall, 1)
+##
+    return(x[,  c('statename', 'year', 'realastpercap_smallno234', 'realastpercap_smallno234Lagged',
+                  'realastpercapall', 'realastpercapalllagged') , drop = FALSE])
+##
+})
+
+View(stateAst$Wyoming)
+
 ## Have read in data, will conduct some analyses now
 ## lgbtrevpercapita is Dr. Taylor's measure
 ## correlations between IVs, dvs, and make a file with output
@@ -75,7 +88,7 @@ no234cols <- colnames(dat)[grepl("no234", colnames(dat))]
 ## multicollinear with both our ivs of interest as well as the other
 ## institutional variable. We can put it back in if we'd like later
 ## though.
-typcont <- c("citi6013", "inst6013_adacope", laxPhillips[5], "evangelical", "Williams")
+typcont <- c("citi6013", "inst6013_adacope", laxPhillips[5], "evangelical")
 typcont <- lapply(seq_along(typcont), function(x) typcont[1:x])
 
 ## ## get income/Revenue/assets variables and combine them into a list
@@ -93,19 +106,19 @@ incasstrevVars <- c(revVars, incVars, assetVars, nussphVars)
 typcont[[4]] %in% colnames(dat)
 "Williams" %in% colnames(dat)
 
-dsub <- dat[, unique(unlist(c(deveesofint, typcont[[5]], incasstrevVars, nussphVars))) ]
+dsub <- dat[, unique(unlist(c(deveesofint, typcont[[length(typcont)]], incasstrevVars, nussphVars))) ]
 incContsCors <- cor(dsub, use = "pairwise.complete.obs")
 write.csv(incContsCors, file = paste0(outlocdb, 'ControlsAndGroupresourcescorrelations.csv'))
 
-dsubSmall <- dat[, c(typcont[[5]], "realastpercapall",  "realastpercap_smallno234", nussphVars)]
+dsubSmall <- dat[, c(typcont[[length(typcont)]], "realastpercapall",  "realastpercap_smallno234", nussphVars, "Williams")]
 littleCors <- cor(dsubSmall, use = "pairwise.complete.obs")
 
 
 cor.test(dsubSmall[, "realastpercapall"], dsubSmall[, "acs5ssph2012"])
 
 
-lcLabs <- c("Citizen Ideology", "ADA COPE Inst Ideo", "Jobs", "Evangelical","Williams",
-            "Real Assets PC All", "Real Assets PC Small, No 234 Groups", "SSPH Census 2000", "ACS SSPH 2012")
+lcLabs <- c("Citizen Ideology", "ADA COPE Inst Ideo", "Jobs", "Evangelical",
+            "Real Assets PC All", "Real Assets PC Small, No 234 Groups", "SSPH Census 2000", "ACS SSPH 2012", "Williams")
 
 rownames(littleCors) <- lcLabs
 colnames(littleCors) <- lcLabs
@@ -143,7 +156,6 @@ ivls <- c( "inst6013_adacope", "inst6014_nom", "citi6013", "iaperc", "realincper
 
 dv1 <- "trans_dis"
 
-simplervar <- lapply(ivls[-4], customglm, dv1, dat)
 
 ## Bind control variables we want to the variables we want to consider in a variable called toreg.
 ## Note to self, it appears that we get what we want if we list the variable of interest last rather than first.
@@ -156,8 +168,6 @@ tRows <- as.numeric(rownames(model.frame(td4tp[[1]])))
 ## unique(dat[as.numeric(tRows), "year"])
 cbind(dat$statename[tRows], model.frame(td4tp[[1]]))
 
-## outreg(tdregsNconts, type = "html")
-
 
 ## Begin working on gay discrimination variables
 dv2 <- "gay_disc"
@@ -166,26 +176,26 @@ dv2 <- "gay_disc"
 # some isolated varsofint
 
 smallno234ivs <- lapply(typcont, c, "realastpercap_smallno234")
-no234mods <- lapply(smallno234ivs, customglm, deev = "trans_dis", dat = dat)
-
-no234mods <- lapply(smallno234ivs, customglm, deev = "gay_disc", dat = dat)
 
 realastivs <- lapply(typcont, c, "realastpercapall")
 ## These shouldn't need to change, but we might want to add one for the ssph
 censussphivs <- lapply(typcont, c, "censsph2000")
 acs5ssphivs <- lapply(typcont, c, "acs5ssph2012")
+williamsivs <- lapply(typcont, c, "Williams")
 
 finalTypCont <- length(typcont)
-IVs <- c(censussphivs[finalTypCont], acs5ssphivs[finalTypCont], realastivs[finalTypCont], smallno234ivs[finalTypCont])
+IVs <- c(censussphivs[finalTypCont], acs5ssphivs[finalTypCont], realastivs[finalTypCont], smallno234ivs[finalTypCont], williamsivs[finalTypCont])
 gdmods4tp <- lapply(IVs, customglm, deev = "gay_disc", dat)
 tdmods4tp <- lapply(IVs, customglm, deev = "trans_dis", dat)
+
+ range(dat$year[ sapply(gdmods4tp, function(x) as.numeric(rownames(model.frame(x))))[[5]] ])
 
 ## Need to grab pseudo-R^2s
 gdpR2s <- lapply(gdmods4tp, function(x) round(pR2(x)['McFadden'], 3))
 tdpR2s <- lapply(tdmods4tp, function(x) round(pR2(x)['McFadden'], 3))
 
 
-myCovLabs <- c("Constant", "Citizen Ideology", "Insitutional Ideology", "Jobs LP", "Evangelical Population", "Williams Measure", "SSPH 2000 Census", "SSPH 2012 ACS", "Real Assets", "Real Assets, no 234 groups")
+myCovLabs <- c("Constant", "Citizen Ideology", "Insitutional Ideology", "Jobs LP", "Evangelical Population", "SSPH 2000 Census", "SSPH 2012 ACS", "Real Assets", "Real Assets, no 234 groups", "Williams Measure")
 
 dvLabs <- c(paste0("Sexual Orientation Anti-Discrimination Law: Models 1-", length(gdmods4tp)),
             paste0("Gender Identity Anti-Discrimination Law: Models ", 1 + length(tdmods4tp), "-", length(gdmods4tp) + length(tdmods4tp)))
@@ -200,8 +210,6 @@ stargazer(c(gdmods4tp, tdmods4tp), type = "html",
           )
 
 
-table(dat$censsph2000, dat$state)
-table(dat$realastpercapall, dat$state)
 
 ## Make a smaller one for the paper
 
@@ -236,26 +244,6 @@ for(i in seq(intMods)){
 
 
 
-## Make formula, one time
-intMod <- tdmods4tp[[4]]
-myForm <- formula(intMod)
-##
-confMats <- lapply(1:100, function(x, data = dat){
-    set.seed(x)
-    tstRows <- sample(1:nrow(data), nrow(data) * .1)
-    myGlm <- glm(myForm, data[-tstRows,], family = "binomial")
-    myPreds <- predict(myGlm, data[tstRows,], type = "response")
-    preds <- sapply(myPreds, function(i) {ifelse(!is.na(i), rbinom(1, 1,  i), NA)})
-    obs <- data[tstRows, "gay_disc"]
-    cmProp <- prop.table(table(obs, preds))
-})
-
-getTruePositives <- function(cMat) ifelse(nrow(cMat) == 2 && ncol(cMat) == 2,
-                                          cMat["0", "0"] + cMat["1", "1"],
-                                          cMat["0", "0"])
-TPVals <- sapply(confMats, getTruePositives)
-summarize(TPVals)
 
 
-intMod <- gdmods4tp[[3]]
-coefplot(intMod, vertical = TRUE)
+6
