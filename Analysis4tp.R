@@ -43,7 +43,7 @@ outlocdb <- "/Users/bjr/Dropbox/LGBT Interest group data/BensOutput/"
 thedate <- substr(Sys.time(), 1, 10)
 
 dat <- read.csv(paste0(loc,"JT DHM LGBT Group Resources.csv"))
-head(dat)
+## head(dat)
 
 stateWill <- split(dat[, c('statename', "Williams")], f = dat$statename)
 stateWill <- lapply(stateWill, function(x){
@@ -155,26 +155,10 @@ ivls <- c( "inst6013_adacope", "inst6014_nom", "citi6013", "iaperc", "realincper
 ## but without repeating this same code over and over.
 
 dv1 <- "trans_dis"
-
-
-## Bind control variables we want to the variables we want to consider in a variable called toreg.
-## Note to self, it appears that we get what we want if we list the variable of interest last rather than first.
-toreg <- lapply(incasstrevVars, function(x) c(typcont[[length(typcont)]], x) )
-
-td4tp <- lapply(toreg[c(19, 21)], customglm, deev = dv1, dat = dat)
-
-## see what years are used in one of the td4tp measures
-tRows <- as.numeric(rownames(model.frame(td4tp[[1]])))
-## unique(dat[as.numeric(tRows), "year"])
-cbind(dat$statename[tRows], model.frame(td4tp[[1]]))
-
-
-## Begin working on gay discrimination variables
 dv2 <- "gay_disc"
 
 
-# some isolated varsofint
-
+## make lists of IVs for the paper
 smallno234ivs <- lapply(typcont, c, "realastpercap_smallno234")
 
 realastivs <- lapply(typcont, c, "realastpercapall")
@@ -183,12 +167,17 @@ censussphivs <- lapply(typcont, c, "censsph2000")
 acs5ssphivs <- lapply(typcont, c, "acs5ssph2012")
 williamsivs <- lapply(typcont, c, "Williams")
 
+## Just grab the last, sans controls, of the data
 finalTypCont <- length(typcont)
-IVs <- c(censussphivs[finalTypCont], acs5ssphivs[finalTypCont], realastivs[finalTypCont], smallno234ivs[finalTypCont], williamsivs[finalTypCont])
+IVs <- c(censussphivs[finalTypCont],
+         acs5ssphivs[finalTypCont],
+         realastivs[finalTypCont],
+         smallno234ivs[finalTypCont],
+         williamsivs[finalTypCont])
+
+## make mods for the paper
 gdmods4tp <- lapply(IVs, customglm, deev = "gay_disc", dat)
 tdmods4tp <- lapply(IVs, customglm, deev = "trans_dis", dat)
-
- range(dat$year[ sapply(gdmods4tp, function(x) as.numeric(rownames(model.frame(x))))[[5]] ])
 
 ## Need to grab pseudo-R^2s
 gdpR2s <- lapply(gdmods4tp, function(x) round(pR2(x)['McFadden'], 3))
@@ -241,9 +230,3 @@ for(i in seq(intMods)){
     atMeanLs[[intVar]] <- NULL
 }
 
-
-
-
-
-
-6
