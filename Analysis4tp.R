@@ -11,7 +11,6 @@ library(xlsx)
 library(pscl)
 
 
-
 ##' create custom glm function suitable for bulk regression orders
 ##' @title custom glm
 ##' @param x a vector containing the independent variables that we want to consider
@@ -24,18 +23,6 @@ customglm <- function(x, deev, dat = dat){
     eval(bquote(glm(.(u), family = "binomial", data = dat)))
 }
 
-##' create custom Ordered logistic regression for bulk regressions
-##' @title custom polr
-##' @param x the independent variable or independent variables of interest as a vector
-##' @param deev the dependent variable of interest
-##' @param thedata the data to model the formula on
-##' @return a polr model in the form deev ~ x
-##' @author Benjamin Rogers
-custompolr <- function(x, deev, dat = dat){
-    x <- ifelse(length(x) > 1, paste0(x, collapse = "+"), x)
-    u <- as.formula(paste(deev, x, sep = " ~ "))
-    eval(bquote(polr(.(u), data = dat, method = "logistic")))
-}
 
 loc <- "/Users/bjr/Dropbox/LGBT Interest group data/"
 outlocgit <- "/Users/bjr/GitHub/TransResearch2016/Output/"
@@ -69,9 +56,9 @@ stateAst <- lapply(stateAst, function(x){
 ##
 })
 
-View(stateAst$Wyoming)
+write.csv(stateAst$Wyoming, file = paste0( outlocdb, "WyomingLagged.csv"), row.names = F)
 
-## Have read in data, will conduct some analyses now
+## Have read in data and played with some variables, will conduct some analyses now
 ## lgbtrevpercapita is Dr. Taylor's measure
 ## correlations between IVs, dvs, and make a file with output
 
@@ -103,8 +90,6 @@ nussphVars <- grep("ssph", colnames(dat)[(ncol(dat)-10):ncol(dat)], value = T)
 incasstrevVars <- c(revVars, incVars, assetVars, nussphVars)
 
 ## Do a correlation matrix on the variables of interest
-typcont[[4]] %in% colnames(dat)
-"Williams" %in% colnames(dat)
 
 dsub <- dat[, unique(unlist(c(deveesofint, typcont[[length(typcont)]], incasstrevVars, nussphVars))) ]
 incContsCors <- cor(dsub, use = "pairwise.complete.obs")
@@ -129,19 +114,6 @@ stargazer(littleCors, type = 'html', out = paste0(outlocdb, "LCHTML.html"))
 library(xlsx)
 write.xlsx(littleCors, file = paste0(outlocdb, "BensDocs.xlsx"))
 
-## Get ScoreCardCats into the correct Order
-SCCLvls <- c("High Priority To Achieve Basic Equality", "Building Equality", "Solidifying Equality", "Working Toward Innovative Equality")
-dat$ScoreCardCats <- factor(dat$ScoreCardCats, levels = SCCLvls)
-## levels(dat$ScoreCardCats)
-
-SCCdat <- dat[ !is.na(dat$ScoreCardCats),]
-
-SCCdat <- SCCdat[, unlist(lapply(SCCdat, function(x) !all(is.na(x))))]
-
-## head(SCCdat)
-
-## Models for ScoreCardCats ordinal Logit regression
-## Incomeall isn't working correctly, but its square root and percentages return a result
 
 ## Create the IVs we'd like
 ivls <- c( "inst6013_adacope", "inst6014_nom", "citi6013", "iaperc", "realincpercapall", "orgcountall", laxPhillips[5])
