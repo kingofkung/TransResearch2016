@@ -203,3 +203,20 @@ for(i in seq(intMods)){
     atMeanLs[[intVar]] <- NULL
 }
 
+
+
+## They need a dataset with all of the variables that we used. I'm
+## going to start with the simpler things, but have to make sure
+## we've got regression stuff in there too.
+OutDatVars <- c(colnames(dsubSmall), dv1, dv2)
+## grab coefficient names from the regressions
+regcoefs <- lapply(c(tdmods4tp, gdmods4tp), function(x) names(coef(x)))
+regcoefs <- unlist(regcoefs)
+regcoefs <- unique(regcoefs)
+regcoefs <- regcoefs[!regcoefs %in% "(Intercept)"]
+## Combine prior variable list with the variable list here as well.
+OutDatVars <- unique(c(OutDatVars, regcoefs))
+
+datUsed <- dat[, OutDatVars]
+
+write.csv(datUsed, paste0(outlocdb, "VariablesUsed.csv"), row.names = F)
