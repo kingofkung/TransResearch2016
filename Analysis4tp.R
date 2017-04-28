@@ -47,17 +47,21 @@ dat$Williams <- stateWill$Williams
 
 ## Need to lag the measures:: realastpercap_smallno234 and realastpercapall
 stateAst <- split(dat[, c('statename', 'realastpercap_smallno234', 'realastpercapall', 'year')], f = dat$statename)
-stateAst <- lapply(stateAst, function(x){
-    x$realastpercap_smallno234Lagged <- Hmisc::Lag(x$realastpercap_smallno234, 1)
-    x$realastpercapalllagged <- Hmisc::Lag(x$realastpercapall, 1)
+stateAst <- lapply(stateAst, function(x, lagNo = 1){
+    x$realastpercap_smallno234Lag <- Hmisc::Lag(x$realastpercap_smallno234, lagNo)
+    x$realastpercapallLag <- Hmisc::Lag(x$realastpercapall, lagNo)
 ##
-    return(x[,  c('statename', 'year', 'realastpercap_smallno234', 'realastpercap_smallno234Lagged',
-                  'realastpercapall', 'realastpercapalllagged') , drop = FALSE])
+    return(x[,  c('statename', 'year', 'realastpercap_smallno234', 'realastpercap_smallno234Lag',
+                  'realastpercapall', 'realastpercapallLag') , drop = FALSE])
 ##
 })
+##
+write.csv(stateAst$Illinois, file = paste0( outlocdb, "IllinoisLagged.csv"), row.names = F)
+##Join stateAst back together
+stateAst <- do.call(rbind, stateAst)
 
-write.csv(stateAst$Wyoming, file = paste0( outlocdb, "WyomingLagged.csv"), row.names = F)
-
+dat$realastpercapallLag <- stateAst$realastpercapallLag
+dat$realastpercap_smallno234Lag <- stateAst$realastpercap_smallno234Lag
 ## Have read in data and played with some variables, will conduct some analyses now
 ## lgbtrevpercapita is Dr. Taylor's measure
 ## correlations between IVs, dvs, and make a file with output
@@ -115,25 +119,21 @@ library(xlsx)
 write.xlsx(littleCors, file = paste0(outlocdb, "BensDocs.xlsx"))
 
 
-## Create the IVs we'd like
-ivls <- c( "inst6013_adacope", "inst6014_nom", "citi6013", "iaperc", "realincpercapall", "orgcountall", laxPhillips[5])
-
-
-## Start adding files that show how HRC is affected by
-
-
 ## Model trans_dis (transgender antidiscrimination statutes) using the
 ## full breadth of the data. Trying to do the same as ScoreCardCats,
 ## but without repeating this same code over and over.
-
+## Make the Lists of DVs
 dv1 <- "trans_dis"
 dv2 <- "gay_disc"
 
-
 ## make lists of IVs for the paper
 smallno234ivs <- lapply(typcont, c, "realastpercap_smallno234")
-
+smallno234ivsLag <- lapply(typcont, c, "realastpercap_smallno234Lag")
+##
+##
 realastivs <- lapply(typcont, c, "realastpercapall")
+realastivsLag <- lapply(typcont, c, "realastpercapallLag")
+##
 ## These shouldn't need to change, but we might want to add one for the ssph
 censussphivs <- lapply(typcont, c, "censsph2000")
 acs5ssphivs <- lapply(typcont, c, "acs5ssph2012")
@@ -141,10 +141,11 @@ williamsivs <- lapply(typcont, c, "Williams")
 
 ## Just grab the last, sans controls, of the data
 finalTypCont <- length(typcont)
-IVs <- c(censussphivs[finalTypCont],
-         acs5ssphivs[finalTypCont],
+IVs <- c(acs5ssphivs[finalTypCont],
          realastivs[finalTypCont],
+         realastivsLag[finalTypCont],
          smallno234ivs[finalTypCont],
+         smallno234ivsLag[finalTypCont],
          williamsivs[finalTypCont])
 
 ## make mods for the paper
@@ -156,7 +157,7 @@ gdpR2s <- lapply(gdmods4tp, function(x) round(pR2(x)['McFadden'], 3))
 tdpR2s <- lapply(tdmods4tp, function(x) round(pR2(x)['McFadden'], 3))
 
 
-myCovLabs <- c("Constant", "Citizen Ideology", "Insitutional Ideology", "Jobs LP", "Evangelical Population", "SSPH 2000 Census", "SSPH 2012 ACS", "Real Assets", "Real Assets, no 234 groups", "Williams Measure")
+myCovLabs <- c("Constant", "Citizen Ideology", "Insitutional Ideology", "Jobs LP", "Evangelical Population", "SSPH 2012 ACS", "Real Assets","Real Assets Lagged", "Real Assets, no 234 groups", "Real Assets, no 234 groups Lagged", "Williams Measure")
 
 dvLabs <- c(paste0("Sexual Orientation Anti-Discrimination Law: Models 1-", length(gdmods4tp)),
             paste0("Gender Identity Anti-Discrimination Law: Models ", 1 + length(tdmods4tp), "-", length(gdmods4tp) + length(tdmods4tp)))
