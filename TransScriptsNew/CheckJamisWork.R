@@ -1,7 +1,7 @@
 ## So in this script, I'll check if Dr. Taylor's calculations are sensible.
 
 ## read in Jami's work
-source("/Users/bjr/GitHub/TransResearch2016/ScriptsForNewData/ReadInNewData.R")
+source("/Users/bjr/GitHub/TransResearch2016/TransScriptsNew/ReadInNewData.R")
 ls()
 
 getwd()
@@ -47,3 +47,31 @@ colDat[, 1:5] <- as.numeric(colDat[, 1:5])
 ## Whatever Dr. Taylor did checks out.
 ## here we make sure the columns are
 all(unlist(lapply(1:ncol(colDat), function(u) all(colDat[, u] == census[, u]))))
+
+
+## of the different datasets, only grpstuff appears to have columns of the same name in there
+colnames(ourdat)[!colnames(ourdat) %in% colnames(grpstuff)]
+
+## I recognized that I made some of these columns
+## Do you need the rest of them merged into this dataset?
+grep("state", colnames(grpstuff), ignore.case = T)
+
+ssphWill[, 'State']
+ssphdt[, 'State']
+
+## Judging from this, grpstuff is not something that should be incorporated in the same way
+grpstuff[, 'statename']
+head(grpstuff)
+
+ssphWill
+
+## the master data file to merge ssphWilliams, ssphdt to
+loc <- "/Users/bjr/Dropbox/LGBT Interest group data/"
+datMA <- read.csv(paste0(loc,"JT DHM LGBT Group Resources.csv"))
+
+## convert ssphWill, ssphdt from wide to long,
+
+
+## merge ssphWill, ssphdt into datMA
+
+## conduct analysis

@@ -29,4 +29,7 @@ ssphWill <- as.data.frame(ssphWill)
 ## now let us read in the stata 13 file
 ourdat <- read.dta13("jami ben and don sppq data  8.6.17.dta")
 
+## read in the census region data we just made
+censusRegions <- read.csv("CensusRegions.csv")
+
 ## ok they're read in. Now to figure out what it is Don wants me to do with them...
