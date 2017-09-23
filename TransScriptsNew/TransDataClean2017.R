@@ -117,3 +117,16 @@ mergeDat <- splitDat
 ## figure out a regional diffusion variable
 ## I made a regional diffusion variable and have added it to the merged data set.
 mergeDat <- data.frame( mergeDat, "censusRegion" = censusRegions[ match(mergeDat$statename, censusRegions$state), "censusRegion"])
+
+mergeDat <- mergeDat[, -1]
+mergeDat$abb <- zoo::na.locf(mergeDat[, "abb"])
+
+mergeDat <- as.data.frame(apply(mergeDat, 2, function(x){
+    x[x %in% "#N/A"] <- NA
+    x
+}))
+
+## having done the regional diffusion variable, we need to figure out how to get a percentage of regions with the
+
+foreign::write.dta(mergeDat, "JamisDataMerged.dta")
+write.csv(mergeDat, "JamisDataMerged.csv", row.names = FALSE)
