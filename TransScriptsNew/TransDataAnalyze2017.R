@@ -1,5 +1,8 @@
 rm(list = ls(all.names = TRUE))
 
+library(stargazer)
+library(survival)
+
 ## let us do the usual thing, in which we take the variables, and transform them into a custom glm function
 customGlm <- function(DVName, IVnames, dat){
     ## need to create the Right hand side first. Putting in all
@@ -17,7 +20,8 @@ customGlm <- function(DVName, IVnames, dat){
 ## grab the data:
 setwd("/Users/bjr/Dropbox/LGBT Interest group data/TransTeamDatFall17")
 ## read in the merged data as .csv
-mergeDat <- read.csv("JamisDataMerged.csv", na = c("#N/A", "NA"), stringsAsFactors = FALSE)
+## mergeDat <- read.csv("JamisDataMerged.csv", na = c("#N/A", "NA"), stringsAsFactors = FALSE)
+mergeDat <- foreign::read.dta("JamisDataMerged.dta")
 ## note to self, if it says dt, then it refers to the "ssphh over time
 ## with williams straight line 1990 2008.xlsx" dataset
 str(mergeDat)
@@ -37,3 +41,39 @@ lapply(dvsInt, customGlm, typCont, mergeDat)
 
 lapply(mainIVLs, function(x) customGlm(dvsInt[1], x, mergeDat))
 
+
+
+r1 <- coxph(Surv(Year, doma) ~ realastpercap_smallno234, data = mergeDat, method = "breslow")
+summary(r1)
+
+
+lhs <- "Surv(Year, event = gay_disc)"
+rhs <- paste(mainIVLs[1], "+", paste( typCont, collapse = " + "))
+
+
+ehaForm <- as.formula( paste(lhs, rhs, sep = "~"))
+##
+eha1 <- coxph(ehaForm, data = mergeDat)
+
+## make my left hand sides for the eha
+lhsVec <- vapply(seq(dvsInt), function(x) paste0("Surv(Year, event = ", dvsInt[x], ")"), character(1))
+
+## and paste together the right hand side as well
+rhsVec <- vapply(mainIVLs, function(x){
+    paste(x, paste(typCont, collapse = " + "), sep = "+")
+}, character(1))
+
+
+for(i in seq(lhsVec)){
+    ## customglm
+    custGlms <- lapply(rhsVec, function(x) customGlm(dvsInt[i], x, mergeDat))
+    custEhas <- lapply(rhsVec, function(x, lh = lhsVec){
+        frm <- as.formula(paste(lh[i], x, sep = "~"))
+        print(frm)
+        coxph(frm, data = mergeDat)
+    })
+##
+}
+
+
+stargazer(eha1)
