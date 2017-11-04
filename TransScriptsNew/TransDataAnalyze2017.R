@@ -64,14 +64,20 @@ rhsVec <- vapply(mainIVLs, function(x){
 }, character(1))
 
 
+## so putting 2 dots in setwd moves one up, and looks for the directory. Why does it work when I'm already there though?
+sg <- function(x, ...) stargazer(x, ..., type = "html")
+
+setwd("../BensOutput")
+getwd()
 for(i in seq(lhsVec)){
     ## customglm
     custGlms <- lapply(rhsVec, function(x) customGlm(dvsInt[i], x, mergeDat))
     custEhas <- lapply(rhsVec, function(x, lh = lhsVec){
         frm <- as.formula(paste(lh[i], x, sep = "~"))
-        print(frm)
         coxph(frm, data = mergeDat)
     })
+    glmOut <- sg(custGlms, out = paste0(dvsInt[i], "glmRegs.html"))
+    ehaOut <- sg(custEhas, out = paste0(dvsInt[i], "ehaRegs.html"))
 ##
 }
 
