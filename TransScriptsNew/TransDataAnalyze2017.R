@@ -21,7 +21,7 @@ customGlm <- function(DVName, IVnames, dat){
 setwd("/Users/bjr/Dropbox/LGBT Interest group data/TransTeamDatFall17")
 ## read in the merged data as .csv
 ## mergeDat <- read.csv("JamisDataMerged.csv", na = c("#N/A", "NA"), stringsAsFactors = FALSE)
-mergeDat <- foreign::read.dta("JamisDataMerged.dta")
+mergeDat <- readstata13::read.dta13("taylor rogers haider markel  11.5.17.dta")
 ## note to self, if it says dt, then it refers to the "ssphh over time
 ## with williams straight line 1990 2008.xlsx" dataset
 str(mergeDat)
@@ -43,17 +43,20 @@ lapply(mainIVLs, function(x) customGlm(dvsInt[1], x, mergeDat))
 
 
 
-r1 <- coxph(Surv(Year, doma) ~ realastpercap_smallno234, data = mergeDat, method = "breslow")
-summary(r1)
+r1 <- coxph(Surv(Year, event = trans_dis, origin = 1995) ~
+            realastpercap_smallno234 + cluster(State),
+            data = mergeDat, ties = "breslow")
+print(r1)
 
 
 lhs <- "Surv(Year, event = gay_disc)"
-rhs <- paste(mainIVLs[1], "+", paste( typCont, collapse = " + "))
-
-
+rhs <- paste(mainIVLs[1])  ##,  "+", paste( typCont, collapse = " + "))
+##
+##
 ehaForm <- as.formula( paste(lhs, rhs, sep = "~"))
 ##
-eha1 <- coxph(ehaForm, data = mergeDat)
+eha1 <- coxph(ehaForm, data = mergeDat, ties = "breslow")
+summary(eha1)
 
 ## make my left hand sides for the eha
 lhsVec <- vapply(seq(dvsInt), function(x) paste0("Surv(Year, event = ", dvsInt[x], ")"), character(1))
@@ -67,6 +70,18 @@ rhsVec <- vapply(mainIVLs, function(x){
 ## so putting 2 dots in setwd moves one up, and looks for the directory. Why does it work when I'm already there though?
 sg <- function(x, ...) stargazer(x, ..., type = "html")
 
+## create list for eventual DV information
+dvTiList <- c("DOMA" = "doma", "Super DOMA" = "superdoma", "Trans Antidiscrimination Legislation" = "trans_dis", "Gay Antidiscrimination Legislation" = "gay_disc")
+
+myCovLabs <- c("Constant",
+               "Census Region 4", "Census Region 3", "Census Region 2",
+               "Evangelical Population", "Jobs LP",
+               "Insitutional Ideology", "Citizen Ideology",
+               "timeVarWillLag", "timeVarWill",
+               "timeVarDtWillLag", "timeVarDtWill",
+               "timeVarDtLag", "timeVarDt", "timeVarLag", "timeVar", "Williams Measure", "SSPH 2012 ACS", "Census Same Sex 2000", "Real Assets Per Capita Lagged","Real Assets Per Capita Lagged", "Real Assets, no 234 groups Lagged", "Real Assets, no 234 groups")
+
+
 setwd("../BensOutput")
 getwd()
 for(i in seq(lhsVec)){
@@ -74,12 +89,23 @@ for(i in seq(lhsVec)){
     custGlms <- lapply(rhsVec, function(x) customGlm(dvsInt[i], x, mergeDat))
     custEhas <- lapply(rhsVec, function(x, lh = lhsVec){
         frm <- as.formula(paste(lh[i], x, sep = "~"))
-        coxph(frm, data = mergeDat)
+        coxph(frm, data = mergeDat, ties = "breslow")
     })
-    glmOut <- sg(custGlms, out = paste0(dvsInt[i], "glmRegs.html"))
-    ehaOut <- sg(custEhas, out = paste0(dvsInt[i], "ehaRegs.html"))
+    ## Release the output.
+    ## get the name of the dv
+    dvName <- names(dvTiList)[grepl(dvsInt[i], dvTiList)]
+    capture.output(stargazer(custGlms,
+                             out = paste0(dvsInt[i], "glmRegs.html"),
+                             type = "html",
+                             covariate.labels = rev(myCovLabs),
+                             title = paste("Predicting", dvName, "Via Generalized Linear Model")))
+    capture.output(stargazer(custEhas,
+                             out = paste0(dvsInt[i], "ehaRegs.html"),
+                             type = "html",
+                             ## there's no constant in this one...
+                             covariate.labels = rev(myCovLabs[-1]),
+                             title = paste("Predicting", dvName, "Via Cox Proportional Hazards Model")))
 ##
 }
 
 
-stargazer(eha1)
