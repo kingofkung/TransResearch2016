@@ -217,6 +217,9 @@ regcoefs <- regcoefs[!regcoefs %in% "(Intercept)"]
 ## Combine prior variable list with the variable list here as well.
 OutDatVars <- unique(c(OutDatVars, regcoefs))
 
-datUsed <- dat[, OutDatVars]
+revPc <- grep('rev', colnames(dat), value = TRUE)
+revPc <- grep('cap', revPc, value = TRUE)
+datUsed <- dat[, c('statename', 'year', OutDatVars, revPc)]
 
 write.csv(datUsed, paste0(outlocdb, "VariablesUsed.csv"), row.names = F)
+
